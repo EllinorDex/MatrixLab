@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MatrixLib_0._1
 {
+    //Класс, реализующий матрицу
     public class Matrix<T>
     {
         private uint _countOfRows;
@@ -31,8 +32,11 @@ namespace MatrixLib_0._1
         {
             return 0;
         }
+
         ~Matrix()
         {
         }
     }
+
+     
 }

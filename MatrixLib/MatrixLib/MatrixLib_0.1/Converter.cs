@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace MatrixLib_0._1
 {
-    class Converter<MLMatrix,T>
+    internal class Converter<MLMatrix,T>
     {
         public MLMatrix ConvertFromMatrixToMLMatrix(Matrix<T> matrix)
         {
-            return MLMatrix();
+            return new MLMatrix();
         }
 
         public Matrix<T> ConvertFromMLMatrixToMatrix(MLMatrix mlMatrix)
         {
-            return Matrix();
+            return new Matrix<T>();
         }
     }
+
 }
