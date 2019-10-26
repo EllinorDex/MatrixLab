@@ -201,5 +201,11 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Matrix frm2 = new Matrix();
+            frm2.Show();
+        }
     }
 }
