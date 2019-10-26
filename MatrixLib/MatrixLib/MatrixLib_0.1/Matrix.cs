@@ -11,30 +11,33 @@ namespace MatrixLib_0._1
     {
         private uint _countOfRows;
         private uint _countOfColumns;
-        private T[][] _matrix;
+        private T[,] _matrix;
 
 
-        public Matrix()
+        public Matrix(uint countOfRows, uint countOfColumns, string typeofMatrix)
         {
         }
-        public Matrix(uint countOFRows, uint countOfColumns, string typeofMatrix)
+        public Matrix(uint countOfRows, uint countOfColumns, T[,] matrix)
         {
-        }
-        public Matrix(uint countOFRows, uint countOfColumns, T[][] matrix)
-        {
+            _countOfRows = countOfRows;
+            _countOfColumns = countOfColumns;
+            _matrix = new T[_countOfColumns,_countOfRows];
+            for (uint i = 0; i < _countOfColumns; ++i)
+                for (uint j = 0; j < _countOfRows; ++j)
+                    _matrix[i,j] = matrix[i, j];
         }
 
         public uint GetCountOfRows()
         {
-            return 0;
+            return _countOfRows;
         }
         public uint GetCountOfColumns()
         {
-            return 0;
+            return _countOfColumns;
         }
-
-        ~Matrix()
+        public T this[int i, int j]
         {
+            get { return _matrix[i, j]; }
         }
     }
 
