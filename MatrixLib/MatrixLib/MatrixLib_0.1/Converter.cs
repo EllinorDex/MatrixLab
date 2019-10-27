@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MatrixLib_0._1
+namespace MatrixLib
 {
-    internal class Converter<MLMatrix,T>
+    class MLMatrix
+    {
+
+    }
+    internal class Converter<T>
     {
         public MLMatrix ConvertFromMatrixToMLMatrix(Matrix<T> matrix)
         {
@@ -15,7 +19,7 @@ namespace MatrixLib_0._1
 
         public Matrix<T> ConvertFromMLMatrixToMatrix(MLMatrix mlMatrix)
         {
-            return new Matrix<T>();
+            return new Matrix<T>(0,0,"");
         }
     }
 

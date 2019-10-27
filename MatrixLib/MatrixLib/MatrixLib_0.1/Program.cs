@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MatrixLib_0._1
+namespace MatrixLib
 {
     class Program
     {

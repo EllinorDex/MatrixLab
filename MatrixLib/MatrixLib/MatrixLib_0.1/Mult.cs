@@ -4,22 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MatrixLib_0._1
+namespace MatrixLib
 {
     //Класс, реализующий умножение матриц
     //Причем, работа должна производиться с матрицами, элементы которых могут быть разного типа
-    public class Mult<T> : Operation<T>
+    public class Mult<T> : OperationRM<T>
     {
         private Matrix<T> _matrixLeft;
         private Matrix<T> _matrixRight;
 
-        public Matrix<T> GetResultMatrix()
+        public Matrix<T> GetResult()
         {
             return _matrixLeft;
-        }
-        public T GetResultScalar()
-        {
-            return T();
         }
     }
 }

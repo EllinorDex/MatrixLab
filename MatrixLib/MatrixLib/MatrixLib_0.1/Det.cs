@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MatrixLib_0._1
+namespace MatrixLib
 {
     //Класс, реализующий нахождение определителя матриц
     //Причем, работа должна производиться с матрицами, элементы которых могут быть разного типа
-    public class Det<T> : OperationScalar<T>
+    public class Det<T> : OperationRS<T>
     {
         private Matrix<T> _matrix;
 
-        public T GetResultScalar()
+        public T GetResult()
         {
-            return T();
+            return _matrix[0,0];
         }
     }
 }

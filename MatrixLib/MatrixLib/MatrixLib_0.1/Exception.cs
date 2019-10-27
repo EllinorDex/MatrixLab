@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MatrixLib_0._1
+namespace MatrixLib
 {
     //Транслирует исключения из MatLab
-    class Exception
+    public class MatrixException : Exception
     {
-        private string _exception;
-        public string GetException()
-        {
-            return null;
-        }
+        public MatrixException() { }
+        public MatrixException(string message) : base(message) { }
+        public MatrixException(string message, Exception inner) : base(message, inner) { }
+        protected MatrixException(
+          System.Runtime.Serialization.SerializationInfo info,
+          System.Runtime.Serialization.StreamingContext context) : base(info, context) { }
     }
 }
