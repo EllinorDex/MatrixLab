@@ -54,7 +54,8 @@ namespace WindowsFormsApplication1
 
         private void openMatrixToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.ShowDialog();
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,7 +70,7 @@ namespace WindowsFormsApplication1
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
         private void operationsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,22 +80,22 @@ namespace WindowsFormsApplication1
 
         private void sumToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            tabControl1.SelectTab(tabPage1);
         }
 
         private void multToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            tabControl1.SelectTab(tabPage2);
         }
 
         private void invToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            tabControl1.SelectTab(tabPage3);
         }
 
         private void delToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            tabControl1.SelectTab(tabPage4);
         }
 
         private void infoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,12 +105,18 @@ namespace WindowsFormsApplication1
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Эта программа позволяет вам проводить простейшие матричные вычисления. " +
+                "Для этого Вам необходимо:\n\n1) Выбрать необходимую Вам операцию;\n\n" +
+                "2) Задать количество строк и столбцов в матрице;\n\n" +
+                "3) Выбрать один из предложенных типов матрицы. " +
+                "Если Ваша матрица произвольная, то выберите пользовательский тип матрицы;\n\n" +
+                "4) В появившемся окне задать элементы матрицы;\n\n" +
+                "5) Нажать кнопку Вычислить!", "Help");
         }
 
         private void aboutUsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Три начинающих программиста из Беларуси и Украины", "About Us");
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -204,8 +211,23 @@ namespace WindowsFormsApplication1
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Matrix frm2 = new Matrix();
+            Matrix frm2 = new Matrix(numericUpDown1, numericUpDown2);
             frm2.Show();
+        }
+
+        private void donateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Помогите двум бедным белорусам и одному украинцу. \nСбербанк Онлайн: +7-977-763-62-91", "Donate");
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

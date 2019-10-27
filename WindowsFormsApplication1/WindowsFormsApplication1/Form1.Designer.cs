@@ -31,8 +31,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openMatrixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +40,7 @@
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.donateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -130,8 +129,6 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openMatrixToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
@@ -144,20 +141,6 @@
             this.openMatrixToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.openMatrixToolStripMenuItem.Text = "Open matrix...";
             this.openMatrixToolStripMenuItem.Click += new System.EventHandler(this.openMatrixToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
-            this.saveAsToolStripMenuItem.Text = "Save as...";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -210,7 +193,8 @@
             // 
             this.infoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.helpToolStripMenuItem,
-            this.aboutUsToolStripMenuItem});
+            this.aboutUsToolStripMenuItem,
+            this.donateToolStripMenuItem});
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
             this.infoToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.infoToolStripMenuItem.Text = "Info";
@@ -229,6 +213,13 @@
             this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(143, 26);
             this.aboutUsToolStripMenuItem.Text = "About us";
             this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.aboutUsToolStripMenuItem_Click);
+            // 
+            // donateToolStripMenuItem
+            // 
+            this.donateToolStripMenuItem.Name = "donateToolStripMenuItem";
+            this.donateToolStripMenuItem.Size = new System.Drawing.Size(143, 26);
+            this.donateToolStripMenuItem.Text = "Donate";
+            this.donateToolStripMenuItem.Click += new System.EventHandler(this.donateToolStripMenuItem_Click);
             // 
             // tabControl1
             // 
@@ -515,6 +506,7 @@
             this.numericUpDown1.Size = new System.Drawing.Size(71, 27);
             this.numericUpDown1.TabIndex = 35;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // label1
             // 
@@ -539,6 +531,7 @@
             this.numericUpDown2.Size = new System.Drawing.Size(71, 27);
             this.numericUpDown2.TabIndex = 33;
             this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
             // 
             // label2
             // 
@@ -633,7 +626,7 @@
             this.tabPage3.Location = new System.Drawing.Point(25, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1225, 552);
+            this.tabPage3.Size = new System.Drawing.Size(1237, 552);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Вычисление обратной";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -763,7 +756,7 @@
             this.tabPage4.Location = new System.Drawing.Point(25, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1225, 552);
+            this.tabPage4.Size = new System.Drawing.Size(1237, 552);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Вычисление определителя";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -903,8 +896,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openMatrixToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem operationsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sumToolStripMenuItem;
@@ -935,9 +926,9 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        public System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        public System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.Label label3;
@@ -961,6 +952,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.ToolStripMenuItem donateToolStripMenuItem;
     }
 }
 
