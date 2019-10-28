@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixLib", "MatrixLib\MatrixLib.csproj", "{CE1D0096-3B49-4750-8ABD-145D934CD6FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixApp", "MatrixApp\MatrixApp.csproj", "{207B331E-5097-41DA-8F72-0D88B38D25D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixTests", "MatrixTests\MatrixTests.csproj", "{F5A77DFF-9F82-4D1A-9D80-FBBF82748D74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE1D0096-3B49-4750-8ABD-145D934CD6FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE1D0096-3B49-4750-8ABD-145D934CD6FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE1D0096-3B49-4750-8ABD-145D934CD6FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE1D0096-3B49-4750-8ABD-145D934CD6FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{207B331E-5097-41DA-8F72-0D88B38D25D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{207B331E-5097-41DA-8F72-0D88B38D25D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{207B331E-5097-41DA-8F72-0D88B38D25D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{207B331E-5097-41DA-8F72-0D88B38D25D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A77DFF-9F82-4D1A-9D80-FBBF82748D74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A77DFF-9F82-4D1A-9D80-FBBF82748D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A77DFF-9F82-4D1A-9D80-FBBF82748D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A77DFF-9F82-4D1A-9D80-FBBF82748D74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E18EDDA2-0E66-4112-B1F3-E5A65D2BB991}
+	EndGlobalSection
+EndGlobal
