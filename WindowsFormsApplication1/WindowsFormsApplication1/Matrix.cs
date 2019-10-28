@@ -32,6 +32,7 @@ namespace WindowsFormsApplication1
             _numericUpDown1 = numericUpDown1;
             _numericUpDown2 = numericUpDown2;
             _comboBox = comboBox4;
+            //доделать
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
