@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-<<<<<<< HEAD
 using System.Text;
+using MathWorks.MATLAB.NET.Arrays;
+using MathWorks.MATLAB.NET.Arrays;
+using Operations;
 
 namespace MatrixLib
 {
@@ -11,24 +13,12 @@ namespace MatrixLib
         private Matrix _matrixRight;
 
         public Matrix GetResult()
-=======
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MatrixLib
-{
-    //Класс, реализующий суммирование матриц
-    //Причем, работа должна производиться с матрицами, элементы которых могут быть разного типа
-    public class Sum<T> : OperationRM<T>
-    {
-        private Matrix<T> _matrixLeft;
-        private Matrix<T> _matrixRight;
-
-        public Matrix<T> GetResult()
->>>>>>> a6b819a89422fed1c4f5fd23284849088f547983
         {
-            return _matrixLeft;
+            operationsmatlab op = new operationsmatlab();
+            Converter converter = new Converter();
+            MWArray[] res = op.Sum(1, converter.ConvertFromMatrixToMLMatrix(_matrixLeft), converter.ConvertFromMatrixToMLMatrix(_matrixRight));
+            int[,] resArr = converter.ConvertFromMLMatrixToMatrix(res);
+            return new Matrix(_matrixLeft.CountOfRows, _matrixLeft.CountOfColumns, resArr);
         }
     }
 }
