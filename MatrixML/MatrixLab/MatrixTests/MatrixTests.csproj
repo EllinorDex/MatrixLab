@@ -13,9 +13,14 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <Reference Include="MatrixLib">
       <HintPath>..\MatrixLib\bin\Debug\netstandard2.0\MatrixLib.dll</HintPath>
     </Reference>
+=======
+    <ProjectReference Include="..\MatrixApp\MatrixApp.csproj" />
+    <ProjectReference Include="..\MatrixLib\MatrixLib.csproj" />
+>>>>>>> a6b819a89422fed1c4f5fd23284849088f547983
   </ItemGroup>
 
 </Project>

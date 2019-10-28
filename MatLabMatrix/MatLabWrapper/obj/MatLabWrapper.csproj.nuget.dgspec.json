@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\Kirill\\YP\\ТиМП\\MatlabMatrix\\MatLabMatrix\\MatLabWrapper\\MatLabWrapper.csproj": {}
+    "D:\\Users\\Kirill\\YP\\MatrixLab\\MatLabMatrix\\MatLabWrapper\\MatLabWrapper.csproj": {}
   },
   "projects": {
-    "D:\\Users\\Kirill\\YP\\ТиМП\\MatlabMatrix\\MatLabMatrix\\MatLabWrapper\\MatLabWrapper.csproj": {
+    "D:\\Users\\Kirill\\YP\\MatrixLab\\MatLabMatrix\\MatLabWrapper\\MatLabWrapper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\Kirill\\YP\\ТиМП\\MatlabMatrix\\MatLabMatrix\\MatLabWrapper\\MatLabWrapper.csproj",
+        "projectUniqueName": "D:\\Users\\Kirill\\YP\\MatrixLab\\MatLabMatrix\\MatLabWrapper\\MatLabWrapper.csproj",
         "projectName": "MatLabWrapper",
-        "projectPath": "D:\\Users\\Kirill\\YP\\ТиМП\\MatlabMatrix\\MatLabMatrix\\MatLabWrapper\\MatLabWrapper.csproj",
+        "projectPath": "D:\\Users\\Kirill\\YP\\MatrixLab\\MatLabMatrix\\MatLabWrapper\\MatLabWrapper.csproj",
         "packagesPath": "C:\\Users\\Кирилл\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\Kirill\\YP\\ТиМП\\MatlabMatrix\\MatLabMatrix\\MatLabWrapper\\obj\\",
+        "outputPath": "D:\\Users\\Kirill\\YP\\MatrixLab\\MatLabMatrix\\MatLabWrapper\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
