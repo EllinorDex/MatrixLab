@@ -1,9 +1,0 @@
-C:\Users\б-201703\Desktop\Proba\Proba\bin\Debug\Proba.exe.config
-C:\Users\б-201703\Desktop\Proba\Proba\bin\Debug\Proba.exe
-C:\Users\б-201703\Desktop\Proba\Proba\bin\Debug\Proba.pdb
-C:\Users\б-201703\Desktop\Proba\Proba\obj\Debug\Proba.csprojResolveAssemblyReference.cache
-C:\Users\б-201703\Desktop\Proba\Proba\obj\Debug\Proba.Properties.Resources.resources
-C:\Users\б-201703\Desktop\Proba\Proba\obj\Debug\Proba.csproj.GenerateResource.Cache
-C:\Users\б-201703\Desktop\Proba\Proba\obj\Debug\Proba.exe
-C:\Users\б-201703\Desktop\Proba\Proba\obj\Debug\Proba.pdb
-C:\Users\б-201703\Desktop\Proba\Proba\obj\Debug\Proba.SanyGoZaShavuhoi.resources
