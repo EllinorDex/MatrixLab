@@ -15,6 +15,7 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+            comboBox4.Text = "Пользовательская";
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -211,8 +212,13 @@ namespace WindowsFormsApplication1
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Matrix frm2 = new Matrix(numericUpDown1, numericUpDown2);
-            frm2.Show();
+            if (numericUpDown1.Value != 0 && numericUpDown2.Value != 0)
+            {
+                Matrix frm2 = new Matrix(numericUpDown1, numericUpDown2, comboBox4);
+                frm2.Show();
+            }
+            else
+                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы", "Error");
         }
 
         private void donateToolStripMenuItem_Click(object sender, EventArgs e)
@@ -228,6 +234,22 @@ namespace WindowsFormsApplication1
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (numericUpDown1.Value != 0 && numericUpDown2.Value != 0)
+            {
+                Matrix frm2 = new Matrix(numericUpDown1, numericUpDown2);
+                frm2.Show();
+            }
+            else
+                MessageBox.Show("Что-то пошло не так", "Error");
         }
     }
 }

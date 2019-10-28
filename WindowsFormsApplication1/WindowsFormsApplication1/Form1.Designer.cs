@@ -492,6 +492,7 @@
             this.comboBox4.Size = new System.Drawing.Size(281, 28);
             this.comboBox4.TabIndex = 36;
             this.comboBox4.Text = "Выберите тип матрицы...";
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // numericUpDown1
             // 
@@ -576,6 +577,7 @@
             this.button5.TabIndex = 29;
             this.button5.Text = "Вычислить!";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // numericUpDown8
             // 
@@ -925,7 +927,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox4;
+        public System.Windows.Forms.ComboBox comboBox4;
         public System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.NumericUpDown numericUpDown2;
