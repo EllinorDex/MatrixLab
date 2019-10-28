@@ -14,25 +14,23 @@ namespace WindowsFormsApplication1
     {
         public Matrix()
         {
-            if ((int)_numericUpDown1.Value != 0 && (int)_numericUpDown2.Value != 0)
-                InitializeComponent();
+
         }
 
-        public Matrix(NumericUpDown numericUpDown1, NumericUpDown numericUpDown2)
+        public Matrix(int numberOfRows, int numberOfColumns)
         {
             InitializeComponent();
-            _numericUpDown1 = numericUpDown1;
-            _numericUpDown2 = numericUpDown2;
-            _result = true;
+            _numberOfRows = numberOfRows;
+            _numberOfColumns = numberOfColumns;
+            _comboBoxValue = "Результирующая";
         }
 
-        public Matrix(NumericUpDown numericUpDown1, NumericUpDown numericUpDown2, ComboBox comboBox4)
+        public Matrix(NumericUpDown firstNumericUpDown, NumericUpDown secondNumericUpDown, ComboBox comboBox)
         {
             InitializeComponent();
-            _numericUpDown1 = numericUpDown1;
-            _numericUpDown2 = numericUpDown2;
-            _comboBox = comboBox4;
-            //доделать
+            _numberOfRows = (int)firstNumericUpDown.Value;
+            _numberOfColumns = (int)secondNumericUpDown.Value;
+            _comboBoxValue = comboBox.SelectedItem.ToString();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -42,49 +40,71 @@ namespace WindowsFormsApplication1
 
         private void Matrix_Load(object sender, EventArgs e)
         {
-            if (_comboBox.SelectedItem.ToString() == "Пользовательская" || _result)
+            if (_comboBoxValue == "Пользовательская")
                 userMatrix();
 
-            if (((int)_numericUpDown1.Value == (int)_numericUpDown2.Value) && 
-                (_comboBox.SelectedItem.ToString() == "Диагональная" || _comboBox.SelectedItem.ToString() == "Единичная"))
+            if (_comboBoxValue == "Диагональная" || _comboBoxValue == "Единичная")
                 diagMatrix();
 
-            if (_comboBox.SelectedItem.ToString() == "Нулевая")
+            if (_comboBoxValue == "Нулевая")
                 zeroMatrix();
+
+            if (_comboBoxValue == "Результирующая")
+                resultMatrix();
         }
 
         partial void userMatrix()
         {
-            dataGridView1.RowCount = (int)_numericUpDown2.Value;
-            dataGridView1.ColumnCount = (int)_numericUpDown1.Value;
-            for (int i = 0; i < (int)_numericUpDown2.Value; i++)
+            dataGridView1.RowCount = _numberOfRows;
+            dataGridView1.ColumnCount = _numberOfColumns;
+            for (int i = 0; i < _numberOfRows; ++i)
             {
-                for (int j = 0; j < (int)_numericUpDown1.Value; j++)
+                for (int j = 0; j < _numberOfColumns; ++j)
                     dataGridView1.Rows[i].Cells[j].Value = 1;
             }
         }
 
         partial void diagMatrix()
         {
-            dataGridView1.RowCount = (int)_numericUpDown2.Value;
-            dataGridView1.ColumnCount = (int)_numericUpDown1.Value;
-            for (int i = 0; i < (int)_numericUpDown2.Value; i++)
+            dataGridView1.RowCount = _numberOfRows;
+            dataGridView1.ColumnCount = _numberOfColumns;
+            for (int i = 0; i < _numberOfRows; ++i)
             {
-                for (int j = 0; j < (int)_numericUpDown1.Value; j++)
-                    dataGridView1.Rows[i].Cells[j].Value = (i == j)
-                        ? 1
-                        : 0;
+                for (int j = 0; j < _numberOfColumns; ++j)
+                {
+                    if (i == j)
+                        dataGridView1.Rows[i].Cells[j].Value = 1;
+                    else
+                    {
+                        dataGridView1.Rows[i].Cells[j].Value = 0;
+                        dataGridView1.Rows[i].Cells[j].ReadOnly = true;
+                    }
+                }
             }
         }
 
         partial void zeroMatrix()
         {
-            dataGridView1.RowCount = (int)_numericUpDown2.Value;
-            dataGridView1.ColumnCount = (int)_numericUpDown1.Value;
-            for (int i = 0; i < (int)_numericUpDown2.Value; i++)
+            dataGridView1.RowCount = _numberOfRows;
+            dataGridView1.ColumnCount = _numberOfColumns;
+            for (int i = 0; i < _numberOfRows; ++i)
             {
-                for (int j = 0; j < (int)_numericUpDown1.Value; j++)
+                for (int j = 0; j < _numberOfColumns; ++j)
                     dataGridView1.Rows[i].Cells[j].Value = 0;
+            }
+        }
+
+        partial void resultMatrix()
+        {
+            dataGridView1.RowCount = _numberOfRows;
+            dataGridView1.ColumnCount = _numberOfColumns;
+            for (int i = 0; i < _numberOfRows; ++i)
+            {
+                for (int j = 0; j < _numberOfColumns; ++j)
+                {
+                    dataGridView1.Rows[i].Cells[j].Value = 2;
+                    dataGridView1.Rows[i].Cells[j].ReadOnly = true;
+                }
             }
         }
 
@@ -93,9 +113,8 @@ namespace WindowsFormsApplication1
             Close();
         }
         
-        private bool _result;
-        private NumericUpDown _numericUpDown1;
-        private NumericUpDown _numericUpDown2;
-        private ComboBox _comboBox;
+        private int _numberOfRows;
+        private int _numberOfColumns;
+        private string _comboBoxValue;
     }
 }
