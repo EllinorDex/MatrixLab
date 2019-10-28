@@ -26,6 +26,7 @@ namespace MatrixLib
                     for (uint i = 0; i < _countOfColumns; ++i)
                             _matrix[i, i] = _matrix[i, i];
                     break;
+                    //почему мы в нуливую матрицу не просто нули закидываем?
                 case "zeros":
                     for (uint i = 0; i < _countOfRows; ++i)
                         for (uint j = 0; j < _countOfColumns; ++j)
@@ -50,6 +51,7 @@ namespace MatrixLib
         public uint CountOfRows
         {
             get { return _countOfRows; }
+            //помоему, нам не нужно позволять изменять значения строк и столбцов
             set { _countOfRows = value; }
         }
         public uint CountOfColumns
