@@ -10,13 +10,13 @@ namespace MatrixLib
     {
         public MWArray ConvertFromMatrixToMLMatrix(Matrix matrix)
         {
-            MWNumericArray mwArr = new MWNumericArray(matrix.GetMatrix());
+            MWNumericArray mwArr = new MWNumericArray((Array)matrix.GetMatrix());
             return (MWArray)mwArr;
         }
 
-        public int[,] ConvertFromMLMatrixToMatrix(MWArray[] mwMatrix)
+        public int[,] ConvertFromMLMatrixToMatrix(MWArray mwMatrix)
         {
-            int[,] matrix = (int[,])mwMatrix[0].ToArray();
+            int[,] matrix = (int[,])mwMatrix.ToArray();
             return matrix;
         }
     }
