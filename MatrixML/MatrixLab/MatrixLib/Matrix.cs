@@ -20,6 +20,7 @@ namespace MatrixLib
             switch (typeofMatrix)
             {
                 case "ones":
+                    //надо иключения для прямоугольных матриц
                     for (uint i = 0; i < _countOfColumns; ++i)
 
                         _matrix[i, i] = 1;
@@ -55,7 +56,7 @@ namespace MatrixLib
         }
         public uint CountOfColumns
         {
-            get { return CountOfColumns; }
+            get { return _countOfColumns; }
             set { _countOfColumns = value; }
         }
         public int this[int i, int j]
