@@ -66,8 +66,6 @@ namespace MatrixTest
             Assert.AreEqual(Matr[1, 1], A[1, 1]);
         }
 
-<<<<<<< HEAD
-=======
         [TestMethod]
         public void UseSumMatrix()
         {
@@ -84,6 +82,5 @@ namespace MatrixTest
             for (int i = 0, j = 0; i < C.CountOfColumns && j < C.CountOfRows; ++i, ++j)
                 Assert.AreEqual(0, C[i, j]);
         }
->>>>>>> de016bd21cc1f1a5e31600f9584a45890c0a9b6d
     }
 }

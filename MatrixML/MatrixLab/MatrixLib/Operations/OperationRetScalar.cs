@@ -6,6 +6,6 @@ namespace MatrixLib
 {
     interface OperationRetScalar
     {
-        int GetResult();
+        int Calculate();
     }
 }

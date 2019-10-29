@@ -6,6 +6,6 @@ namespace MatrixLib
 {
     interface OperationRetMatrix
     {
-        Matrix GetResult();
+        Matrix Calculate();
     }
 }

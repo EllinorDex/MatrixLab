@@ -8,7 +8,7 @@ namespace MatrixLib
     {
         private Matrix _matrix;
 
-        public Matrix GetResult()
+        public Matrix Calculate()
         {
             return _matrix;
         }

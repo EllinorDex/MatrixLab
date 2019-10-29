@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using MathWorks.MATLAB.NET.Arrays;
-using MathWorks.MATLAB.NET.Arrays;
 using Operations;
 
 namespace MatrixLib
@@ -12,19 +11,25 @@ namespace MatrixLib
         private Matrix _matrixLeft;
         private Matrix _matrixRight;
 
+        public Sum(Matrix matrixLeft, Matrix matrixRight)
+        {
+            _matrixLeft = matrixLeft;
+            _matrixRight = matrixRight;
+        }
+
         public Matrix MatrixLeft
         {
-            get { return _matrixLeft; }
-            set { _matrixLeft = value; }
+            get;
+            set;
         }
 
         public Matrix MatrixRight
         {
-            get { return _matrixRight; }
-            set { _matrixRight = value; }
+            get;
+            set;
         }
 
-        public Matrix GetResult()
+        public Matrix Calculate()
         {
             operationsmatlab op = new operationsmatlab();
             Converter converter = new Converter();

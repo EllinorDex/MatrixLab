@@ -4,22 +4,23 @@ using System.Text;
 
 namespace MatrixLib
 {
+    public enum MatrixType { ones = 1, zeros};
+
     public class Matrix
     {
         private uint _countOfRows;
         private uint _countOfColumns;
         private int[,] _matrix;
 
-        public Matrix(uint countOfRows, uint countOfColumns, string typeofMatrix)
+        public Matrix(uint countOfRows, uint countOfColumns, MatrixType typeOfMatrix)
         {
-            _countOfRows = countOfRows;
+            _countOfRows    = countOfRows;
             _countOfColumns = countOfColumns;
 
             _matrix = new int[_countOfColumns, _countOfRows];
-
-            switch (typeofMatrix)
+            switch (typeOfMatrix)
             {
-                case "ones":
+                case MatrixType.ones:
                     if (countOfRows != countOfColumns)
                         throw new MatrixException("Unable to create matrix.Incorrect type.");
 
@@ -27,7 +28,7 @@ namespace MatrixLib
                         _matrix[i, i] = 1;
                     break;
 
-                case "zeros":
+                case MatrixType.zeros:
                     for (uint i = 0; i < _countOfRows; ++i)
                         for (uint j = 0; j < _countOfColumns; ++j)
                             _matrix[j, i] = 0;

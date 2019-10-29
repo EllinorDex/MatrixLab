@@ -9,7 +9,7 @@ namespace MatrixLib
         private Matrix _matrixLeft;
         private Matrix _matrixRight;
 
-        public Matrix GetResult()
+        public Matrix Calculate()
         {
             return _matrixLeft;
         }
