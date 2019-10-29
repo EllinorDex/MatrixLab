@@ -15,8 +15,6 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
-            comboBox4.Text = "Пользовательская";
-            //костыль
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -57,7 +55,9 @@ namespace WindowsFormsApplication1
         private void openMatrixToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.ShowDialog();
+            openFileDialog1.Filter = "Text files(*.txt)|*.txt";
+            if (openFileDialog1.ShowDialog() != DialogResult.OK) return;
+            MessageBox.Show("Выбран файл: " + openFileDialog1.FileName);
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -128,7 +128,15 @@ namespace WindowsFormsApplication1
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            int a = 5;
+            int b = 6;
+            if (a != 0 && b != 0)
+            {
+                Matrix form = new Matrix(a, b);
+                form.Show();
+            }
+            else
+                MessageBox.Show("Что-то пошло не так", "Error");
         }
 
         private void numericUpDown4_ValueChanged(object sender, EventArgs e)
@@ -143,7 +151,21 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (numericUpDown5.Value != 0 && numericUpDown6.Value != 0)
+            {
+                if (comboBox1.SelectedItem.ToString() == "Диагональная" || comboBox1.SelectedItem.ToString() == "Единичная")
+                {
+                    if (numericUpDown5.Value != numericUpDown6.Value)
+                    {
+                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
+                        return;
+                    }
+                }
+                Matrix form = new Matrix(numericUpDown5, numericUpDown6, comboBox1);
+                form.Show();
+            }
+            else
+                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы", "Error");
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -203,7 +225,21 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            if (numericUpDown4.Value != 0 && numericUpDown7.Value != 0)
+            {
+                if (comboBox2.SelectedItem.ToString() == "Диагональная" || comboBox2.SelectedItem.ToString() == "Единичная")
+                {
+                    if (numericUpDown4.Value != numericUpDown7.Value)
+                    {
+                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
+                        return;
+                    }
+                }
+                Matrix form = new Matrix(numericUpDown4, numericUpDown7, comboBox2);
+                form.Show();
+            }
+            else
+                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы", "Error");
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -254,7 +290,95 @@ namespace WindowsFormsApplication1
         {
             int a = 5;
             int b = 6;
-            if (numericUpDown1.Value != 0 && numericUpDown2.Value != 0)
+            if (a!= 0 && b != 0)
+            {
+                Matrix form = new Matrix(a, b);
+                form.Show();
+            }
+            else
+                MessageBox.Show("Что-то пошло не так", "Error");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (numericUpDown8.Value != 0 && numericUpDown3.Value != 0)
+            {
+                if (comboBox3.SelectedItem.ToString() == "Диагональная" || comboBox3.SelectedItem.ToString() == "Единичная")
+                {
+                    if (numericUpDown8.Value != numericUpDown3.Value)
+                    {
+                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
+                        return;
+                    }
+                }
+                Matrix form = new Matrix(numericUpDown8, numericUpDown3, comboBox3);
+                form.Show();
+            }
+            else
+                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы", "Error");
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (numericUpDown10.Value != 0 && numericUpDown9.Value != 0)
+            {
+                if (comboBox6.SelectedItem.ToString() == "Диагональная" || comboBox6.SelectedItem.ToString() == "Единичная")
+                {
+                    if (numericUpDown10.Value != numericUpDown9.Value)
+                    {
+                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
+                        return;
+                    }
+                }
+                Matrix form = new Matrix(numericUpDown10, numericUpDown9, comboBox6);
+                form.Show();
+            }
+            else
+                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы", "Error");
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (numericUpDown14.Value != 0 && numericUpDown13.Value != 0)
+            {
+                if (comboBox5.SelectedItem.ToString() == "Диагональная" || comboBox5.SelectedItem.ToString() == "Единичная")
+                {
+                    if (numericUpDown14.Value != numericUpDown13.Value)
+                    {
+                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
+                        return;
+                    }
+                }
+                Matrix form = new Matrix(numericUpDown14, numericUpDown13, comboBox5);
+                form.Show();
+            }
+            else
+                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы", "Error");
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            int a = 5;
+            int b = 6;
+            if (a != 0 && b != 0)
+            {
+                Matrix form = new Matrix(a, b);
+                form.Show();
+            }
+            else
+                MessageBox.Show("Что-то пошло не так", "Error");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int a = 5;
+            int b = 6;
+            if (a != 0 && b != 0)
             {
                 Matrix form = new Matrix(a, b);
                 form.Show();

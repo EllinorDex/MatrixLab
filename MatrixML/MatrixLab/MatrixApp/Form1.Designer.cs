@@ -138,14 +138,17 @@
             // openMatrixToolStripMenuItem
             // 
             this.openMatrixToolStripMenuItem.Name = "openMatrixToolStripMenuItem";
-            this.openMatrixToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.openMatrixToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openMatrixToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
             this.openMatrixToolStripMenuItem.Text = "Open matrix...";
             this.openMatrixToolStripMenuItem.Click += new System.EventHandler(this.openMatrixToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.exitToolStripMenuItem.ShortcutKeyDisplayString = "";
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -164,28 +167,32 @@
             // sumToolStripMenuItem
             // 
             this.sumToolStripMenuItem.Name = "sumToolStripMenuItem";
-            this.sumToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.sumToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.sumToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.sumToolStripMenuItem.Text = "Sum";
             this.sumToolStripMenuItem.Click += new System.EventHandler(this.sumToolStripMenuItem_Click);
             // 
             // multToolStripMenuItem
             // 
             this.multToolStripMenuItem.Name = "multToolStripMenuItem";
-            this.multToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.multToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
+            this.multToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.multToolStripMenuItem.Text = "Mult";
             this.multToolStripMenuItem.Click += new System.EventHandler(this.multToolStripMenuItem_Click);
             // 
             // invToolStripMenuItem
             // 
             this.invToolStripMenuItem.Name = "invToolStripMenuItem";
-            this.invToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.invToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+            this.invToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.invToolStripMenuItem.Text = "Inv";
             this.invToolStripMenuItem.Click += new System.EventHandler(this.invToolStripMenuItem_Click);
             // 
             // delToolStripMenuItem
             // 
             this.delToolStripMenuItem.Name = "delToolStripMenuItem";
-            this.delToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.delToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.delToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.delToolStripMenuItem.Text = "Del";
             this.delToolStripMenuItem.Click += new System.EventHandler(this.delToolStripMenuItem_Click);
             // 
@@ -203,21 +210,24 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(143, 26);
+            this.helpToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // aboutUsToolStripMenuItem
             // 
             this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
-            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(143, 26);
+            this.aboutUsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
+            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.aboutUsToolStripMenuItem.Text = "About us";
             this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.aboutUsToolStripMenuItem_Click);
             // 
             // donateToolStripMenuItem
             // 
             this.donateToolStripMenuItem.Name = "donateToolStripMenuItem";
-            this.donateToolStripMenuItem.Size = new System.Drawing.Size(143, 26);
+            this.donateToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
+            this.donateToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.donateToolStripMenuItem.Text = "Donate";
             this.donateToolStripMenuItem.Click += new System.EventHandler(this.donateToolStripMenuItem_Click);
             // 
@@ -273,7 +283,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(281, 28);
             this.comboBox2.TabIndex = 25;
-            this.comboBox2.Text = "Выберите тип матрицы...";
+            this.comboBox2.Text = "Пользовательская";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button2
@@ -300,7 +310,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(281, 28);
             this.comboBox1.TabIndex = 23;
-            this.comboBox1.Text = "Выберите тип матрицы...";
+            this.comboBox1.Text = "Пользовательская";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // numericUpDown6
@@ -466,7 +476,8 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(281, 28);
             this.comboBox3.TabIndex = 38;
-            this.comboBox3.Text = "Выберите тип матрицы...";
+            this.comboBox3.Text = "Пользовательская";
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // button4
             // 
@@ -477,6 +488,7 @@
             this.button4.TabIndex = 37;
             this.button4.Text = "Задать вторую матрицу";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // comboBox4
             // 
@@ -491,7 +503,7 @@
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(281, 28);
             this.comboBox4.TabIndex = 36;
-            this.comboBox4.Text = "Выберите тип матрицы...";
+            this.comboBox4.Text = "Пользовательская";
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // numericUpDown1
@@ -675,7 +687,7 @@
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(281, 28);
             this.comboBox6.TabIndex = 36;
-            this.comboBox6.Text = "Выберите тип матрицы...";
+            this.comboBox6.Text = "Пользовательская";
             // 
             // numericUpDown9
             // 
@@ -735,6 +747,7 @@
             this.button8.TabIndex = 29;
             this.button8.Text = "Вычислить!";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -745,6 +758,7 @@
             this.button9.TabIndex = 26;
             this.button9.Text = "Задать матрицу";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // tabPage4
             // 
@@ -777,7 +791,7 @@
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(281, 28);
             this.comboBox5.TabIndex = 43;
-            this.comboBox5.Text = "Выберите тип матрицы...";
+            this.comboBox5.Text = "Пользовательская";
             // 
             // numericUpDown13
             // 
@@ -836,6 +850,7 @@
             this.button7.TabIndex = 38;
             this.button7.Text = "Вычислить!";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button10
             // 
@@ -846,6 +861,7 @@
             this.button10.TabIndex = 37;
             this.button10.Text = "Задать матрицу";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // Form1
             // 
