@@ -20,17 +20,19 @@ namespace MatrixLib
             switch (typeofMatrix)
             {
                 case "ones":
-                    //надо иключения для прямоугольных матриц
-                    for (uint i = 0; i < _countOfColumns; ++i)
+                    if (countOfRows != countOfColumns)
+                        throw new MatrixException("Unable to create matrix.Incorrect type.");
 
+                    for (uint i = 0; i < _countOfColumns; ++i)
                         _matrix[i, i] = 1;
                     break;
+
                 case "zeros":
                     for (uint i = 0; i < _countOfRows; ++i)
                         for (uint j = 0; j < _countOfColumns; ++j)
                             _matrix[j, i] = 0;
-
                     break;
+
                 default:
                     break;
             }

@@ -25,7 +25,8 @@ namespace MatrixTest
         {
             uint lengthCol = 5;
             uint lengthRow = 7;
-            Assert.ThrowsException<IndexOutOfRangeException>(() => new Matrix(lengthRow, lengthCol, "ones"));
+            //Проверил на матричное исключение
+            Assert.ThrowsException<MatrixException>(() => new Matrix(lengthRow, lengthCol, "ones"));
 
         }
 
