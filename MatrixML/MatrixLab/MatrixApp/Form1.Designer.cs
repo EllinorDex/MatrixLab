@@ -120,7 +120,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1260, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1397, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -168,7 +168,7 @@
             // 
             this.sumToolStripMenuItem.Name = "sumToolStripMenuItem";
             this.sumToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.sumToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.sumToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.sumToolStripMenuItem.Text = "Sum";
             this.sumToolStripMenuItem.Click += new System.EventHandler(this.sumToolStripMenuItem_Click);
             // 
@@ -176,7 +176,7 @@
             // 
             this.multToolStripMenuItem.Name = "multToolStripMenuItem";
             this.multToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
-            this.multToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.multToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.multToolStripMenuItem.Text = "Mult";
             this.multToolStripMenuItem.Click += new System.EventHandler(this.multToolStripMenuItem_Click);
             // 
@@ -184,7 +184,7 @@
             // 
             this.invToolStripMenuItem.Name = "invToolStripMenuItem";
             this.invToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.invToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.invToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.invToolStripMenuItem.Text = "Inv";
             this.invToolStripMenuItem.Click += new System.EventHandler(this.invToolStripMenuItem_Click);
             // 
@@ -192,8 +192,8 @@
             // 
             this.delToolStripMenuItem.Name = "delToolStripMenuItem";
             this.delToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.delToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.delToolStripMenuItem.Text = "Del";
+            this.delToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.delToolStripMenuItem.Text = "Dev";
             this.delToolStripMenuItem.Click += new System.EventHandler(this.delToolStripMenuItem_Click);
             // 
             // infoToolStripMenuItem
@@ -211,7 +211,7 @@
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -219,7 +219,7 @@
             // 
             this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
             this.aboutUsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.aboutUsToolStripMenuItem.Text = "About us";
             this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.aboutUsToolStripMenuItem_Click);
             // 
@@ -227,7 +227,7 @@
             // 
             this.donateToolStripMenuItem.Name = "donateToolStripMenuItem";
             this.donateToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.donateToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.donateToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.donateToolStripMenuItem.Text = "Donate";
             this.donateToolStripMenuItem.Click += new System.EventHandler(this.donateToolStripMenuItem_Click);
             // 
@@ -238,11 +238,14 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabControl1.ItemSize = new System.Drawing.Size(113, 120);
             this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1266, 560);
+            this.tabControl1.Size = new System.Drawing.Size(1397, 562);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 1;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -261,12 +264,12 @@
             this.tabPage1.Controls.Add(this.numericUpDown4);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Location = new System.Drawing.Point(25, 4);
+            this.tabPage1.Location = new System.Drawing.Point(124, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1237, 552);
+            this.tabPage1.Size = new System.Drawing.Size(1269, 554);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Суммирование";
+            this.tabPage1.Text = "Sum";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
@@ -454,12 +457,12 @@
             this.tabPage2.Controls.Add(this.numericUpDown8);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.button6);
-            this.tabPage2.Location = new System.Drawing.Point(25, 4);
+            this.tabPage2.Location = new System.Drawing.Point(124, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1237, 552);
+            this.tabPage2.Size = new System.Drawing.Size(1304, 552);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Произведение";
+            this.tabPage2.Text = "Mult";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
@@ -637,12 +640,12 @@
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.button8);
             this.tabPage3.Controls.Add(this.button9);
-            this.tabPage3.Location = new System.Drawing.Point(25, 4);
+            this.tabPage3.Location = new System.Drawing.Point(124, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1237, 552);
+            this.tabPage3.Size = new System.Drawing.Size(1304, 552);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Вычисление обратной";
+            this.tabPage3.Text = "Inv";
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
@@ -769,12 +772,12 @@
             this.tabPage4.Controls.Add(this.label12);
             this.tabPage4.Controls.Add(this.button7);
             this.tabPage4.Controls.Add(this.button10);
-            this.tabPage4.Location = new System.Drawing.Point(25, 4);
+            this.tabPage4.Location = new System.Drawing.Point(124, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1237, 552);
+            this.tabPage4.Size = new System.Drawing.Size(1304, 552);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Вычисление определителя";
+            this.tabPage4.Text = "Dev";
             this.tabPage4.UseVisualStyleBackColor = true;
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
@@ -867,7 +870,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1260, 587);
+            this.ClientSize = new System.Drawing.Size(1397, 589);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
