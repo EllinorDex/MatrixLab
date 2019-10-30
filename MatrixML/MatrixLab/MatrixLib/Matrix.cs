@@ -69,6 +69,7 @@ namespace MatrixLib
         }
         public int[,] GetMatrix()
         {
+            //необходимо возвращать значения, а не указатель
             return _matrix;
         }
     }
