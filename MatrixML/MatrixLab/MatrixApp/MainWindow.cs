@@ -7,34 +7,99 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class MainWindow : Form
     {
-        public Form1()
+        public MainWindow()
         {
             InitializeComponent();
             tabControl1.DrawItem += new DrawItemEventHandler(tabControl1_DrawItem);
+            setComboBox(comboBox1);
+            setComboBox(comboBox2);
+            setComboBox(comboBox3);
+            setComboBox(comboBox4);
+            setComboBox(comboBox5);
+            setComboBox(comboBox6);
         }
 
-        private void tabControl1_DrawItem(Object sender, System.Windows.Forms.DrawItemEventArgs e)
+        void setComboBox(ComboBox comboBox)
+        {
+            if (!comboBox.Items.Contains("Выберите тип матрицы..."))
+            {
+                comboBox.Items.Add("Выберите тип матрицы...");
+            }
+            comboBox.Text = "Выберите тип матрицы...";
+
+            if (comboBox == comboBox1)
+                comboBox.DropDown += comboBox1_DropDown;
+
+            else if (comboBox == comboBox2)
+                comboBox.DropDown += comboBox2_DropDown;
+
+            else if (comboBox == comboBox3)
+                comboBox.DropDown += comboBox3_DropDown;
+
+            else if (comboBox == comboBox4)
+                comboBox.DropDown += comboBox4_DropDown;
+
+            else if (comboBox == comboBox5)
+                comboBox.DropDown += comboBox5_DropDown;
+
+            else if (comboBox == comboBox6)
+                comboBox.DropDown += comboBox6_DropDown;
+        }
+
+
+        void comboBox1_DropDown(object sender, EventArgs e)
+        {
+            if (comboBox1.Items.Contains("Выберите тип матрицы..."))
+                comboBox1.Items.Remove("Выберите тип матрицы...");
+        }
+
+        void comboBox2_DropDown(object sender, EventArgs e)
+        {
+            if (comboBox2.Items.Contains("Выберите тип матрицы..."))
+                comboBox2.Items.Remove("Выберите тип матрицы...");
+        }
+
+        void comboBox3_DropDown(object sender, EventArgs e)
+        {
+            if (comboBox3.Items.Contains("Выберите тип матрицы..."))
+                comboBox3.Items.Remove("Выберите тип матрицы...");
+        }
+
+        void comboBox4_DropDown(object sender, EventArgs e)
+        {
+            if (comboBox4.Items.Contains("Выберите тип матрицы..."))
+                comboBox4.Items.Remove("Выберите тип матрицы...");
+        }
+
+        void comboBox5_DropDown(object sender, EventArgs e)
+        {
+            if (comboBox5.Items.Contains("Выберите тип матрицы..."))
+                comboBox5.Items.Remove("Выберите тип матрицы...");
+        }
+
+        void comboBox6_DropDown(object sender, EventArgs e)
+        {
+            if (comboBox6.Items.Contains("Выберите тип матрицы..."))
+                comboBox6.Items.Remove("Выберите тип матрицы...");
+        }
+
+        private void tabControl1_DrawItem(Object sender, DrawItemEventArgs e)
         {
             Graphics g = e.Graphics;
             Brush _textBrush;
-
-            // Get the item from the collection.
             TabPage _tabPage = tabControl1.TabPages[e.Index];
-
-            // Get the real bounds for the tab rectangle.
             Rectangle _tabBounds = tabControl1.GetTabRect(e.Index);
 
             if (e.State == DrawItemState.Selected)
             {
-
-                // Draw a different background color, and don't paint a focus rectangle.
-                _textBrush = new SolidBrush(Color.Red);
-                g.FillRectangle(Brushes.Gray, e.Bounds);
+                _textBrush = new SolidBrush(Color.Blue);
+                g.FillRectangle(Brushes.Yellow, e.Bounds);
             }
             else
             {
@@ -42,10 +107,8 @@ namespace WindowsFormsApplication1
                 e.DrawBackground();
             }
 
-            // Use our own font.
-            Font _tabFont = new Font("Arial", 10.0f, FontStyle.Bold, GraphicsUnit.Pixel);
+            Font _tabFont = new Font("Arial", 30.0f, FontStyle.Bold, GraphicsUnit.Pixel);
 
-            // Draw string. Center the text.
             StringFormat _stringFlags = new StringFormat();
             _stringFlags.Alignment = StringAlignment.Center;
             _stringFlags.LineAlignment = StringAlignment.Center;
@@ -93,6 +156,13 @@ namespace WindowsFormsApplication1
             openFileDialog1.Filter = "Text files(*.txt)|*.txt";
             if (openFileDialog1.ShowDialog() != DialogResult.OK) return;
             MessageBox.Show("Выбран файл: " + openFileDialog1.FileName);
+            /*StreamReader sr = new StreamReader(openFileDialog1.FileName);
+            int[,] matrix = new int[4, 4];
+            for (int i = 0; i < 4; ++i)
+            {
+                for (int j = 0; j < 4; ++j)
+                    matrix[i, j] = sr.Read();
+            }*/
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
