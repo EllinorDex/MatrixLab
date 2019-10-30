@@ -4,8 +4,9 @@ using System.Text;
 
 namespace MatrixLib
 {
+    //интерфейс всех операций  возвращающих матрицу
     interface OperationRetMatrix
     {
-        Matrix GetResult();
+        Matrix Calculate();
     }
 }

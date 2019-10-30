@@ -4,13 +4,14 @@ using System.Text;
 
 namespace MatrixLib
 {
-    public class Determinant : OperationRetScalar
+    //Обратная матрица
+    public class InverseMatrix : OperationRetMatrix
     {
         private Matrix _matrix;
 
-        public int GetResult()
+        public Matrix Calculate()
         {
-            return 0;
+            return _matrix;
         }
     }
 }

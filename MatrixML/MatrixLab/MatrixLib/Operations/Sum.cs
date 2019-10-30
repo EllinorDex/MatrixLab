@@ -2,29 +2,37 @@
 using System.Collections.Generic;
 using System.Text;
 using MathWorks.MATLAB.NET.Arrays;
-using MathWorks.MATLAB.NET.Arrays;
 using Operations;
 
 namespace MatrixLib
 {
+    //сложение матриц
     public class Sum : OperationRetMatrix
     {
         private Matrix _matrixLeft;
         private Matrix _matrixRight;
 
+        //конструктор добавляет матрицы для дальнейшего сложения
+        public Sum(Matrix matrixLeft, Matrix matrixRight)
+        {
+            _matrixLeft = matrixLeft;
+            _matrixRight = matrixRight;
+        }
+
+        //возвращает или меняет слогаемые
         public Matrix MatrixLeft
         {
-            get { return _matrixLeft; }
-            set { _matrixLeft = value; }
+            get;
+            set;
         }
-
         public Matrix MatrixRight
         {
-            get { return _matrixRight; }
-            set { _matrixRight = value; }
+            get;
+            set;
         }
 
-        public Matrix GetResult()
+        //непосредственно считает сумму с использованием библиотеки MatLab
+        public Matrix Calculate()
         {
             operationsmatlab op = new operationsmatlab();
             Converter converter = new Converter();
