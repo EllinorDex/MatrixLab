@@ -4,6 +4,7 @@ using System.Text;
 
 namespace MatrixLib
 {
+    //Умножение матриц
     public class Multiplication : OperationRetMatrix
     {
         private Matrix _matrixLeft;

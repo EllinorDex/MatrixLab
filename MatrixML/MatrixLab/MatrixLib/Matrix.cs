@@ -4,6 +4,7 @@ using System.Text;
 
 namespace MatrixLib
 {
+    //Стандартные типы матриц
     public enum MatrixType { ones = 1, zeros};
 
     public class Matrix
@@ -12,6 +13,7 @@ namespace MatrixLib
         private uint _countOfColumns;
         private int[,] _matrix;
 
+        //конструктор создания стандартных матриц
         public Matrix(uint countOfRows, uint countOfColumns, MatrixType typeOfMatrix)
         {
             _countOfRows    = countOfRows;
@@ -39,6 +41,7 @@ namespace MatrixLib
             }
         }
 
+        //создание пользовательской матрицы
         public Matrix(uint countOfRows, uint countOfColumns, int[,] matrix)
 
         {
@@ -52,6 +55,7 @@ namespace MatrixLib
 
         }
 
+        //Возвращение размеров матриц(думаю не стоит позволять пользователю их менять(set))
         public uint CountOfRows
         {
             get { return _countOfRows; }
@@ -62,11 +66,15 @@ namespace MatrixLib
             get { return _countOfColumns; }
             set { _countOfColumns = value; }
         }
+
+        //значение в конкретной ячейке матрицы
         public int this[int i, int j]
         {
             get { return _matrix[i, j]; }
             set { _matrix[i, j] = value; }
         }
+
+        //возвращает полностью содержимое матрицы
         public int[,] GetMatrix()
         {
             //необходимо возвращать значения, а не указатель
