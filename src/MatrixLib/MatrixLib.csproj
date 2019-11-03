@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutDir>..\..\bin\$(Configuration)\$(Platform)\MatrixLib</OutDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="MWArray">
+      <HintPath>..\..\lib\MWArray.dll</HintPath>
+    </Reference>
+    <Reference Include="Operations">
+      <HintPath>..\..\lib\Operations.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
