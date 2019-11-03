@@ -15,7 +15,7 @@
             _countOfRows = countOfRows;
             _countOfColumns = countOfColumns;
 
-            _matrix = new int[_countOfColumns, _countOfRows];
+            _matrix = new int[_countOfRows, _countOfColumns];
             switch (typeOfMatrix)
             {
                 case MatrixType.ones:
@@ -29,7 +29,7 @@
                 case MatrixType.zeros:
                     for (uint i = 0; i < _countOfRows; ++i)
                         for (uint j = 0; j < _countOfColumns; ++j)
-                            _matrix[j, i] = 0;
+                            _matrix[i, j] = 0;
                     break;
 
                 default:
@@ -44,9 +44,9 @@
             _countOfRows = countOfRows;
             _countOfColumns = countOfColumns;
 
-            _matrix = new int[_countOfColumns, _countOfRows];
-            for (uint i = 0; i < _countOfColumns; ++i)
-                for (uint j = 0; j < _countOfRows; ++j)
+            _matrix = new int[_countOfRows, _countOfColumns];
+            for (uint i = 0; i < _countOfRows; ++i)
+                for (uint j = 0; j < _countOfColumns; ++j)
                     _matrix[i, j] = matrix[i, j];
 
         }
@@ -71,10 +71,14 @@
         }
 
         //возвращает полностью содержимое матрицы
-        public int[,] GetMatrix()
+        public int[,] Get2DArray()
         {
-            //необходимо возвращать значения, а не указатель
-            return _matrix;
+            int[,] res = new int[_countOfRows,_countOfColumns];
+            for (uint i = 0; i < _countOfRows; ++i)
+                for (uint j = 0; j < _countOfColumns; ++j)
+                    res[i, j] = _matrix[i, j];
+
+            return res;
         }
     }
 }

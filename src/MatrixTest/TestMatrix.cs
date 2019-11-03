@@ -32,16 +32,16 @@ namespace MatrixTest
 
             int[,] Matr = new int[5, 7];
 
-            CollectionAssert.AreEqual(Matr, A.GetMatrix());
+            CollectionAssert.AreEqual(Matr, A.Get2DArray());
         }
 
         [TestMethod]
         public void ConstractUsersMatrixNorm()
         {
             int[,] Matr = new int[,] { { 1, 2, 3 }, { 4, 5, 6 } };
-            Matrix A = new Matrix((uint)3, (uint)2, Matr);
+            Matrix A = new Matrix((uint)2, (uint)3, Matr);
 
-            CollectionAssert.AreEqual(Matr, A.GetMatrix());
+            CollectionAssert.AreEqual(Matr, A.Get2DArray());
         }
 
         [TestMethod]
@@ -57,8 +57,8 @@ namespace MatrixTest
         public void MethodGetMatrixRectangle()
         {
             int[,] Matr = new int[,] { { 1, 2, 3 }, { 4, 5, 6 } };
-            Matrix A = new Matrix((uint)3, (uint)2, Matr);
-            int[,] MatrA = A.GetMatrix();
+            Matrix A = new Matrix((uint)2, (uint)3, Matr);
+            int[,] MatrA = A.Get2DArray();
             MatrA[1, 1] = 10;
 
             Assert.AreEqual(Matr[1, 1], A[1, 1]);

@@ -31,7 +31,7 @@ namespace MatrixLib
         //непосредственно считает сумму с использованием библиотеки MatLab
         public Matrix Calculate()
         {
-            operationsmatlab op = new operationsmatlab();
+            OperWithMatr op = new OperWithMatr();
             Converter converter = new Converter();
             MWArray[] res = op.Sum(1, converter.ConvertFromMatrixToMLMatrix(_matrixLeft), converter.ConvertFromMatrixToMLMatrix(_matrixRight));
             int[,] resArr = converter.ConvertFromMLMatrixToMatrix(res[0]);

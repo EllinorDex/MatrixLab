@@ -9,15 +9,22 @@ namespace MatrixLib
         //конвертация в MatLab
         public MWArray ConvertFromMatrixToMLMatrix(Matrix matrix)
         {
-            MWNumericArray mwArr = new MWNumericArray((Array)matrix.GetMatrix());
+            MWNumericArray mwArr = new MWNumericArray((Array)matrix.Get2DArray());
             return (MWArray)mwArr;
         }
 
         //конвертация из MatLab
         public int[,] ConvertFromMLMatrixToMatrix(MWArray mwMatrix)
         {
-            int[,] matrix = (int[,])mwMatrix.ToArray();
-            return matrix;
+            double[,] matrix = (double[,])mwMatrix.ToArray();
+            int length1 = matrix.GetLength(0);
+            int length2 = matrix.GetLength(1);
+            int[,] res = new int[length1, length2];
+
+            for (int i = 0; i < length1; ++i)
+                for (int j = 0; j < length2; ++j)
+                    res[i, j] = (int)matrix[i, j];
+            return res;
         }
     }
 }
