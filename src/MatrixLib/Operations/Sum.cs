@@ -3,39 +3,46 @@ using Operations;
 
 namespace MatrixLib
 {
-    //сложение матриц
-    public class Sum : OperationRetMatrix
+    //Операция сложения матриц
+    public class Sum : OperationThatReturnMatrix
     {
         private Matrix _matrixLeft;
         private Matrix _matrixRight;
 
-        //конструктор добавляет матрицы для дальнейшего сложения
+        //Конструктор, в котором происходит формирование операндов
         public Sum(Matrix matrixLeft, Matrix matrixRight)
         {
+            if (matrixLeft.GetCountOfRows() != matrixRight.GetCountOfRows() && matrixLeft.GetCountOfColumns() != matrixRight.GetCountOfColumns())
+                throw new MatrixException("The operation cannot be performed. Incorrect sizes of operands.");
+
             _matrixLeft = matrixLeft;
             _matrixRight = matrixRight;
         }
 
-        //возвращает или меняет слогаемые
+        //Получение или изменение левого операнда
         public Matrix MatrixLeft
         {
             get;
             set;
         }
+
+        //Получение или изменение правого операнда
         public Matrix MatrixRight
         {
             get;
             set;
         }
 
-        //непосредственно считает сумму с использованием библиотеки MatLab
+        //Подсчёт суммы
         public Matrix Calculate()
         {
-            OperWithMatr op = new OperWithMatr();
+            OperWithMatr op     = new OperWithMatr();
             Converter converter = new Converter();
-            MWArray[] res = op.Sum(1, converter.ConvertFromMatrixToMLMatrix(_matrixLeft), converter.ConvertFromMatrixToMLMatrix(_matrixRight));
-            int[,] resArr = converter.ConvertFromMLMatrixToMatrix(res[0]);
-            return new Matrix(_matrixLeft.CountOfRows, _matrixLeft.CountOfColumns, resArr);
+
+            MWArray[] result       = op.Sum(1, converter.ConvertFromMatrixToMLMatrix(_matrixLeft), converter.ConvertFromMatrixToMLMatrix(_matrixRight));
+            int[,] resultArr       = converter.ConvertFromMLMatrixToMatrix(result[0]);
+
+            return new Matrix(_matrixLeft.GetCountOfRows(), _matrixLeft.GetCountOfColumns(), resultArr);
         }
     }
 }

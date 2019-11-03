@@ -1,15 +1,16 @@
 ﻿namespace MatrixLib
 {
-    //Стандартные типы матриц
-    public enum MatrixType { ones = 1, zeros };
+    //Перечень стандартных типов матриц
+    public enum MatrixType { ones = 1, zeros = 2 };
 
+    //Собственно, матрица
     public class Matrix
     {
         private uint _countOfRows;
         private uint _countOfColumns;
         private int[,] _matrix;
 
-        //конструктор создания стандартных матриц
+        //Создание стандартной матрицы
         public Matrix(uint countOfRows, uint countOfColumns, MatrixType typeOfMatrix)
         {
             _countOfRows = countOfRows;
@@ -20,7 +21,7 @@
             {
                 case MatrixType.ones:
                     if (countOfRows != countOfColumns)
-                        throw new MatrixException("Unable to create matrix.Incorrect type.");
+                        throw new MatrixException("Unable to create matrix.Incorrect type or size.");
 
                     for (uint i = 0; i < _countOfColumns; ++i)
                         _matrix[i, i] = 1;
@@ -37,9 +38,8 @@
             }
         }
 
-        //создание пользовательской матрицы
+        //Создание нестандартной матрицы
         public Matrix(uint countOfRows, uint countOfColumns, int[,] matrix)
-
         {
             _countOfRows = countOfRows;
             _countOfColumns = countOfColumns;
@@ -48,32 +48,30 @@
             for (uint i = 0; i < _countOfRows; ++i)
                 for (uint j = 0; j < _countOfColumns; ++j)
                     _matrix[i, j] = matrix[i, j];
-
         }
 
-        //Возвращение размеров матриц(думаю не стоит позволять пользователю их менять(set))
-        public uint CountOfRows
+        //Получение количества строк
+        public uint GetCountOfRows()
         {
-            get { return _countOfRows; }
-            set { _countOfRows = value; }
-        }
-        public uint CountOfColumns
-        {
-            get { return _countOfColumns; }
-            set { _countOfColumns = value; }
+            return _countOfRows;
         }
 
-        //значение в конкретной ячейке матрицы
+        //Получение количества столбцов
+        public uint GetCountOfColumns()
+        {
+            return _countOfColumns;
+        }
+
+        //Оператор индексирования
         public int this[int i, int j]
         {
             get { return _matrix[i, j]; }
-            set { _matrix[i, j] = value; }
         }
 
-        //возвращает полностью содержимое матрицы
+        //Получение внутреннего двумерного массива
         public int[,] Get2DArray()
         {
-            int[,] res = new int[_countOfRows,_countOfColumns];
+            int[,] res = new int[_countOfRows, _countOfColumns];
             for (uint i = 0; i < _countOfRows; ++i)
                 for (uint j = 0; j < _countOfColumns; ++j)
                     res[i, j] = _matrix[i, j];

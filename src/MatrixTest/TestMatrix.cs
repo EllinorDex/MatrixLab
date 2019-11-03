@@ -49,8 +49,8 @@ namespace MatrixTest
         {
             Matrix A = new Matrix((uint)5, (uint)5, MatrixType.ones);
 
-            Assert.AreEqual((uint)5, A.CountOfColumns);
-            Assert.AreEqual((uint)5, A.CountOfRows);
+            Assert.AreEqual((uint)5, A.GetCountOfColumns());
+            Assert.AreEqual((uint)5, A.GetCountOfRows());
         }
 
         [TestMethod]
