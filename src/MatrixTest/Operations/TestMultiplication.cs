@@ -26,9 +26,9 @@ namespace MatrixTest.Operations
         {
             int[,] MatrA = new[,] { { 1, 2 }, { 4, 5 }, { 7, 8 } };
             int[,] MatrB = new[,] { { 1, 3 }, { 2, 4 } };
-            int[,] resultMatr = new int[,] { { 5, 9 }, { 14, 32 }, { 23, 53 } };
+            int[,] resultMatr = new int[,] { { 5, 11 }, { 14, 32 }, { 23, 53 } };
             Matrix A = new Matrix((uint)3, (uint)2, MatrA);
-            Matrix B = new Matrix((uint)4, (uint)3, MatrA);
+            Matrix B = new Matrix((uint)2, (uint)2, MatrB);
 
             Multiplication Mult = new Multiplication(A, B);
 
@@ -44,9 +44,7 @@ namespace MatrixTest.Operations
             Matrix A = new Matrix((uint)4, (uint)5, MatrixType.zeros);
             Matrix B = new Matrix((uint)4, (uint)5, MatrixType.zeros);
 
-            Multiplication Mult = new Multiplication(A, B);
-
-            Assert.ThrowsException<MatrixException>(() => Mult.Calculate());
+            Assert.ThrowsException<MatrixException>(() => new Multiplication(A, B));
         }
     }
 }

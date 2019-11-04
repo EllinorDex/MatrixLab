@@ -42,10 +42,8 @@ namespace MatrixTest.Operations
         {
             Matrix A = new Matrix((uint)4, (uint)5, MatrixType.zeros);
             Matrix B = new Matrix((uint)5, (uint)4, MatrixType.zeros);
-            //если так, то должно либо в этой функции, либо в следующей
-            Sum sum = new Sum(A, B);
 
-            Assert.ThrowsException<MatrixException>(() => sum.Calculate());
+            Assert.ThrowsException<MatrixException>(() => new Sum(A, B));
         }
     }
 }
