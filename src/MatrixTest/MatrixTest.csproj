@@ -90,6 +90,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Operations\TestMultiplication.cs" />
     <Compile Include="TestMatrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Operations\TestSum.cs" />
