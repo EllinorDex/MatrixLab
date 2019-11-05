@@ -30,6 +30,7 @@ namespace MatrixLib
         //Конвертация из встроенного типа MatLab в скаляр
         public int ConvertFromMLMatrixToScalar(MWArray mwMatrix)
         {
+            //Что-то в этой строчке не так. Посмотри, из-за неё возникает исключение: "Заданное приведение является недопустимым"
             int res = (int)mwMatrix.ToArray().GetValue(0,0);
 
             return res;

@@ -11,7 +11,7 @@ namespace MatrixLib
         //Конструктор, в котором происходит формирование операнда
         public Determinant(Matrix matrixOperand)
         {
-            if (_matrixOperand.GetCountOfColumns() != _matrixOperand.GetCountOfRows())
+            if (matrixOperand.GetCountOfColumns() != matrixOperand.GetCountOfRows())
                 throw new MatrixException("The operation cannot be performed. Incorrect sizes of operand.");
 
             _matrixOperand = matrixOperand;
