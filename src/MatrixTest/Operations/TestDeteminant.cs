@@ -10,6 +10,7 @@ namespace MatrixTest.Operations
         [TestMethod]
         public void DeteminantOnesMatrix()
         {
+            
             Matrix A = new Matrix((uint)5, (uint)5, MatrixType.ones);
 
             Determinant Matr = new Determinant(A);
