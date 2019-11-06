@@ -11,7 +11,7 @@ namespace MatrixLib
         //Конструктор, в котором происходит формирование операнда
         public InverseMatrix(Matrix matrixOperand)
         {
-            if (_matrixOperand.GetCountOfColumns() != _matrixOperand.GetCountOfRows())
+            if (matrixOperand.GetCountOfColumns() != matrixOperand.GetCountOfRows())
                 throw new MatrixException("The operation cannot be performed. Incorrect sizes of operand.");
             Determinant det = new Determinant(matrixOperand);
             if (det.Calculate() == 0)
