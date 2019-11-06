@@ -15,27 +15,7 @@
         {
             _countOfRows = countOfRows;
             _countOfColumns = countOfColumns;
-
-            _matrix = new int[_countOfRows, _countOfColumns];
-            switch (typeOfMatrix)
-            {
-                case MatrixType.ones:
-                    if (countOfRows != countOfColumns)
-                        throw new MatrixException("Unable to create matrix.Incorrect type or size.");
-
-                    for (uint i = 0; i < _countOfColumns; ++i)
-                        _matrix[i, i] = 1;
-                    break;
-
-                case MatrixType.zeros:
-                    for (uint i = 0; i < _countOfRows; ++i)
-                        for (uint j = 0; j < _countOfColumns; ++j)
-                            _matrix[i, j] = 0;
-                    break;
-
-                default:
-                    break;
-            }
+            _matrix = creator2DArray(typeOfMatrix);
         }
 
         //Создание нестандартной матрицы
@@ -77,6 +57,31 @@
                     res[i, j] = _matrix[i, j];
 
             return res;
+        }
+
+        private int[,] creator2DArray(MatrixType typeOfMatrix)
+        {
+            int[,] d2array = new int[_countOfRows, _countOfColumns];
+            switch (typeOfMatrix)
+            {
+                case MatrixType.ones:
+                    if (_countOfRows != _countOfColumns)
+                        throw new MatrixException("Unable to create matrix.Incorrect type or size.");
+
+                    for (uint i = 0; i < _countOfColumns; ++i)
+                        d2array[i, i] = 1;
+                    break;
+
+                case MatrixType.zeros:
+                    for (uint i = 0; i < _countOfRows; ++i)
+                        for (uint j = 0; j < _countOfColumns; ++j)
+                            d2array[i, j] = 0;
+                    break;
+
+                default:
+                    break;
+            }
+            return d2array;
         }
     }
 }
