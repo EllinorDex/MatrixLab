@@ -33,11 +33,6 @@ namespace WindowsFormsApplication1
             _comboBoxValue = comboBox.SelectedItem.ToString();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void Matrix_Load(object sender, EventArgs e)
         {
             if (_comboBoxValue == "Пользовательская")
@@ -110,6 +105,58 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (_comboBoxValue == "Пользовательская")
+            {
+                int[,] arrayOfValues = new int[_numberOfRows, _numberOfColumns];
+                for (int i = 0; i < _numberOfRows; ++i)
+                {
+                    for (int j = 0; j < _numberOfColumns; ++j)
+                        arrayOfValues[i, j] = Convert.ToInt32(dataGridView1[i, j].Value);
+                }
+
+            }
+
+            if (_comboBoxValue == "Диагональная")
+            {
+                int[,] arrayOfValues = new int[_numberOfRows, _numberOfColumns];
+                for (int i = 0; i < _numberOfRows; ++i)
+                {
+                    for (int j = 0; j < _numberOfColumns; ++j)
+                    {
+                        if (i == j)
+                            arrayOfValues[i, j] = Convert.ToInt32(dataGridView1[i, j].Value);
+                        else
+                            arrayOfValues[i, j] = 0;
+                    }
+                }
+            }
+
+            if (_comboBoxValue == "Единичная")
+            {
+                int[,] arrayOfValues = new int[_numberOfRows, _numberOfColumns];
+                for (int i = 0; i < _numberOfRows; ++i)
+                {
+                    for (int j = 0; j < _numberOfColumns; ++j)
+                    {
+                        if (i == j)
+                            arrayOfValues[i, j] = 1;
+                        else
+                            arrayOfValues[i, j] = 0;
+
+                    }
+                }
+            }
+
+            if (_comboBoxValue == "Нулевая")
+            {
+                int[,] arrayOfValues = new int[_numberOfRows, _numberOfColumns];
+                for (int i = 0; i < _numberOfRows; ++i)
+                {
+                    for (int j = 0; j < _numberOfColumns; ++j)
+                            arrayOfValues[i, j] = 0;
+                }
+            }
+
             Close();
         }
         
