@@ -115,13 +115,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\MatrixLib\MatrixLib.csproj">
       <Project>{ce1d0096-3b49-4750-8abd-145d934cd6fb}</Project>
       <Name>MatrixLib</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

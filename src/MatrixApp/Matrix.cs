@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace MatrixApp
 {
     public partial class Matrix : Form
     {
@@ -25,12 +25,13 @@ namespace WindowsFormsApplication1
             _comboBoxValue = "Результирующая";
         }
 
-        public Matrix(NumericUpDown firstNumericUpDown, NumericUpDown secondNumericUpDown, ComboBox comboBox)
+        public Matrix(NumericUpDown firstNumericUpDown, NumericUpDown secondNumericUpDown, ComboBox comboBox, string operand)
         {
             InitializeComponent();
             _numberOfRows = (int)firstNumericUpDown.Value;
             _numberOfColumns = (int)secondNumericUpDown.Value;
             _comboBoxValue = comboBox.SelectedItem.ToString();
+            _operand = operand;
         }
 
         private void Matrix_Load(object sender, EventArgs e)
@@ -105,63 +106,56 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (_comboBoxValue == "Пользовательская")
+            
+            if (_comboBoxValue == "Пользовательская" || _comboBoxValue == "Диагональная")
             {
-                int[,] arrayOfValues = new int[_numberOfRows, _numberOfColumns];
-                for (int i = 0; i < _numberOfRows; ++i)
-                {
-                    for (int j = 0; j < _numberOfColumns; ++j)
-                        arrayOfValues[i, j] = Convert.ToInt32(dataGridView1[i, j].Value);
-                }
-
-            }
-
-            if (_comboBoxValue == "Диагональная")
-            {
-                int[,] arrayOfValues = new int[_numberOfRows, _numberOfColumns];
-                for (int i = 0; i < _numberOfRows; ++i)
-                {
-                    for (int j = 0; j < _numberOfColumns; ++j)
-                    {
-                        if (i == j)
-                            arrayOfValues[i, j] = Convert.ToInt32(dataGridView1[i, j].Value);
-                        else
-                            arrayOfValues[i, j] = 0;
-                    }
-                }
+                if (_operand == "Left Matrix")
+                    _leftMatrix = new MatrixLib.Matrix((uint)_numberOfRows, (uint)_numberOfColumns, matrixWrite());
+                else
+                    _rightMatrix = new MatrixLib.Matrix((uint)_numberOfRows, (uint)_numberOfColumns, matrixWrite());
             }
 
             if (_comboBoxValue == "Единичная")
             {
-                int[,] arrayOfValues = new int[_numberOfRows, _numberOfColumns];
-                for (int i = 0; i < _numberOfRows; ++i)
-                {
-                    for (int j = 0; j < _numberOfColumns; ++j)
-                    {
-                        if (i == j)
-                            arrayOfValues[i, j] = 1;
-                        else
-                            arrayOfValues[i, j] = 0;
-
-                    }
-                }
+                if (_operand == "Left Matrix")
+                    _leftMatrix = new MatrixLib.Matrix((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.ones);
+                else
+                    _rightMatrix = new MatrixLib.Matrix((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.ones);
             }
 
             if (_comboBoxValue == "Нулевая")
             {
-                int[,] arrayOfValues = new int[_numberOfRows, _numberOfColumns];
-                for (int i = 0; i < _numberOfRows; ++i)
-                {
-                    for (int j = 0; j < _numberOfColumns; ++j)
-                            arrayOfValues[i, j] = 0;
-                }
+                if (_operand == "Left Matrix")
+                    _leftMatrix = new MatrixLib.Matrix((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.zeros);
+                else
+                    _rightMatrix = new MatrixLib.Matrix((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.zeros);
             }
 
             Close();
         }
-        
+
+        int[,] matrixWrite()
+        {
+            int[,] arrayOfValues = new int[_numberOfRows, _numberOfColumns];
+            for (int i = 0; i < _numberOfRows; ++i)
+            {
+                for (int j = 0; j < _numberOfColumns; ++j)
+                {
+                    if (i == j)
+                        arrayOfValues[i, j] = Convert.ToInt32(dataGridView1[i, j].Value);
+                    else
+                        arrayOfValues[i, j] = 0;
+                }
+            }
+            return arrayOfValues;
+        }
+
+        string _operand;
         private int _numberOfRows;
         private int _numberOfColumns;
         private string _comboBoxValue;
+
+        public MatrixLib.Matrix _leftMatrix;
+        public MatrixLib.Matrix _rightMatrix;
     }
 }
