@@ -7,6 +7,8 @@
 
   <PropertyGroup>
     <OutDir>..\..\bin\$(Configuration)\$(Platform)\MatrixLib</OutDir>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>MatrixMatrix.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>

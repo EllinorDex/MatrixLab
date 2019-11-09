@@ -11,9 +11,7 @@ namespace MatrixLib
         //Конструктор, в котором происходит формирование операнда
         public Determinant(Matrix matrixOperand)
         {
-            if (matrixOperand.GetCountOfColumns() != matrixOperand.GetCountOfRows())
-                throw new MatrixException("The operation cannot be performed. Incorrect sizes of operand.");
-
+            isCorrect(matrixOperand);
             _matrixOperand = matrixOperand;
         }
 
@@ -27,13 +25,20 @@ namespace MatrixLib
         //Подсчёт определителя
         public int Calculate()
         {
-            OperWithMatr op = new OperWithMatr();
+            OperWithMatr op     = new OperWithMatr();
             Converter converter = new Converter();
 
             MWArray[] result = op.Determinant(1, converter.ConvertFromMatrixToMLMatrix(_matrixOperand));
-            int resultScal = converter.ConvertFromMLMatrixToScalar(result[0]);
+            int resultScal   = converter.ConvertFromMLMatrixToScalar(result[0]);
 
             return resultScal;
+        }
+
+        //Проверка корректности операции
+        private void isCorrect(Matrix matrixOperand)
+        {
+            if (matrixOperand.GetCountOfColumns() != matrixOperand.GetCountOfRows())
+                throw new MatrixException("The operation cannot be performed. Incorrect sizes of operand.");
         }
     }
 }

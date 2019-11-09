@@ -11,12 +11,7 @@ namespace MatrixLib
         //Конструктор, в котором происходит формирование операнда
         public InverseMatrix(Matrix matrixOperand)
         {
-            if (matrixOperand.GetCountOfColumns() != matrixOperand.GetCountOfRows())
-                throw new MatrixException("The operation cannot be performed. Incorrect sizes of operand.");
-            Determinant det = new Determinant(matrixOperand);
-            if (det.Calculate() == 0)
-                throw new MatrixException("The operation cannot be performed. Incorrect matrix.");
-
+            isCorrect(matrixOperand);
             _matrixOperand = matrixOperand;
         }
 
@@ -30,13 +25,23 @@ namespace MatrixLib
         //Нахождение обратной матрицы
         public Matrix Calculate()
         {
-            OperWithMatr op = new OperWithMatr();
+            OperWithMatr op     = new OperWithMatr();
             Converter converter = new Converter();
 
             MWArray[] result = op.InverseMatrix(1, converter.ConvertFromMatrixToMLMatrix(_matrixOperand));
             int[,] resultArr = converter.ConvertFromMLMatrixToMatrix(result[0]);
 
             return new Matrix(_matrixOperand.GetCountOfRows(), _matrixOperand.GetCountOfColumns(), resultArr);
+        }
+
+        //Проверка корректности операции
+        private void isCorrect(Matrix matrixOperand)
+        {
+            if (matrixOperand.GetCountOfColumns() != matrixOperand.GetCountOfRows())
+                throw new MatrixException("The operation cannot be performed. Incorrect sizes of operand.");
+            Determinant det = new Determinant(matrixOperand);
+            if (det.Calculate() == 0)
+                throw new MatrixException("The operation cannot be performed. Incorrect matrix.");
         }
     }
 }

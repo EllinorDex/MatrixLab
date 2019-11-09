@@ -10,7 +10,8 @@ namespace MatrixTest
 
         [TestMethod]
         public void ConstractOnesMatrixNorm()
-        {
+        { 
+            //Лучше сделать сравнение с двумерным массивом(1 ассерт + полная проверка)
             Matrix A = new Matrix((uint)5, (uint)5, MatrixType.ones);
 
             Assert.AreEqual(1, A[2, 2]);
@@ -20,9 +21,7 @@ namespace MatrixTest
         [TestMethod]
         public void ConstractOnesMatrixRectangle()
         {
-            //Проверил на матричное исключение
             Assert.ThrowsException<MatrixException>(() => new Matrix((uint)7, (uint)5, MatrixType.ones));
-
         }
 
         [TestMethod]

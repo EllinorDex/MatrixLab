@@ -13,15 +13,16 @@
         //Создание стандартной матрицы
         public Matrix(uint countOfRows, uint countOfColumns, MatrixType typeOfMatrix)
         {
-            _countOfRows = countOfRows;
+            _countOfRows    = countOfRows;
             _countOfColumns = countOfColumns;
-            _matrix = creator2DArray(typeOfMatrix);
+            _matrix         = creator2DArray(typeOfMatrix);
         }
 
         //Создание нестандартной матрицы
         public Matrix(uint countOfRows, uint countOfColumns, int[,] matrix)
         {
-            _countOfRows = countOfRows;
+            isCorrect(countOfRows, countOfColumns, matrix);
+            _countOfRows    = countOfRows;
             _countOfColumns = countOfColumns;
 
             _matrix = new int[_countOfRows, _countOfColumns];
@@ -59,6 +60,7 @@
             return res;
         }
 
+        //Создание двумерного массива
         private int[,] creator2DArray(MatrixType typeOfMatrix)
         {
             int[,] d2array = new int[_countOfRows, _countOfColumns];
@@ -77,11 +79,15 @@
                         for (uint j = 0; j < _countOfColumns; ++j)
                             d2array[i, j] = 0;
                     break;
-
-                default:
-                    break;
             }
             return d2array;
+        }
+
+        //Проверка корректности создания матрицы
+        private void isCorrect(uint countOfRows, uint countOfColumns, int[,] matrix)
+        {
+            if (matrix.GetLength(0) != countOfRows || matrix.GetLength(1) != countOfColumns)
+                throw new MatrixException("Unable to create matrix.Incompatible size and 2dArray.");
         }
     }
 }

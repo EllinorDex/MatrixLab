@@ -12,9 +12,7 @@ namespace MatrixLib
         //Конструктор, в котором происходит формирование операндов
         public Sum(Matrix matrixLeft, Matrix matrixRight)
         {
-            if (matrixLeft.GetCountOfRows() != matrixRight.GetCountOfRows() && matrixLeft.GetCountOfColumns() != matrixRight.GetCountOfColumns())
-                throw new MatrixException("The operation cannot be performed. Incorrect sizes of operands.");
-
+            isCorrect(matrixLeft, matrixRight);
             _matrixLeft = matrixLeft;
             _matrixRight = matrixRight;
         }
@@ -39,10 +37,17 @@ namespace MatrixLib
             OperWithMatr op     = new OperWithMatr();
             Converter converter = new Converter();
 
-            MWArray[] result       = op.Sum(1, converter.ConvertFromMatrixToMLMatrix(_matrixLeft), converter.ConvertFromMatrixToMLMatrix(_matrixRight));
-            int[,] resultArr       = converter.ConvertFromMLMatrixToMatrix(result[0]);
+            MWArray[] result = op.Sum(1, converter.ConvertFromMatrixToMLMatrix(_matrixLeft), converter.ConvertFromMatrixToMLMatrix(_matrixRight));
+            int[,] resultArr = converter.ConvertFromMLMatrixToMatrix(result[0]);
 
             return new Matrix(_matrixLeft.GetCountOfRows(), _matrixLeft.GetCountOfColumns(), resultArr);
+        }
+
+        //Проверка корректности операции
+        private void isCorrect(Matrix matrixLeft, Matrix matrixRight)
+        {
+            if (matrixLeft.GetCountOfRows() != matrixRight.GetCountOfRows() || matrixLeft.GetCountOfColumns() != matrixRight.GetCountOfColumns())
+                throw new MatrixException("The operation cannot be performed. Incorrect sizes of operands.");
         }
     }
 }

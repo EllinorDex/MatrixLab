@@ -1,5 +1,8 @@
 ﻿using MathWorks.MATLAB.NET.Arrays;
 using System;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("MatrixTest")]
 
 namespace MatrixLib
 {
@@ -9,8 +12,8 @@ namespace MatrixLib
         //Конвертация из матрицы в встроенный тип MatLab
         public MWArray ConvertFromMatrixToMLMatrix(Matrix matrix)
         {
-            MWNumericArray mwArr = new MWNumericArray((Array)matrix.Get2DArray());
-            return (MWArray)mwArr;
+            MWNumericArray mwnArr = new MWNumericArray((Array)matrix.Get2DArray());
+            return (MWArray)mwnArr;
         }
 
         //Конвертация из встроенного типа MatLab в матрицу
@@ -19,8 +22,8 @@ namespace MatrixLib
             double[,] matrix = (double[,])mwMatrix.ToArray();
             int length1      = matrix.GetLength(0);
             int length2      = matrix.GetLength(1);
-            int[,] res       = new int[length1, length2];
 
+            int[,] res = new int[length1, length2];
             for (int i = 0; i < length1; ++i)
                 for (int j = 0; j < length2; ++j)
                     res[i, j] = (int)Math.Round(matrix[i, j], 3);
@@ -31,7 +34,7 @@ namespace MatrixLib
         public int ConvertFromMLMatrixToScalar(MWArray mwMatrix)
         {
             double[,] matrix = (double[,])mwMatrix.ToArray();
-            int res = (int)matrix[0,0];
+            int res          = (int)matrix[0,0];
 
             return res;
         }

@@ -37,6 +37,7 @@ namespace MatrixTest.Operations
         [TestMethod]
         public void InverseUsersMatrixNumb()
         {
+            //TODO: Странный тест, я его немного переделал, но обрати внимание
             int[,] matrOfArray = new int[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
             int[,] resultMatr = new int[,] { { }, { }, { } };
             Matrix A = new Matrix((uint)3, (uint)3, matrOfArray);
@@ -45,7 +46,7 @@ namespace MatrixTest.Operations
 
             Matrix detem = Matr.Calculate();
 
-            Assert.AreEqual(3, detem);
+            Assert.AreEqual(-1, detem[0,0]); // БЫЛО Assert.AreEqual(3, detem);
         }
 
         [TestMethod]

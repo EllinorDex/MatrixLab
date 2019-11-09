@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("MatrixTest")]
 
 namespace MatrixLib
 {
     //Исключение, соответсвующее критическим ситуациям работы с матрицами
-    public class MatrixException : Exception
+    internal class MatrixException : Exception
     {
         public MatrixException() { }
 
