@@ -19,8 +19,8 @@ namespace WindowsFormsApplication1
             tabControl1.DrawItem += new DrawItemEventHandler(tabControl1_DrawItem);
             setComboBox(comboBox1);
             setComboBox(comboBox2);
-            setComboBox(comboBox3);
             setComboBox(comboBox4);
+            setComboBox(comboBox3);
             setComboBox(comboBox5);
             setComboBox(comboBox6);
         }
@@ -114,6 +114,7 @@ namespace WindowsFormsApplication1
 
         private void button3_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(tabControl1.SelectedTab.Text);
             int a = 5;
             int b = 6;
             if (a != 0 && b != 0)
@@ -146,17 +147,17 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (numericUpDown3.Value != 0 && numericUpDown4.Value != 0)
+            if (numericUpDown4.Value != 0 && numericUpDown3.Value != 0)
             {
                 if (comboBox2.SelectedItem.ToString() == "Диагональная" || comboBox2.SelectedItem.ToString() == "Единичная")
                 {
-                    if (numericUpDown3.Value != numericUpDown4.Value)
+                    if (numericUpDown4.Value != numericUpDown3.Value)
                     {
                         MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
                         return;
                     }
                 }
-                Matrix form = new Matrix(numericUpDown3, numericUpDown4, comboBox2);
+                Matrix form = new Matrix(numericUpDown4, numericUpDown3, comboBox2);
                 form.Show();
             }
             else
@@ -165,17 +166,17 @@ namespace WindowsFormsApplication1
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (numericUpDown6.Value != 0 && numericUpDown5.Value != 0)
+            if (numericUpDown7.Value != 0 && numericUpDown8.Value != 0)
             {
-                if (comboBox4.SelectedItem.ToString() == "Диагональная" || comboBox4.SelectedItem.ToString() == "Единичная")
+                if (comboBox3.SelectedItem.ToString() == "Диагональная" || comboBox3.SelectedItem.ToString() == "Единичная")
                 {
-                    if (numericUpDown6.Value != numericUpDown5.Value)
+                    if (numericUpDown7.Value != numericUpDown8.Value)
                     {
                         MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
                         return;
                     }
                 }
-                Matrix form = new Matrix(numericUpDown6, numericUpDown5, comboBox4);
+                Matrix form = new Matrix(numericUpDown7, numericUpDown8, comboBox3);
                 form.Show();
             }
             else
@@ -202,17 +203,17 @@ namespace WindowsFormsApplication1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (numericUpDown7.Value != 0 && numericUpDown8.Value != 0)
+            if (numericUpDown6.Value != 0 && numericUpDown5.Value != 0)
             {
-                if (comboBox3.SelectedItem.ToString() == "Диагональная" || comboBox3.SelectedItem.ToString() == "Единичная")
+                if (comboBox4.SelectedItem.ToString() == "Диагональная" || comboBox4.SelectedItem.ToString() == "Единичная")
                 {
-                    if (numericUpDown7.Value != numericUpDown8.Value)
+                    if (numericUpDown6.Value != numericUpDown5.Value)
                     {
                         MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
                         return;
                     }
                 }
-                Matrix form = new Matrix(numericUpDown7, numericUpDown8, comboBox3);
+                Matrix form = new Matrix(numericUpDown6, numericUpDown5, comboBox4);
                 form.Show();
             }
             else
@@ -221,17 +222,17 @@ namespace WindowsFormsApplication1
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if (numericUpDown9.Value != 0 && numericUpDown10.Value != 0)
+            if (numericUpDown10.Value != 0 && numericUpDown9.Value != 0)
             {
                 if (comboBox5.SelectedItem.ToString() == "Диагональная" || comboBox5.SelectedItem.ToString() == "Единичная")
                 {
-                    if (numericUpDown9.Value != numericUpDown10.Value)
+                    if (numericUpDown10.Value != numericUpDown9.Value)
                     {
                         MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
                         return;
                     }
                 }
-                Matrix form = new Matrix(numericUpDown9, numericUpDown10, comboBox5);
+                Matrix form = new Matrix(numericUpDown10, numericUpDown9, comboBox5);
                 form.Show();
             }
             else
@@ -240,17 +241,17 @@ namespace WindowsFormsApplication1
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (numericUpDown11.Value != 0 && numericUpDown12.Value != 0)
+            if (numericUpDown12.Value != 0 && numericUpDown11.Value != 0)
             {
                 if (comboBox5.SelectedItem.ToString() == "Диагональная" || comboBox5.SelectedItem.ToString() == "Единичная")
                 {
-                    if (numericUpDown11.Value != numericUpDown12.Value)
+                    if (numericUpDown12.Value != numericUpDown11.Value)
                     {
                         MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
                         return;
                     }
                 }
-                Matrix form = new Matrix(numericUpDown11, numericUpDown12, comboBox5);
+                Matrix form = new Matrix(numericUpDown12, numericUpDown11, comboBox5);
                 form.Show();
             }
             else
