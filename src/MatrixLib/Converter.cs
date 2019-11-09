@@ -23,7 +23,7 @@ namespace MatrixLib
 
             for (int i = 0; i < length1; ++i)
                 for (int j = 0; j < length2; ++j)
-                    res[i, j] = (int)matrix[i, j];
+                    res[i, j] = (int)Math.Round(matrix[i, j], 3);
             return res;
         }
 
