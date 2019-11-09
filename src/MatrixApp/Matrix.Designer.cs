@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace MatrixApp
 {
     partial class Matrix
     {
