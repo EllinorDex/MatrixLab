@@ -17,11 +17,17 @@ namespace MatrixApp
 
         }
 
-        public Matrix(int numberOfRows, int numberOfColumns)
+        public Matrix(int numberOfRows, int numberOfColumns, int[,] matrixValues)
         {
+            MessageBox.Show("jkjk");
             InitializeComponent();
             _numberOfRows = numberOfRows;
             _numberOfColumns = numberOfColumns;
+            for (int i = 0; i < matrixValues.GetLength(0); ++i)
+            {
+                for (int j = 0; j < matrixValues.GetLength(1); ++j)
+                    _resultMatrixValues[i, j] = matrixValues[i, j];
+            }
             _comboBoxValue = "Результирующая";
         }
 
@@ -94,11 +100,12 @@ namespace MatrixApp
         {
             dataGridView1.RowCount = _numberOfRows;
             dataGridView1.ColumnCount = _numberOfColumns;
+            MessageBox.Show("jkjk");
             for (int i = 0; i < _numberOfRows; ++i)
             {
                 for (int j = 0; j < _numberOfColumns; ++j)
                 {
-                    dataGridView1.Rows[i].Cells[j].Value = 2;
+                    dataGridView1.Rows[i].Cells[j].Value = _resultMatrixValues[i, j];
                     dataGridView1.Rows[i].Cells[j].ReadOnly = true;
                 }
             }
@@ -106,7 +113,6 @@ namespace MatrixApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
             if (_comboBoxValue == "Пользовательская" || _comboBoxValue == "Диагональная")
             {
                 if (_operand == "Left Matrix")
@@ -150,12 +156,23 @@ namespace MatrixApp
             return arrayOfValues;
         }
 
+        public MatrixLib.Matrix GetLeftMatrix()
+        {
+            return _leftMatrix;
+        }
+
+        public MatrixLib.Matrix GetRightMatrix()
+        {
+            return _rightMatrix;
+        }
+
+        int[,] _resultMatrixValues;
         string _operand;
         private int _numberOfRows;
         private int _numberOfColumns;
         private string _comboBoxValue;
 
-        public MatrixLib.Matrix _leftMatrix;
-        public MatrixLib.Matrix _rightMatrix;
+        private MatrixLib.Matrix _leftMatrix;
+        private MatrixLib.Matrix _rightMatrix;
     }
 }

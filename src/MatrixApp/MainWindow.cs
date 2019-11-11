@@ -158,14 +158,14 @@ namespace MatrixApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Matrix resultMatrix = new Matrix();
-            //resultMatrix = 
-            MessageBox.Show(tabControl1.SelectedTab.Text);
-            int a = 5;
-            int b = 6;
-            if (a != 0 && b != 0)
+            MessageBox.Show("jkjk");
+            MatrixLib.Sum matrix = new MatrixLib.Sum(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
+            MatrixLib.Matrix resultMatrix = matrix.Calculate();
+            MessageBox.Show("jkjk");
+            //MessageBox.Show(tabControl1.SelectedTab.Text);
+            if (resultMatrix.GetCountOfRows() != 0 && resultMatrix.GetCountOfColumns() != 0)
             {
-                Matrix form = new Matrix(a, b);
+                Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
                 form.Show();
             }
             else
@@ -216,8 +216,8 @@ namespace MatrixApp
             int b = 6;
             if (a != 0 && b != 0)
             {
-                Matrix form = new Matrix(a, b);
-                form.Show();
+                //Matrix form = new Matrix(a, b);
+               // form.Show();
             }
             else
                 MessageBox.Show("Что-то пошло не так", "Error");
@@ -248,8 +248,8 @@ namespace MatrixApp
             int b = 6;
             if (a != 0 && b != 0)
             {
-                Matrix form = new Matrix(a, b);
-                form.Show();
+                //Matrix form = new Matrix(a, b);
+                //form.Show();
             }
             else
                 MessageBox.Show("Что-то пошло не так", "Error");
@@ -280,8 +280,8 @@ namespace MatrixApp
             int b = 6;
             if (a != 0 && b != 0)
             {
-                Matrix form = new Matrix(a, b);
-                form.Show();
+                //Matrix form = new Matrix(a, b);
+                //form.Show();
             }
             else
                 MessageBox.Show("Что-то пошло не так", "Error");
