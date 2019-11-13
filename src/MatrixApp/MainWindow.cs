@@ -158,18 +158,10 @@ namespace MatrixApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("jkjk");
             MatrixLib.Sum matrix = new MatrixLib.Sum(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
             MatrixLib.Matrix resultMatrix = matrix.Calculate();
-            MessageBox.Show("jkjk");
-            //MessageBox.Show(tabControl1.SelectedTab.Text);
-            if (resultMatrix.GetCountOfRows() != 0 && resultMatrix.GetCountOfColumns() != 0)
-            {
-                Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
-                form.Show();
-            }
-            else
-                MessageBox.Show("Что-то пошло не так", "Error");
+            Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
+            form.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -212,15 +204,10 @@ namespace MatrixApp
 
         private void button6_Click(object sender, EventArgs e)
         {
-            int a = 5;
-            int b = 6;
-            if (a != 0 && b != 0)
-            {
-                //Matrix form = new Matrix(a, b);
-               // form.Show();
-            }
-            else
-                MessageBox.Show("Что-то пошло не так", "Error");
+            MatrixLib.Multiplication matrix = new MatrixLib.Multiplication(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
+            MatrixLib.Matrix resultMatrix = matrix.Calculate();
+            Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
+            form.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -244,15 +231,10 @@ namespace MatrixApp
 
         private void button8_Click(object sender, EventArgs e)
         {
-            int a = 5;
-            int b = 6;
-            if (a != 0 && b != 0)
-            {
-                //Matrix form = new Matrix(a, b);
-                //form.Show();
-            }
-            else
-                MessageBox.Show("Что-то пошло не так", "Error");
+            MatrixLib.InverseMatrix matrix = new MatrixLib.InverseMatrix(Matrix.GetLeftMatrix());
+            MatrixLib.Matrix resultMatrix = matrix.Calculate();
+            Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
+            form.Show();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -276,15 +258,9 @@ namespace MatrixApp
 
         private void button10_Click(object sender, EventArgs e)
         {
-            int a = 5;
-            int b = 6;
-            if (a != 0 && b != 0)
-            {
-                //Matrix form = new Matrix(a, b);
-                //form.Show();
-            }
-            else
-                MessageBox.Show("Что-то пошло не так", "Error");
+            MatrixLib.Determinant matrix = new MatrixLib.Determinant(Matrix.GetLeftMatrix());
+            int determinant = matrix.Calculate();
+            MessageBox.Show("Определитель матрицы равен", determinant.ToString());
         }
     }
 }
