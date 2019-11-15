@@ -32,6 +32,7 @@ namespace MatrixTest.Operations
 
             Assert.AreEqual(0, detem);
         }
+
         [TestMethod]
         public void DeteminantUsersMatrixNumb()
         {

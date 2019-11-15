@@ -11,7 +11,6 @@ namespace MatrixTest.Operations
         [TestMethod]
         public void InverseOnesMatrix()
         {
-
             Matrix A = new Matrix((uint)5, (uint)5, MatrixType.ones);
 
             InverseMatrix Matr = new InverseMatrix(A);
@@ -44,20 +43,30 @@ namespace MatrixTest.Operations
 
             InverseMatrix Matr = new InverseMatrix(A);
 
-            Matrix detem = Matr.Calculate();
+            Matrix inverse = Matr.Calculate();
 
-            Assert.AreEqual(-1, detem[0,0]); // БЫЛО Assert.AreEqual(3, detem);
+            Assert.AreEqual(-1, inverse[0,0]); // БЫЛО Assert.AreEqual(3, detem);
         }
 
         [TestMethod]
         public void InverseException()
         {
             int[,] matrOfArray = new int[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 7, 8, 9 } };
+
+
             Matrix A = new Matrix((uint)4, (uint)3, matrOfArray);
 
             InverseMatrix IM = new InverseMatrix(A);
 
             Assert.ThrowsException<MatrixException>(() => IM.Calculate());
+        }
+
+        [TestMethod]
+        public void IsCorrectNotException()
+        {
+            int[,] matrOfArray = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+            Matrix A = new Matrix((uint)3, (uint)3, matrOfArray);
+            Assert.ThrowsException<MatrixException>(() => new InverseMatrix(A));
         }
     }
 }
