@@ -11,20 +11,20 @@ namespace MatrixLib
         //Конструктор, в котором происходит формирование операнда
         public InverseMatrix(Matrix matrixOperand)
         {
-            isCorrect(matrixOperand);
             _matrixOperand = matrixOperand;
         }
 
         //Получение или изменение операнда
         public Matrix MatrixOperand
         {
-            get;
-            set;
+            get { return _matrixOperand; }
+            set { _matrixOperand = value; }
         }
 
         //Нахождение обратной матрицы
         public Matrix Calculate()
         {
+            isCorrect(_matrixOperand);
             OperWithMatr op     = new OperWithMatr();
             Converter converter = new Converter();
 
