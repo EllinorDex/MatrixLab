@@ -12,7 +12,6 @@ namespace MatrixLib
         //Конструктор, в котором происходит формирование операндов
         public Sum(Matrix matrixLeft, Matrix matrixRight)
         {
-            isCorrect(matrixLeft, matrixRight);
             _matrixLeft = matrixLeft;
             _matrixRight = matrixRight;
         }
@@ -34,6 +33,7 @@ namespace MatrixLib
         //Подсчёт суммы
         public Matrix Calculate()
         {
+            isCorrect(_matrixLeft, _matrixRight);
             OperWithMatr op     = new OperWithMatr();
             Converter converter = new Converter();
 

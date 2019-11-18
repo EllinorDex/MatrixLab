@@ -43,8 +43,9 @@ namespace MatrixTest.Operations
         {
             Matrix A = new Matrix((uint)4, (uint)5, MatrixType.zeros);
             Matrix B = new Matrix((uint)4, (uint)5, MatrixType.zeros);
+            Multiplication Mult = new Multiplication(A, B);
 
-            Assert.ThrowsException<MatrixException>(() => new Multiplication(A, B));
+            Assert.ThrowsException<MatrixException>(() => Mult.Calculate());
         }
     }
 }

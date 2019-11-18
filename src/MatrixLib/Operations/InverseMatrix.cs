@@ -11,7 +11,6 @@ namespace MatrixLib
         //Конструктор, в котором происходит формирование операнда
         public InverseMatrix(Matrix matrixOperand)
         {
-            isCorrect(matrixOperand);
             _matrixOperand = matrixOperand;
         }
 
@@ -25,6 +24,7 @@ namespace MatrixLib
         //Нахождение обратной матрицы
         public Matrix Calculate()
         {
+            isCorrect(_matrixOperand);
             OperWithMatr op     = new OperWithMatr();
             Converter converter = new Converter();
 
