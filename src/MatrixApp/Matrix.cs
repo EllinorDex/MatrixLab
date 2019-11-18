@@ -43,8 +43,11 @@ namespace MatrixApp
             if (_comboBoxValue == "Пользовательская")
                 userMatrix();
 
-            if (_comboBoxValue == "Диагональная" || _comboBoxValue == "Единичная")
+            if (_comboBoxValue == "Диагональная")
                 diagMatrix();
+
+            if (_comboBoxValue == "Единичная")
+                unitMatrix();
 
             if (_comboBoxValue == "Нулевая")
                 zeroMatrix();
@@ -83,6 +86,24 @@ namespace MatrixApp
             }
         }
 
+        partial void unitMatrix()
+        {
+            dataGridView1.RowCount = _numberOfRows;
+            dataGridView1.ColumnCount = _numberOfColumns;
+            for (int i = 0; i < _numberOfRows; ++i)
+            {
+                for (int j = 0; j < _numberOfColumns; ++j)
+                {
+                    if (i == j)
+                        dataGridView1.Rows[i].Cells[j].Value = 1;
+                    else
+                        dataGridView1.Rows[i].Cells[j].Value = 0;
+
+                    dataGridView1.Rows[i].Cells[j].ReadOnly = true;
+                }
+            }
+        }
+
         partial void zeroMatrix()
         {
             dataGridView1.RowCount = _numberOfRows;
@@ -90,7 +111,10 @@ namespace MatrixApp
             for (int i = 0; i < _numberOfRows; ++i)
             {
                 for (int j = 0; j < _numberOfColumns; ++j)
+                {
                     dataGridView1.Rows[i].Cells[j].Value = 0;
+                    dataGridView1.Rows[i].Cells[j].ReadOnly = true;
+                }
             }
         }
 
@@ -141,8 +165,20 @@ namespace MatrixApp
         {
             int[,] arrayOfValues = new int[_numberOfRows, _numberOfColumns];
             for (int i = 0; i < _numberOfRows; ++i)
+            {
                 for (int j = 0; j < _numberOfColumns; ++j)
-                    arrayOfValues[i, j] = Convert.ToInt32(dataGridView1[j, i].Value);
+                {
+                    try
+                    {
+                        arrayOfValues[i, j] = Convert.ToInt32(dataGridView1[j, i].Value);
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Вы ввели некорректный символ как элемент матрицы.\n" +
+                            "Так делать не надо. Пожалуйста, проверьте элементы заданной Вами матрицы.", "Ошибка!");
+                    }
+                }
+            }
             return arrayOfValues;
         }
 

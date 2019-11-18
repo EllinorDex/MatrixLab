@@ -158,10 +158,17 @@ namespace MatrixApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MatrixLib.Sum matrix = new MatrixLib.Sum(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
-            MatrixLib.Matrix resultMatrix = matrix.Calculate();
-            Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
-            form.Show();
+            try
+            {
+                MatrixLib.Sum matrix = new MatrixLib.Sum(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
+                MatrixLib.Matrix resultMatrix = matrix.Calculate();
+                Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
+                form.Show();
+            }
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("Для выполнения операции, пожалуйста, задайте все необходимые матрицы.", "Ошибка!");
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
