@@ -92,6 +92,7 @@
 
         #endregion
         partial void userMatrix();
+        partial void loadedMatrix();
         partial void diagMatrix();
         partial void unitMatrix();
         partial void zeroMatrix();

@@ -56,20 +56,46 @@ namespace MatrixApp
             g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
         }
 
-        private void openMatrixToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openLeftMatrixToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Text files(*.txt)|*.txt";
             if (openFileDialog1.ShowDialog() != DialogResult.OK) return;
-            MessageBox.Show("Выбран файл: " + openFileDialog1.FileName);
-            /*StreamReader sr = new StreamReader(openFileDialog1.FileName);
-            int[,] matrix = new int[4, 4];
-            for (int i = 0; i < 4; ++i)
-            {
-                for (int j = 0; j < 4; ++j)
-                    matrix[i, j] = sr.Read();
 
-            }*/
+            string[] matrix = File.ReadAllLines(openFileDialog1.FileName);
+            int numberOfRows = matrix.Length;
+            int numberOfColumns = matrix[0].Split(' ').Length;
+            int[,] arrayOfMatrixValues = new int[numberOfRows, numberOfColumns];
+            string[] matrixRow = {};
+            for (int i = 0; i < numberOfRows; ++i)
+            {
+                matrixRow = matrix[i].Split(' ');
+                for (int j = 0; j < numberOfColumns; ++j)
+                    arrayOfMatrixValues[i, j] = Convert.ToInt32(matrixRow[j]);
+            }
+            Matrix form = new Matrix(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Left Matrix");
+            form.Show();
+        }
+
+        private void openRightMatrixToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Text files(*.txt)|*.txt";
+            if (openFileDialog1.ShowDialog() != DialogResult.OK) return;
+
+            string[] matrix = File.ReadAllLines(openFileDialog1.FileName);
+            int numberOfRows = matrix.Length;
+            int numberOfColumns = matrix[0].Split(' ').Length;
+            int[,] arrayOfMatrixValues = new int[numberOfRows, numberOfColumns];
+            string[] matrixRow = {};
+            for (int i = 0; i < numberOfRows; ++i)
+            {
+                matrixRow = matrix[i].Split(' ');
+                for (int j = 0; j < numberOfColumns; ++j)
+                    arrayOfMatrixValues[i, j] = Convert.ToInt32(matrixRow[j]);
+            }
+            Matrix form = new Matrix(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Right Matrix");
+            form.Show();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

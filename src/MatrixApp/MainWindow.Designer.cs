@@ -30,7 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openMatrixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openLeftMatrixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openRightMatrixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -135,26 +136,35 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openMatrixToolStripMenuItem,
+            this.openLeftMatrixToolStripMenuItem,
+            this.openRightMatrixToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // openMatrixToolStripMenuItem
+            // openLeftMatrixToolStripMenuItem
             // 
-            this.openMatrixToolStripMenuItem.Name = "openMatrixToolStripMenuItem";
-            this.openMatrixToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openMatrixToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
-            this.openMatrixToolStripMenuItem.Text = "Open matrix...";
-            this.openMatrixToolStripMenuItem.Click += new System.EventHandler(this.openMatrixToolStripMenuItem_Click);
+            this.openLeftMatrixToolStripMenuItem.Name = "openLeftMatrixToolStripMenuItem";
+            this.openLeftMatrixToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.openLeftMatrixToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
+            this.openLeftMatrixToolStripMenuItem.Text = "Open left matrix...";
+            this.openLeftMatrixToolStripMenuItem.Click += new System.EventHandler(this.openLeftMatrixToolStripMenuItem_Click);
+            // 
+            // openRightMatrixToolStripMenuItem
+            // 
+            this.openRightMatrixToolStripMenuItem.Name = "openRightMatrixToolStripMenuItem";
+            this.openRightMatrixToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.openRightMatrixToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
+            this.openRightMatrixToolStripMenuItem.Text = "Open right matrix...";
+            this.openRightMatrixToolStripMenuItem.Click += new System.EventHandler(this.openRightMatrixToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeyDisplayString = "";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -1038,7 +1048,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openMatrixToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openLeftMatrixToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem operationsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sumToolStripMenuItem;
@@ -1106,6 +1116,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.ToolStripMenuItem openRightMatrixToolStripMenuItem;
     }
 }
 

@@ -38,10 +38,26 @@ namespace MatrixApp
             _operand = operand;
         }
 
+        public Matrix(int numberOfRows, int numberOfColumns, int[,] matrixValues, string operand)
+        {
+            InitializeComponent();
+            _numberOfRows = numberOfRows;
+            _numberOfColumns = numberOfColumns;
+            _resultMatrixValues = new int[_numberOfRows, _numberOfColumns];
+            for (int i = 0; i < matrixValues.GetLength(0); ++i)
+                for (int j = 0; j < matrixValues.GetLength(1); ++j)
+                    _resultMatrixValues[i, j] = matrixValues[i, j];
+            _comboBoxValue = "Загруженная";
+            _operand = operand;
+        }
+
         private void Matrix_Load(object sender, EventArgs e)
         {
             if (_comboBoxValue == "Пользовательская")
                 userMatrix();
+
+            if (_comboBoxValue == "Загруженная")
+                loadedMatrix();
 
             if (_comboBoxValue == "Диагональная")
                 diagMatrix();
@@ -64,6 +80,17 @@ namespace MatrixApp
             {
                 for (int j = 0; j < _numberOfColumns; ++j)
                     dataGridView1.Rows[i].Cells[j].Value = 1;
+            }
+        }
+
+        partial void loadedMatrix()
+        {
+            dataGridView1.RowCount = _numberOfRows;
+            dataGridView1.ColumnCount = _numberOfColumns;
+            for (int i = 0; i < _numberOfRows; ++i)
+            {
+                for (int j = 0; j < _numberOfColumns; ++j)
+                    dataGridView1.Rows[i].Cells[j].Value = _resultMatrixValues[i, j];
             }
         }
 
@@ -134,7 +161,7 @@ namespace MatrixApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (_comboBoxValue == "Пользовательская" || _comboBoxValue == "Диагональная")
+            if (_comboBoxValue == "Пользовательская" || _comboBoxValue == "Загруженная" || _comboBoxValue == "Диагональная")
             {
                 if (_operand == "Left Matrix")
                     _leftMatrix = new MatrixLib.Matrix((uint)_numberOfRows, (uint)_numberOfColumns, matrixWrite());
