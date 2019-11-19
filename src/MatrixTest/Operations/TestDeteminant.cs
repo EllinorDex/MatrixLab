@@ -51,6 +51,7 @@ namespace MatrixTest.Operations
         {
             int[,] matrOfArray = new int[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 7, 8, 9 } };
             Matrix A = new Matrix((uint)4, (uint)3, matrOfArray);
+
             Determinant DM = new Determinant(A);
 
             Assert.ThrowsException<MatrixException>(() => DM.Calculate());

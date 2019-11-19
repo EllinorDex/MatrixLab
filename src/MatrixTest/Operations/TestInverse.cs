@@ -59,5 +59,14 @@ namespace MatrixTest.Operations
             Assert.ThrowsException<MatrixException>(() => IM.Calculate());
         }
 
+        [TestMethod]
+        public void IsCorrectNotException()
+        {
+            int[,] matrOfArray = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+            Matrix A = new Matrix((uint)3, (uint)3, matrOfArray);
+            InverseMatrix IM = new InverseMatrix(A);
+
+            Assert.ThrowsException<MatrixException>(() => IM.Calculate());
+        }
     }
 }

@@ -17,8 +17,8 @@ namespace MatrixLib
         //Получение или изменение операнда
         public Matrix MatrixOperand
         {
-            get;
-            set;
+            get { return _matrixOperand; }
+            set { _matrixOperand = value; }
         }
 
         //Нахождение обратной матрицы

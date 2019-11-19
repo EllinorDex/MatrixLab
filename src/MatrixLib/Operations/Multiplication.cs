@@ -19,15 +19,15 @@ namespace MatrixLib
         //Получение или изменение левого операнда
         public Matrix MatrixLeft
         {
-            get;
-            set;
+            get { return _matrixLeft; }
+            set { _matrixLeft = value; }
         }
 
         //Получение или изменение правого операнда
         public Matrix MatrixRight
         {
-            get;
-            set;
+            get { return _matrixRight; }
+            set { _matrixRight = value; }
         }
 
         //Подсчёт произведения
