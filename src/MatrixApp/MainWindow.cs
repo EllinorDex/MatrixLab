@@ -126,7 +126,7 @@ namespace MatrixApp
                 {
                     if (numericUpDown1.Value != numericUpDown2.Value)
                     {
-                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
+                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов.", "Ошибка!");
                         return;
                     }
                 }
@@ -134,7 +134,7 @@ namespace MatrixApp
                 form.Show();
             }
             else
-                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы", "Error");
+                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы.", "Ошибка!");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -145,7 +145,7 @@ namespace MatrixApp
                 {
                     if (numericUpDown3.Value != numericUpDown4.Value)
                     {
-                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
+                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов.", "Ошибка!");
                         return;
                     }
                 }
@@ -153,7 +153,7 @@ namespace MatrixApp
                 form.Show();
             }
             else
-                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы", "Error");
+                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы.", "Ошибка!");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -169,6 +169,11 @@ namespace MatrixApp
             {
                 MessageBox.Show("Для выполнения операции, пожалуйста, задайте все необходимые матрицы.", "Ошибка!");
             }
+            catch(MatrixLib.MatrixException)
+            {
+                MessageBox.Show("Размеры матриц не подходят для выполнения выбранной операции.\n" +
+                    "Пожалуйста, проверьте корректность размеров заданных Вами матриц.", "Ошибка!");
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -179,7 +184,7 @@ namespace MatrixApp
                 {
                     if (numericUpDown5.Value != numericUpDown6.Value)
                     {
-                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
+                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов.", "Ошибка!");
                         return;
                     }
                 }
@@ -187,7 +192,7 @@ namespace MatrixApp
                 form.Show();
             }
             else
-                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы", "Error");
+                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы.", "Ошибка!");
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -198,7 +203,7 @@ namespace MatrixApp
                 {
                     if (numericUpDown7.Value != numericUpDown8.Value)
                     {
-                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
+                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов.", "Ошибка!");
                         return;
                     }
                 }
@@ -206,15 +211,27 @@ namespace MatrixApp
                 form.Show();
             }
             else
-                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы", "Error");
+                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы.", "Ошибка!");
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            MatrixLib.Multiplication matrix = new MatrixLib.Multiplication(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
-            MatrixLib.Matrix resultMatrix = matrix.Calculate();
-            Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
-            form.Show();
+            try
+            {
+                MatrixLib.Multiplication matrix = new MatrixLib.Multiplication(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
+                MatrixLib.Matrix resultMatrix = matrix.Calculate();
+                Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
+                form.Show();
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Для выполнения операции, пожалуйста, задайте все необходимые матрицы.", "Ошибка!");
+            }
+            catch (MatrixLib.MatrixException)
+            {
+                MessageBox.Show("Размеры матриц не подходят для выполнения выбранной операции.\n" +
+                    "Пожалуйста, проверьте корректность размеров заданных Вами матриц.", "Ошибка!");
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -225,7 +242,7 @@ namespace MatrixApp
                 {
                     if (numericUpDown9.Value != numericUpDown10.Value)
                     {
-                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
+                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов.", "Ошибка!");
                         return;
                     }
                 }
@@ -233,15 +250,27 @@ namespace MatrixApp
                 form.Show();
             }
             else
-                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы", "Error");
+                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы.", "Ошибка!");
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            MatrixLib.InverseMatrix matrix = new MatrixLib.InverseMatrix(Matrix.GetLeftMatrix());
-            MatrixLib.Matrix resultMatrix = matrix.Calculate();
-            Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
-            form.Show();
+            try
+            { 
+                MatrixLib.InverseMatrix matrix = new MatrixLib.InverseMatrix(Matrix.GetLeftMatrix());
+                MatrixLib.Matrix resultMatrix = matrix.Calculate();
+                Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
+                form.Show();
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Для выполнения операции, пожалуйста, задайте матрицу.", "Ошибка!");
+            }
+            catch (MatrixLib.MatrixException)
+            {
+                MessageBox.Show("Введённая Вами матрица не является обратимой.\n" +
+                    "Пожалуйста, введите другую матрицу.", "Ошибка!");
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -252,7 +281,7 @@ namespace MatrixApp
                 {
                     if (numericUpDown11.Value != numericUpDown12.Value)
                     {
-                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов", "Error");
+                        MessageBox.Show("У диагональной и единичной матриц количество строк должно быть равно количеству столбцов.", "Ошибка!");
                         return;
                     }
                 }
@@ -260,14 +289,26 @@ namespace MatrixApp
                 form.Show();
             }
             else
-                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы", "Error");
+                MessageBox.Show("Пожалуйста, задайте все необходимые параметры для построения матрицы.", "Ошибка!");
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            MatrixLib.Determinant matrix = new MatrixLib.Determinant(Matrix.GetLeftMatrix());
-            int determinant = matrix.Calculate();
-            MessageBox.Show("Определитель матрицы равен", determinant.ToString());
+            try
+            {
+                MatrixLib.Determinant matrix = new MatrixLib.Determinant(Matrix.GetLeftMatrix());
+                int determinant = matrix.Calculate();
+                MessageBox.Show("Определитель матрицы равен " + determinant.ToString() + '.', "Определитель");
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Для выполнения операции, пожалуйста, задайте матрицу.", "Ошибка!");
+            }
+            catch (MatrixLib.MatrixException)
+            {
+                MessageBox.Show("Размер матрицы не позволяет вычислить её определитель.\n" +
+                    "Пожалуйста, проверьте корректность размеров заданной Вами матрицы.", "Ошибка!");
+            }
         }
     }
 }

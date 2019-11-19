@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 namespace MatrixLib
 {
     //Исключение, соответсвующее критическим ситуациям работы с матрицами
-    internal class MatrixException : Exception
+    public class MatrixException : Exception
     {
         public MatrixException() { }
 
