@@ -12,12 +12,12 @@ namespace MatrixTest.Operations
         public void SumZerosMatrix()
         {
             int[,] resultMatr = new int[5, 7];
-            Matrix A = new Matrix((uint)5, (uint)7, MatrixType.zeros);
-            Matrix B = new Matrix((uint)5, (uint)7, MatrixType.zeros);
+            Matrix<int> A = new Matrix<int>((uint)5, (uint)7, MatrixType.zeros);
+            Matrix<int> B = new Matrix<int>((uint)5, (uint)7, MatrixType.zeros);
 
-            Sum sum = new Sum(A, B);
+            Sum<int> sum = new Sum<int>(A, B);
 
-            Matrix C = sum.Calculate();
+            Matrix<int> C = sum.Calculate();
 
             CollectionAssert.AreEqual(resultMatr, C.Get2DArray());
         }
@@ -27,12 +27,12 @@ namespace MatrixTest.Operations
         {
             int[,] MatrA = new[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
             int[,] resultMatr = new int[,] { { 2, 4, 6 }, { 8, 10, 12 }, { 14, 16, 18 }, { 20, 22, 24 } };
-            Matrix A = new Matrix((uint)4, (uint)3, MatrA);
-            Matrix B = new Matrix((uint)4, (uint)3, MatrA);
+            Matrix<int> A = new Matrix<int>((uint)4, (uint)3, MatrA);
+            Matrix<int> B = new Matrix<int>((uint)4, (uint)3, MatrA);
 
-            Sum sum = new Sum(A, B);
+            Sum<int> sum = new Sum<int>(A, B);
 
-            Matrix C = sum.Calculate();
+            Matrix<int> C = sum.Calculate();
 
             CollectionAssert.AreEqual(resultMatr, C.Get2DArray());
         }
@@ -40,9 +40,9 @@ namespace MatrixTest.Operations
         [TestMethod]
         public void SumMatrixException()
         {
-            Matrix A = new Matrix((uint)4, (uint)5, MatrixType.zeros);
-            Matrix B = new Matrix((uint)5, (uint)4, MatrixType.zeros);
-            Sum SM = new Sum(A, B);
+            Matrix<int> A = new Matrix<int>((uint)4, (uint)5, MatrixType.zeros);
+            Matrix<int> B = new Matrix<int>((uint)5, (uint)4, MatrixType.zeros);
+            Sum<int> SM = new Sum<int>(A, B);
           
             Assert.ThrowsException<MatrixException>(() => SM.Calculate());
 

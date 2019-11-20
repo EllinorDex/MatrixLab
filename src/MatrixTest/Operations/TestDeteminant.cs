@@ -11,9 +11,9 @@ namespace MatrixTest.Operations
         public void DeteminantOnesMatrix()
         {
             
-            Matrix A = new Matrix((uint)5, (uint)5, MatrixType.ones);
+            Matrix<int> A = new Matrix<int>((uint)5, (uint)5, MatrixType.ones);
 
-            Determinant Matr = new Determinant(A);
+            Determinant<int> Matr = new Determinant<int>(A);
 
             int  detem = Matr.Calculate();
 
@@ -24,9 +24,9 @@ namespace MatrixTest.Operations
         public void DeteminantUsersMatrix0()
         {
             int[,] matrOfArray = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-            Matrix A = new Matrix((uint)3, (uint)3, matrOfArray);
+            Matrix<int> A = new Matrix<int>((uint)3, (uint)3, matrOfArray);
 
-            Determinant Matr = new Determinant(A);
+            Determinant<int> Matr = new Determinant<int>(A);
 
             int detem = Matr.Calculate();
 
@@ -37,9 +37,9 @@ namespace MatrixTest.Operations
         public void DeteminantUsersMatrixNumb()
         {
             int[,] matrOfArray = new int[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-            Matrix A = new Matrix((uint)3, (uint)3, matrOfArray);
+            Matrix<int> A = new Matrix<int>((uint)3, (uint)3, matrOfArray);
 
-            Determinant Matr = new Determinant(A);
+            Determinant<int> Matr = new Determinant<int>(A);
 
             int detem = Matr.Calculate();
 
@@ -50,9 +50,9 @@ namespace MatrixTest.Operations
         public void DeteminantException()
         {
             int[,] matrOfArray = new int[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 7, 8, 9 } };
-            Matrix A = new Matrix((uint)4, (uint)3, matrOfArray);
+            Matrix<int> A = new Matrix<int>((uint)4, (uint)3, matrOfArray);
 
-            Determinant DM = new Determinant(A);
+            Determinant<int> DM = new Determinant<int>(A);
 
             Assert.ThrowsException<MatrixException>(() => DM.Calculate());
         }

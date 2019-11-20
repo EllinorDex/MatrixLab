@@ -7,34 +7,34 @@ using System.Runtime.CompilerServices;
 namespace MatrixLib
 {
     //Конвертация C# <-> MATLAB
-    internal class Converter
+    internal class Converter<T> where T: IConvertible
     {
         //Конвертация из матрицы в встроенный тип MatLab
-        public MWArray ConvertFromMatrixToMLMatrix(Matrix matrix)
+        public MWArray ConvertFromMatrixToMLMatrix(Matrix<T> matrix)
         {
             MWNumericArray mwnArr = new MWNumericArray((Array)matrix.Get2DArray());
             return (MWArray)mwnArr;
         }
 
         //Конвертация из встроенного типа MatLab в матрицу
-        public int[,] ConvertFromMLMatrixToMatrix(MWArray mwMatrix)
+        public T[,] ConvertFromMLMatrixToMatrix(MWArray mwMatrix)
         {
             double[,] matrix = (double[,])mwMatrix.ToArray();
             int length1      = matrix.GetLength(0);
             int length2      = matrix.GetLength(1);
 
-            int[,] res = new int[length1, length2];
+            T[,] res = new T[length1, length2];
             for (int i = 0; i < length1; ++i)
                 for (int j = 0; j < length2; ++j)
-                    res[i, j] = (int)Math.Round(matrix[i, j], 3);
+                    res[i, j] = (T)Convert.ChangeType(Math.Round(matrix[i, j], 3),typeof(T));
             return res;
         }
 
         //Конвертация из встроенного типа MatLab в скаляр
-        public int ConvertFromMLMatrixToScalar(MWArray mwMatrix)
+        public T ConvertFromMLMatrixToScalar(MWArray mwMatrix)
         {
             double[,] matrix = (double[,])mwMatrix.ToArray();
-            int res          = (int)matrix[0,0];
+            T res            = (T)Convert.ChangeType(Math.Round(matrix[0, 0], 3), typeof(T));
 
             return res;
         }

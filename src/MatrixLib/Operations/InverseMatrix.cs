@@ -1,46 +1,47 @@
 ﻿using MathWorks.MATLAB.NET.Arrays;
 using Operations;
+using System;
 
 namespace MatrixLib
 {
     //Операция нахождения обратной матрицы
-    public class InverseMatrix : OperationThatReturnMatrix
+    public class InverseMatrix<T> : IOperationThatReturnMatrix<T> where T: IConvertible
     {
-        private Matrix _matrixOperand;
+        private Matrix<T> _matrixOperand;
 
         //Конструктор, в котором происходит формирование операнда
-        public InverseMatrix(Matrix matrixOperand)
+        public InverseMatrix(Matrix<T> matrixOperand)
         {
             _matrixOperand = matrixOperand;
         }
 
         //Получение или изменение операнда
-        public Matrix MatrixOperand
+        public Matrix<T> MatrixOperand
         {
             get { return _matrixOperand; }
             set { _matrixOperand = value; }
         }
 
         //Нахождение обратной матрицы
-        public Matrix Calculate()
+        public Matrix<T> Calculate()
         {
-            isCorrect(_matrixOperand);
+            IsCorrect(_matrixOperand);
             OperWithMatr op     = new OperWithMatr();
-            Converter converter = new Converter();
+            Converter<T> converter = new Converter<T>();
 
             MWArray[] result = op.InverseMatrix(1, converter.ConvertFromMatrixToMLMatrix(_matrixOperand));
-            int[,] resultArr = converter.ConvertFromMLMatrixToMatrix(result[0]);
+            T[,] resultArr = converter.ConvertFromMLMatrixToMatrix(result[0]);
 
-            return new Matrix(_matrixOperand.GetCountOfRows(), _matrixOperand.GetCountOfColumns(), resultArr);
+            return new Matrix<T>(_matrixOperand.GetCountOfRows(), _matrixOperand.GetCountOfColumns(), resultArr);
         }
 
         //Проверка корректности операции
-        private void isCorrect(Matrix matrixOperand)
+        private void IsCorrect(Matrix<T> matrixOperand)
         {
             if (matrixOperand.GetCountOfColumns() != matrixOperand.GetCountOfRows())
                 throw new MatrixException("The operation cannot be performed. Incorrect sizes of operand.");
-            Determinant det = new Determinant(matrixOperand);
-            if (det.Calculate() == 0)
+            Determinant<T> det = new Determinant<T>(matrixOperand);
+            if ((int)Convert.ChangeType(det.Calculate(),typeof(int)) == (int)Convert.ChangeType(default(T),typeof(int)))
                 throw new MatrixException("The operation cannot be performed. Incorrect matrix.");
         }
     }

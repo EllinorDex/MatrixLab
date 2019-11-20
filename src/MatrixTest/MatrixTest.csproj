@@ -110,13 +110,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OperationsDouble\TestDeteminantDouble.cs" />
+    <Compile Include="OperationsDouble\TestInverseDouble.cs" />
+    <Compile Include="OperationsDouble\TestMultiplicationDouble.cs" />
+    <Compile Include="OperationsDouble\TestSumDouble.cs" />
     <Compile Include="Operations\TestDeteminant.cs" />
     <Compile Include="Operations\TestInverse.cs" />
     <Compile Include="Operations\TestMultiplication.cs" />
-    <Compile Include="TestConverter.cs" />
     <Compile Include="TestMatrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Operations\TestSum.cs" />
+    <Compile Include="TestMatrixDouble.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

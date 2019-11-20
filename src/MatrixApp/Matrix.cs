@@ -164,25 +164,25 @@ namespace MatrixApp
             if (_comboBoxValue == "Пользовательская" || _comboBoxValue == "Загруженная" || _comboBoxValue == "Диагональная")
             {
                 if (_operand == "Left Matrix")
-                    _leftMatrix = new MatrixLib.Matrix((uint)_numberOfRows, (uint)_numberOfColumns, matrixWrite());
+                    _leftMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, matrixWrite());
                 else
-                    _rightMatrix = new MatrixLib.Matrix((uint)_numberOfRows, (uint)_numberOfColumns, matrixWrite());
+                    _rightMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, matrixWrite());
             }
 
             if (_comboBoxValue == "Единичная")
             {
                 if (_operand == "Left Matrix")
-                    _leftMatrix = new MatrixLib.Matrix((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.ones);
+                    _leftMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.ones);
                 else
-                    _rightMatrix = new MatrixLib.Matrix((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.ones);
+                    _rightMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.ones);
             }
 
             if (_comboBoxValue == "Нулевая")
             {
                 if (_operand == "Left Matrix")
-                    _leftMatrix = new MatrixLib.Matrix((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.zeros);
+                    _leftMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.zeros);
                 else
-                    _rightMatrix = new MatrixLib.Matrix((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.zeros);
+                    _rightMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.zeros);
             }
 
             Close();
@@ -209,12 +209,12 @@ namespace MatrixApp
             return arrayOfValues;
         }
 
-        static public MatrixLib.Matrix GetLeftMatrix()
+        static public MatrixLib.Matrix<int> GetLeftMatrix()
         {
             return _leftMatrix;
         }
 
-        static public MatrixLib.Matrix GetRightMatrix()
+        static public MatrixLib.Matrix<int> GetRightMatrix()
         {
             return _rightMatrix;
         }
@@ -225,7 +225,7 @@ namespace MatrixApp
         private int _numberOfColumns;
         private string _comboBoxValue;
 
-        static private MatrixLib.Matrix _leftMatrix;
-        static private MatrixLib.Matrix _rightMatrix;
+        static private MatrixLib.Matrix<int> _leftMatrix;
+        static private MatrixLib.Matrix<int> _rightMatrix;
     }
 }

@@ -186,8 +186,8 @@ namespace MatrixApp
         {
             try
             {
-                MatrixLib.Sum matrix = new MatrixLib.Sum(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
-                MatrixLib.Matrix resultMatrix = matrix.Calculate();
+                MatrixLib.Sum<int> matrix = new MatrixLib.Sum<int>(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
+                MatrixLib.Matrix<int> resultMatrix = matrix.Calculate();
                 Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
                 form.Show();
             }
@@ -244,8 +244,8 @@ namespace MatrixApp
         {
             try
             {
-                MatrixLib.Multiplication matrix = new MatrixLib.Multiplication(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
-                MatrixLib.Matrix resultMatrix = matrix.Calculate();
+                MatrixLib.Multiplication<int> matrix = new MatrixLib.Multiplication<int>(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
+                MatrixLib.Matrix<int> resultMatrix = matrix.Calculate();
                 Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
                 form.Show();
             }
@@ -283,8 +283,8 @@ namespace MatrixApp
         {
             try
             { 
-                MatrixLib.InverseMatrix matrix = new MatrixLib.InverseMatrix(Matrix.GetLeftMatrix());
-                MatrixLib.Matrix resultMatrix = matrix.Calculate();
+                MatrixLib.InverseMatrix<int> matrix = new MatrixLib.InverseMatrix<int>(Matrix.GetLeftMatrix());
+                MatrixLib.Matrix<int> resultMatrix = matrix.Calculate();
                 Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
                 form.Show();
             }
@@ -322,7 +322,7 @@ namespace MatrixApp
         {
             try
             {
-                MatrixLib.Determinant matrix = new MatrixLib.Determinant(Matrix.GetLeftMatrix());
+                MatrixLib.Determinant<int> matrix = new MatrixLib.Determinant<int>(Matrix.GetLeftMatrix());
                 int determinant = matrix.Calculate();
                 MessageBox.Show("Определитель матрицы равен " + determinant.ToString() + '.', "Определитель");
             }
