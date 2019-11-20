@@ -41,11 +41,21 @@ namespace MatrixTest.Operations
         public void SumMatrixException()
         {
             Matrix<int> A = new Matrix<int>((uint)4, (uint)5, MatrixType.zeros);
-            Matrix<int> B = new Matrix<int>((uint)5, (uint)4, MatrixType.zeros);
+            Matrix<int> B = new Matrix<int>((uint)4, (uint)4, MatrixType.zeros);
             Sum<int> SM = new Sum<int>(A, B);
-          
-            Assert.ThrowsException<MatrixException>(() => SM.Calculate());
 
+            bool Except = false;
+
+            try
+            {
+                Matrix<int> M = SM.Calculate();
+            }
+            catch (MatrixException)
+            {
+                Except = true;
+            }
+
+            Assert.IsTrue(Except);
         }
 
     }

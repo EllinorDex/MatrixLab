@@ -45,7 +45,39 @@ namespace MatrixTest.OperationsDouble
             Matrix<double> B = new Matrix<double>((uint)4, (uint)5, MatrixType.zeros);
             Multiplication<double> Mult = new Multiplication<double>(A, B);
 
-            Assert.ThrowsException<MatrixException>(() => Mult.Calculate());
+            bool Except = false;
+
+            try
+            {
+                Matrix<double> M = Mult.Calculate();
+            }
+            catch (MatrixException)
+            {
+                Except = true;
+            }
+
+            Assert.IsTrue(Except);
         }
+
+        [TestMethod]
+        public void GetSetMultMatrixDouble()
+        {
+            Matrix<double> A = new Matrix<double>((uint)4, (uint)5, MatrixType.zeros);
+            Matrix<double> B = new Matrix<double>((uint)5, (uint)5, MatrixType.ones);
+
+            double[,] MatrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
+            Matrix<double> C = new Matrix<double>((uint)4, (uint)3, MatrA);
+            Matrix<double> D = new Matrix<double>((uint)4, (uint)3, MatrA);
+            Multiplication<double> SM = new Multiplication<double>(A, B);
+
+            SM.MatrixLeft = C;
+            //
+            SM.MatrixRight = D;
+
+            CollectionAssert.AreEqual(SM.MatrixLeft.Get2DArray(), C.Get2DArray());
+            CollectionAssert.AreEqual(SM.MatrixRight.Get2DArray(), C.Get2DArray());
+
+        }
+
     }
 }

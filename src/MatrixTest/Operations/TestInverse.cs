@@ -65,7 +65,18 @@ namespace MatrixTest.Operations
             Matrix<int> A = new Matrix<int>((uint)3, (uint)3, matrOfArray);
             InverseMatrix<int> IM = new InverseMatrix<int>(A);
 
-            Assert.ThrowsException<MatrixException>(() => IM.Calculate());
+            bool Except = false;
+
+            try
+            {
+                Matrix<int> M = IM.Calculate();
+            }
+            catch (MatrixException)
+            {
+                Except = true;
+            }
+
+            Assert.IsTrue(Except);
         }
     }
 }
