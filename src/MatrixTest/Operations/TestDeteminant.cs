@@ -54,7 +54,18 @@ namespace MatrixTest.Operations
 
             Determinant<int> DM = new Determinant<int>(A);
 
-            Assert.ThrowsException<MatrixException>(() => DM.Calculate());
+            bool Except = false;
+
+            try
+            {
+                int M = DM.Calculate();
+            }
+            catch (MatrixException)
+            {
+                Except = true;
+            }
+
+            Assert.IsTrue(Except);
         }
     }
 }

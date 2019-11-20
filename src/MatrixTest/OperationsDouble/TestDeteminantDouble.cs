@@ -54,7 +54,33 @@ namespace MatrixTest.OperationsDouble
 
             Determinant<double> DM = new Determinant<double>(A);
 
-            Assert.ThrowsException<MatrixException>(() => DM.Calculate());
+            bool Except = false;
+
+            try
+            {
+                double M = DM.Calculate();
+            }
+            catch (MatrixException)
+            {
+                Except = true;
+            }
+
+            Assert.IsTrue(Except);
+        }
+
+        [TestMethod]
+        public void GetSetDeterminantMatrixDouble()
+        {
+            Matrix<double> A = new Matrix<double>((uint)4, (uint)5, MatrixType.zeros);
+
+            double[,] MatrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
+            Matrix<double> C = new Matrix<double>((uint)4, (uint)3, MatrA);
+            Determinant<double> SM = new Determinant<double>(A);
+
+            SM.MatrixOperand = C;
+
+            CollectionAssert.AreEqual(SM.MatrixOperand.Get2DArray(), C.Get2DArray());
+
         }
     }
 }

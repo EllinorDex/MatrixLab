@@ -50,22 +50,38 @@ namespace MatrixTest.OperationsDouble
         [TestMethod]
         public void InverseExceptionDouble()
         {
-            double[,] matrOfArray = new double[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 7, 8, 9 } };
-
-            Matrix<double> A = new Matrix<double>((uint)4, (uint)3, matrOfArray);
-            InverseMatrix<double> IM = new InverseMatrix<double>(A);
-
-            Assert.ThrowsException<MatrixException>(() => IM.Calculate());
-        }
-
-        [TestMethod]
-        public void IsCorrectNotExceptionDouble()
-        {
             double[,] matrOfArray = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
             Matrix<double> A = new Matrix<double>((uint)3, (uint)3, matrOfArray);
             InverseMatrix<double> IM = new InverseMatrix<double>(A);
 
-            Assert.ThrowsException<MatrixException>(() => IM.Calculate());
+            bool Except = false;
+
+            try
+            {
+                Matrix<double> M = IM.Calculate();
+            }
+            catch (MatrixException)
+            {
+                Except = true;
+            }
+
+            Assert.IsTrue(Except);
         }
+
+        [TestMethod]
+        public void GetSetSumMatrixDouble()
+        {
+            Matrix<double> A = new Matrix<double>((uint)4, (uint)5, MatrixType.zeros);
+
+            double[,] MatrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
+            Matrix<double> C = new Matrix<double>((uint)4, (uint)3, MatrA);
+            InverseMatrix<double> SM = new InverseMatrix<double>(A);
+
+            SM.MatrixOperand = C;
+
+            CollectionAssert.AreEqual(SM.MatrixOperand.Get2DArray(), C.Get2DArray());
+
+        }
+
     }
 }
