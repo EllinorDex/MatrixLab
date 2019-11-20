@@ -70,8 +70,24 @@ namespace MatrixApp
             for (int i = 0; i < numberOfRows; ++i)
             {
                 matrixRow = matrix[i].Split(' ');
-                for (int j = 0; j < numberOfColumns; ++j)
-                    arrayOfMatrixValues[i, j] = Convert.ToInt32(matrixRow[j]);
+                try
+                {
+                    if (matrix[i].Split(' ').Length == numberOfColumns)
+                    {
+                        for (int j = 0; j < numberOfColumns; ++j)
+                            arrayOfMatrixValues[i, j] = Convert.ToInt32(matrixRow[j]);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Матрица, которую Вы пытались загрузить из файла, задана некорректно.", "Ошибка!");
+                        return;
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Матрица, которую Вы пытались загрузить из файла, задана некорректно.", "Ошибка!");
+                    return;
+                }
             }
             Matrix form = new Matrix(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Left Matrix");
             form.Show();
@@ -91,8 +107,24 @@ namespace MatrixApp
             for (int i = 0; i < numberOfRows; ++i)
             {
                 matrixRow = matrix[i].Split(' ');
-                for (int j = 0; j < numberOfColumns; ++j)
-                    arrayOfMatrixValues[i, j] = Convert.ToInt32(matrixRow[j]);
+                try
+                {
+                    if (matrix[i].Split(' ').Length == numberOfColumns)
+                    {
+                        for (int j = 0; j < numberOfColumns; ++j)
+                            arrayOfMatrixValues[i, j] = Convert.ToInt32(matrixRow[j]);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Матрица, которую Вы пытались загрузить из файла, задана некорректно.", "Ошибка!");
+                        return;
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Матрица, которую Вы пытались загрузить из файла, задана некорректно.", "Ошибка!");
+                    return;
+                }
             }
             Matrix form = new Matrix(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Right Matrix");
             form.Show();
