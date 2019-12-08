@@ -208,7 +208,7 @@
             this.delToolStripMenuItem.Name = "delToolStripMenuItem";
             this.delToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
             this.delToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
-            this.delToolStripMenuItem.Text = "Dev";
+            this.delToolStripMenuItem.Text = "Det";
             this.delToolStripMenuItem.Click += new System.EventHandler(this.detToolStripMenuItem_Click);
             // 
             // infoToolStripMenuItem
@@ -295,22 +295,22 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(709, 22);
+            this.label5.Location = new System.Drawing.Point(774, 22);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(410, 55);
+            this.label5.Size = new System.Drawing.Size(291, 55);
             this.label5.TabIndex = 37;
-            this.label5.Text = "Правая матрица";
+            this.label5.Text = "Right matrix";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(705, 190);
+            this.label8.Location = new System.Drawing.Point(760, 196);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(175, 29);
+            this.label8.Size = new System.Drawing.Size(134, 29);
             this.label8.TabIndex = 36;
-            this.label8.Text = "Тип матрицы:";
+            this.label8.Text = "Matrix type:";
             // 
             // comboBox2
             // 
@@ -318,20 +318,20 @@
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Пользовательская",
-            "Диагональная",
-            "Единичная",
-            "Нулевая"});
-            this.comboBox2.Location = new System.Drawing.Point(915, 191);
+            "Custom",
+            "Diagonal",
+            "Unit",
+            "Zero"});
+            this.comboBox2.Location = new System.Drawing.Point(970, 197);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(221, 28);
+            this.comboBox2.Size = new System.Drawing.Size(121, 28);
             this.comboBox2.TabIndex = 35;
             // 
             // numericUpDown4
             // 
             this.numericUpDown4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown4.Location = new System.Drawing.Point(1065, 143);
+            this.numericUpDown4.Location = new System.Drawing.Point(1021, 149);
             this.numericUpDown4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(71, 30);
@@ -347,16 +347,16 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(705, 142);
+            this.label7.Location = new System.Drawing.Point(760, 148);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(273, 29);
+            this.label7.Size = new System.Drawing.Size(228, 29);
             this.label7.TabIndex = 33;
-            this.label7.Text = "Количество столбцов:";
+            this.label7.Text = "Number of columns:";
             // 
             // numericUpDown3
             // 
             this.numericUpDown3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown3.Location = new System.Drawing.Point(1065, 95);
+            this.numericUpDown3.Location = new System.Drawing.Point(1021, 101);
             this.numericUpDown3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(71, 30);
@@ -372,21 +372,21 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(705, 94);
+            this.label6.Location = new System.Drawing.Point(760, 100);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(228, 29);
+            this.label6.Size = new System.Drawing.Size(190, 29);
             this.label6.TabIndex = 31;
-            this.label6.Text = "Количество строк:";
+            this.label6.Text = "Number of rows:";
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(759, 319);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(341, 70);
             this.button2.TabIndex = 30;
-            this.button2.Text = "Задать правую матрицу";
+            this.button2.Text = "Set right matrix";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -394,22 +394,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(100, 22);
+            this.label1.Location = new System.Drawing.Point(167, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(381, 55);
+            this.label1.Size = new System.Drawing.Size(258, 55);
             this.label1.TabIndex = 29;
-            this.label1.Text = "Левая матрица";
+            this.label1.Text = "Left matrix";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(80, 190);
+            this.label4.Location = new System.Drawing.Point(135, 196);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(175, 29);
+            this.label4.Size = new System.Drawing.Size(134, 29);
             this.label4.TabIndex = 26;
-            this.label4.Text = "Тип матрицы:";
+            this.label4.Text = "Matrix type:";
             // 
             // comboBox1
             // 
@@ -417,20 +417,20 @@
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Пользовательская",
-            "Диагональная",
-            "Единичная",
-            "Нулевая"});
-            this.comboBox1.Location = new System.Drawing.Point(290, 191);
+            "Custom",
+            "Diagonal",
+            "Unit",
+            "Zero"});
+            this.comboBox1.Location = new System.Drawing.Point(345, 197);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(221, 28);
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
             this.comboBox1.TabIndex = 23;
             // 
             // numericUpDown2
             // 
             this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown2.Location = new System.Drawing.Point(440, 143);
+            this.numericUpDown2.Location = new System.Drawing.Point(397, 149);
             this.numericUpDown2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(71, 30);
@@ -446,16 +446,16 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(80, 142);
+            this.label3.Location = new System.Drawing.Point(135, 148);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(273, 29);
+            this.label3.Size = new System.Drawing.Size(228, 29);
             this.label3.TabIndex = 21;
-            this.label3.Text = "Количество столбцов:";
+            this.label3.Text = "Number of columns:";
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown1.Location = new System.Drawing.Point(440, 95);
+            this.numericUpDown1.Location = new System.Drawing.Point(397, 101);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(71, 30);
@@ -471,11 +471,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(80, 94);
+            this.label2.Location = new System.Drawing.Point(135, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(228, 29);
+            this.label2.Size = new System.Drawing.Size(190, 29);
             this.label2.TabIndex = 19;
-            this.label2.Text = "Количество строк:";
+            this.label2.Text = "Number of rows:";
             // 
             // button3
             // 
@@ -485,19 +485,19 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(383, 87);
             this.button3.TabIndex = 12;
-            this.button3.Text = "Вычислить!";
+            this.button3.Text = "Calculate!";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(134, 319);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(341, 70);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Задать левую матрицу";
+            this.button1.Text = "Set left matrix";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -533,22 +533,22 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(709, 22);
+            this.label13.Location = new System.Drawing.Point(774, 22);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(410, 55);
+            this.label13.Size = new System.Drawing.Size(291, 55);
             this.label13.TabIndex = 54;
-            this.label13.Text = "Правая матрица";
+            this.label13.Text = "Right matrix";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(705, 190);
+            this.label16.Location = new System.Drawing.Point(760, 196);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(175, 29);
+            this.label16.Size = new System.Drawing.Size(134, 29);
             this.label16.TabIndex = 53;
-            this.label16.Text = "Тип матрицы:";
+            this.label16.Text = "Matrix type:";
             // 
             // comboBox4
             // 
@@ -556,20 +556,20 @@
             this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
-            "Пользовательская",
-            "Диагональная",
-            "Единичная",
-            "Нулевая"});
-            this.comboBox4.Location = new System.Drawing.Point(915, 191);
+            "Custom",
+            "Diagonal",
+            "Unit",
+            "Zero"});
+            this.comboBox4.Location = new System.Drawing.Point(970, 197);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(221, 28);
+            this.comboBox4.Size = new System.Drawing.Size(121, 28);
             this.comboBox4.TabIndex = 52;
             // 
             // numericUpDown8
             // 
             this.numericUpDown8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown8.Location = new System.Drawing.Point(1065, 143);
+            this.numericUpDown8.Location = new System.Drawing.Point(1021, 149);
             this.numericUpDown8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown8.Name = "numericUpDown8";
             this.numericUpDown8.Size = new System.Drawing.Size(71, 30);
@@ -585,16 +585,16 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(705, 142);
+            this.label15.Location = new System.Drawing.Point(760, 148);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(273, 29);
+            this.label15.Size = new System.Drawing.Size(228, 29);
             this.label15.TabIndex = 50;
-            this.label15.Text = "Количество столбцов:";
+            this.label15.Text = "Number of columns:";
             // 
             // numericUpDown7
             // 
             this.numericUpDown7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown7.Location = new System.Drawing.Point(1065, 95);
+            this.numericUpDown7.Location = new System.Drawing.Point(1021, 101);
             this.numericUpDown7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown7.Name = "numericUpDown7";
             this.numericUpDown7.Size = new System.Drawing.Size(71, 30);
@@ -610,21 +610,21 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(705, 94);
+            this.label14.Location = new System.Drawing.Point(760, 100);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(228, 29);
+            this.label14.Size = new System.Drawing.Size(190, 29);
             this.label14.TabIndex = 48;
-            this.label14.Text = "Количество строк:";
+            this.label14.Text = "Number of rows:";
             // 
             // button5
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.Location = new System.Drawing.Point(759, 319);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(341, 70);
             this.button5.TabIndex = 47;
-            this.button5.Text = "Задать правую матрицу";
+            this.button5.Text = "Set right matrix";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -632,22 +632,22 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(100, 22);
+            this.label9.Location = new System.Drawing.Point(167, 22);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(381, 55);
+            this.label9.Size = new System.Drawing.Size(258, 55);
             this.label9.TabIndex = 46;
-            this.label9.Text = "Левая матрица";
+            this.label9.Text = "Left matrix";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(80, 190);
+            this.label12.Location = new System.Drawing.Point(135, 196);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(175, 29);
+            this.label12.Size = new System.Drawing.Size(134, 29);
             this.label12.TabIndex = 45;
-            this.label12.Text = "Тип матрицы:";
+            this.label12.Text = "Matrix type:";
             // 
             // comboBox3
             // 
@@ -655,20 +655,20 @@
             this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "Пользовательская",
-            "Диагональная",
-            "Единичная",
-            "Нулевая"});
-            this.comboBox3.Location = new System.Drawing.Point(290, 191);
+            "Custom",
+            "Diagonal",
+            "Unit",
+            "Zero"});
+            this.comboBox3.Location = new System.Drawing.Point(345, 197);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(221, 28);
+            this.comboBox3.Size = new System.Drawing.Size(121, 28);
             this.comboBox3.TabIndex = 44;
             // 
             // numericUpDown6
             // 
             this.numericUpDown6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown6.Location = new System.Drawing.Point(440, 143);
+            this.numericUpDown6.Location = new System.Drawing.Point(397, 149);
             this.numericUpDown6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown6.Name = "numericUpDown6";
             this.numericUpDown6.Size = new System.Drawing.Size(71, 30);
@@ -684,16 +684,16 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(80, 142);
+            this.label11.Location = new System.Drawing.Point(135, 148);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(273, 29);
+            this.label11.Size = new System.Drawing.Size(228, 29);
             this.label11.TabIndex = 42;
-            this.label11.Text = "Количество столбцов:";
+            this.label11.Text = "Number of columns:";
             // 
             // numericUpDown5
             // 
             this.numericUpDown5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown5.Location = new System.Drawing.Point(440, 95);
+            this.numericUpDown5.Location = new System.Drawing.Point(397, 101);
             this.numericUpDown5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown5.Name = "numericUpDown5";
             this.numericUpDown5.Size = new System.Drawing.Size(71, 30);
@@ -709,11 +709,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(80, 94);
+            this.label10.Location = new System.Drawing.Point(135, 100);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(228, 29);
+            this.label10.Size = new System.Drawing.Size(190, 29);
             this.label10.TabIndex = 40;
-            this.label10.Text = "Количество строк:";
+            this.label10.Text = "Number of rows:";
             // 
             // button6
             // 
@@ -723,19 +723,19 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(383, 87);
             this.button6.TabIndex = 39;
-            this.button6.Text = "Вычислить!";
+            this.button6.Text = "Calculate!";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.Location = new System.Drawing.Point(134, 319);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(341, 70);
             this.button4.TabIndex = 38;
-            this.button4.Text = "Задать левую матрицу";
+            this.button4.Text = "Set left matrix";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -763,22 +763,22 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(490, 22);
+            this.label17.Location = new System.Drawing.Point(532, 22);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(229, 55);
+            this.label17.Size = new System.Drawing.Size(160, 55);
             this.label17.TabIndex = 55;
-            this.label17.Text = "Матрица";
+            this.label17.Text = "Matrix";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.Location = new System.Drawing.Point(391, 190);
+            this.label20.Location = new System.Drawing.Point(446, 196);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(175, 29);
+            this.label20.Size = new System.Drawing.Size(134, 29);
             this.label20.TabIndex = 54;
-            this.label20.Text = "Тип матрицы:";
+            this.label20.Text = "Matrix type:";
             // 
             // comboBox5
             // 
@@ -786,20 +786,20 @@
             this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Items.AddRange(new object[] {
-            "Пользовательская",
-            "Диагональная",
-            "Единичная",
-            "Нулевая"});
-            this.comboBox5.Location = new System.Drawing.Point(601, 191);
+            "Custom",
+            "Diagonal",
+            "Unit",
+            "Zero"});
+            this.comboBox5.Location = new System.Drawing.Point(656, 197);
             this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(221, 28);
+            this.comboBox5.Size = new System.Drawing.Size(121, 28);
             this.comboBox5.TabIndex = 53;
             // 
             // numericUpDown10
             // 
             this.numericUpDown10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown10.Location = new System.Drawing.Point(751, 143);
+            this.numericUpDown10.Location = new System.Drawing.Point(708, 149);
             this.numericUpDown10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown10.Name = "numericUpDown10";
             this.numericUpDown10.Size = new System.Drawing.Size(71, 30);
@@ -815,16 +815,16 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(391, 142);
+            this.label19.Location = new System.Drawing.Point(446, 148);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(273, 29);
+            this.label19.Size = new System.Drawing.Size(228, 29);
             this.label19.TabIndex = 51;
-            this.label19.Text = "Количество столбцов:";
+            this.label19.Text = "Number of columns:";
             // 
             // numericUpDown9
             // 
             this.numericUpDown9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown9.Location = new System.Drawing.Point(751, 95);
+            this.numericUpDown9.Location = new System.Drawing.Point(708, 101);
             this.numericUpDown9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown9.Name = "numericUpDown9";
             this.numericUpDown9.Size = new System.Drawing.Size(71, 30);
@@ -840,11 +840,11 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(391, 94);
+            this.label18.Location = new System.Drawing.Point(446, 100);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(228, 29);
+            this.label18.Size = new System.Drawing.Size(190, 29);
             this.label18.TabIndex = 49;
-            this.label18.Text = "Количество строк:";
+            this.label18.Text = "Number of rows:";
             // 
             // button8
             // 
@@ -854,19 +854,19 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(383, 87);
             this.button8.TabIndex = 48;
-            this.button8.Text = "Вычислить!";
+            this.button8.Text = "Calculate!";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button7.Location = new System.Drawing.Point(445, 319);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(341, 70);
             this.button7.TabIndex = 47;
-            this.button7.Text = "Задать матрицу";
+            this.button7.Text = "Set matrix";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -887,29 +887,29 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.Size = new System.Drawing.Size(1269, 554);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Dev";
+            this.tabPage4.Text = "Det";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.Location = new System.Drawing.Point(490, 22);
+            this.label21.Location = new System.Drawing.Point(532, 22);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(229, 55);
+            this.label21.Size = new System.Drawing.Size(160, 55);
             this.label21.TabIndex = 64;
-            this.label21.Text = "Матрица";
+            this.label21.Text = "Matrix";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label24.Location = new System.Drawing.Point(391, 190);
+            this.label24.Location = new System.Drawing.Point(446, 196);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(175, 29);
+            this.label24.Size = new System.Drawing.Size(134, 29);
             this.label24.TabIndex = 63;
-            this.label24.Text = "Тип матрицы:";
+            this.label24.Text = "Matrix type:";
             // 
             // comboBox6
             // 
@@ -917,20 +917,20 @@
             this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Items.AddRange(new object[] {
-            "Пользовательская",
-            "Диагональная",
-            "Единичная",
-            "Нулевая"});
-            this.comboBox6.Location = new System.Drawing.Point(601, 191);
+            "Custom",
+            "Diagonal",
+            "Unit",
+            "Zero"});
+            this.comboBox6.Location = new System.Drawing.Point(656, 197);
             this.comboBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(221, 28);
+            this.comboBox6.Size = new System.Drawing.Size(121, 28);
             this.comboBox6.TabIndex = 62;
             // 
             // numericUpDown12
             // 
             this.numericUpDown12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown12.Location = new System.Drawing.Point(751, 143);
+            this.numericUpDown12.Location = new System.Drawing.Point(708, 149);
             this.numericUpDown12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown12.Name = "numericUpDown12";
             this.numericUpDown12.Size = new System.Drawing.Size(71, 30);
@@ -946,16 +946,16 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label23.Location = new System.Drawing.Point(391, 142);
+            this.label23.Location = new System.Drawing.Point(446, 148);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(273, 29);
+            this.label23.Size = new System.Drawing.Size(228, 29);
             this.label23.TabIndex = 60;
-            this.label23.Text = "Количество столбцов:";
+            this.label23.Text = "Number of columns:";
             // 
             // numericUpDown11
             // 
             this.numericUpDown11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown11.Location = new System.Drawing.Point(751, 95);
+            this.numericUpDown11.Location = new System.Drawing.Point(708, 101);
             this.numericUpDown11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown11.Name = "numericUpDown11";
             this.numericUpDown11.Size = new System.Drawing.Size(71, 30);
@@ -971,11 +971,11 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label22.Location = new System.Drawing.Point(391, 94);
+            this.label22.Location = new System.Drawing.Point(446, 100);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(228, 29);
+            this.label22.Size = new System.Drawing.Size(190, 29);
             this.label22.TabIndex = 58;
-            this.label22.Text = "Количество строк:";
+            this.label22.Text = "Number of rows:";
             // 
             // button10
             // 
@@ -985,19 +985,19 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(383, 87);
             this.button10.TabIndex = 57;
-            this.button10.Text = "Вычислить!";
+            this.button10.Text = "Calculate!";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button9.Location = new System.Drawing.Point(445, 319);
             this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(341, 70);
             this.button9.TabIndex = 56;
-            this.button9.Text = "Задать матрицу";
+            this.button9.Text = "Set matrix";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -1015,7 +1015,7 @@
             this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MatLabForm";
+            this.Text = "MatLab";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);

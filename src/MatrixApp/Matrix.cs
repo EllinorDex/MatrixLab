@@ -26,7 +26,11 @@ namespace MatrixApp
             for (int i = 0; i < matrixValues.GetLength(0); ++i)
                 for (int j = 0; j < matrixValues.GetLength(1); ++j)
                     _resultMatrixValues[i, j] = matrixValues[i, j];
-            _comboBoxValue = "Результирующая";
+            _comboBoxValue = "Result";
+            _operand = "Result";
+
+            _resultMatrix = new MatrixLib.Matrix<int>((uint)_resultMatrixValues.GetLength(0),
+                (uint)_resultMatrixValues.GetLength(1), _resultMatrixValues);
         }
 
         public Matrix(NumericUpDown firstNumericUpDown, NumericUpDown secondNumericUpDown, ComboBox comboBox, string operand)
@@ -47,29 +51,65 @@ namespace MatrixApp
             for (int i = 0; i < matrixValues.GetLength(0); ++i)
                 for (int j = 0; j < matrixValues.GetLength(1); ++j)
                     _resultMatrixValues[i, j] = matrixValues[i, j];
-            _comboBoxValue = "Загруженная";
+            _comboBoxValue = "Loaded";
             _operand = operand;
         }
 
         private void Matrix_Load(object sender, EventArgs e)
         {
-            if (_comboBoxValue == "Пользовательская")
-                userMatrix();
+            this.Text = _operand;
 
-            if (_comboBoxValue == "Загруженная")
-                loadedMatrix();
+            _userMatrixValues = new int[_numberOfRows, _numberOfColumns];
 
-            if (_comboBoxValue == "Диагональная")
-                diagMatrix();
+            if (_resultMatrix == null || _rightMatrix == null || _numberOfRows > _rightMatrix.Get2DArray().GetLength(0)
+                || _numberOfColumns > _rightMatrix.Get2DArray().GetLength(1)
+                || _numberOfRows > _resultMatrix.Get2DArray().GetLength(0) || _numberOfColumns > _resultMatrix.Get2DArray().GetLength(1))
+            {
+                for (int i = 0; i < _numberOfRows; ++i)
+                    for (int j = 0; j < _numberOfColumns; ++j)
+                        _userMatrixValues[i, j] = 1;
+            }
 
-            if (_comboBoxValue == "Единичная")
-                unitMatrix();
+            else if (_resultMatrix != null && _operand == "Left Matrix")
+            {
+                for (int i = 0; i < _numberOfRows; ++i)
+                    for (int j = 0; j < _numberOfColumns; ++j)
+                        _userMatrixValues[i, j] = _resultMatrix.Get2DArray()[i, j];
 
-            if (_comboBoxValue == "Нулевая")
-                zeroMatrix();
+                _leftMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, _userMatrixValues);
+                _resultMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, _userMatrixValues);
+            }
 
-            if (_comboBoxValue == "Результирующая")
-                resultMatrix();
+            else if (_rightMatrix != null && _operand == "Right Matrix")
+            {
+                for (int i = 0; i < _numberOfRows; ++i)
+                    for (int j = 0; j < _numberOfColumns; ++j)
+                        _userMatrixValues[i, j] = _rightMatrix.Get2DArray()[i, j];
+
+                _rightMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, _userMatrixValues);
+            }
+            
+            switch(_comboBoxValue)
+            {
+                case "Custom":
+                    userMatrix();
+                    break;
+                case "Diagonal":
+                    diagMatrix();
+                    break;
+                case "Unit":
+                    unitMatrix();
+                    break;
+                case "Zero":
+                    zeroMatrix();
+                    break;
+                case "Loaded":
+                    loadedMatrix();
+                    break;
+                case "Result":
+                    resultMatrix();
+                    break;
+            }
         }
 
         partial void userMatrix()
@@ -79,7 +119,7 @@ namespace MatrixApp
             for (int i = 0; i < _numberOfRows; ++i)
             {
                 for (int j = 0; j < _numberOfColumns; ++j)
-                    dataGridView1.Rows[i].Cells[j].Value = 1;
+                    dataGridView1.Rows[i].Cells[j].Value = _userMatrixValues[i, j];
             }
         }
 
@@ -161,27 +201,30 @@ namespace MatrixApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (_comboBoxValue == "Пользовательская" || _comboBoxValue == "Загруженная" || _comboBoxValue == "Диагональная")
+            if (_comboBoxValue == "Custom" || _comboBoxValue == "Loaded" || _comboBoxValue == "Diagonal")
             {
                 if (_operand == "Left Matrix")
                     _leftMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, matrixWrite());
-                else
+
+                if (_operand == "Right Matrix")
                     _rightMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, matrixWrite());
             }
 
-            if (_comboBoxValue == "Единичная")
+            if (_comboBoxValue == "Unit")
             {
                 if (_operand == "Left Matrix")
                     _leftMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.ones);
-                else
+
+                if (_operand == "Right Matrix")
                     _rightMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.ones);
             }
 
-            if (_comboBoxValue == "Нулевая")
+            if (_comboBoxValue == "Zero")
             {
                 if (_operand == "Left Matrix")
                     _leftMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.zeros);
-                else
+
+                if (_operand == "Right Matrix")
                     _rightMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.zeros);
             }
 
@@ -201,8 +244,8 @@ namespace MatrixApp
                     }
                     catch (FormatException)
                     {
-                        MessageBox.Show("Вы ввели некорректный символ как элемент матрицы.\n" +
-                            "Так делать не надо. Пожалуйста, проверьте элементы заданной Вами матрицы.", "Ошибка!");
+                        MessageBox.Show("You entered an invalid character as a matrix element.\n" +
+                            "Don't do that. Please, check the elements of the matrix you set.", "Error!");
                     }
                 }
             }
@@ -219,13 +262,15 @@ namespace MatrixApp
             return _rightMatrix;
         }
 
-        int[,] _resultMatrixValues;
         string _operand;
         private int _numberOfRows;
         private int _numberOfColumns;
+        int[,] _userMatrixValues;
+        int[,] _resultMatrixValues;
         private string _comboBoxValue;
 
         static private MatrixLib.Matrix<int> _leftMatrix;
         static private MatrixLib.Matrix<int> _rightMatrix;
+        static private MatrixLib.Matrix<int> _resultMatrix;
     }
 }

@@ -79,7 +79,7 @@ namespace MatrixLib
                 case MatrixType.zeros:
                     for (uint i = 0; i < _countOfRows; ++i)
                         for (uint j = 0; j < _countOfColumns; ++j)
-                            d2array[i, j] = default;
+                            d2array[i, j] = default(T);
                     break;
             }
             return d2array;
