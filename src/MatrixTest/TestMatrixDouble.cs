@@ -12,55 +12,55 @@ namespace MatrixTestDouble
         public void ConstractOnesMatrixNormDouble()
         {
             //Лучше сделать сравнение с двумерным массивом(1 ассерт + полная проверка)
-            Matrix<double> A = new Matrix<double>((uint)5, (uint)5, MatrixType.ones);
+            var a = new Matrix<double>(5, 5, MatrixType.Ones);
 
-            Assert.AreEqual(1, A[2, 2]);
-            Assert.AreEqual(0, A[3, 2]);
+            Assert.AreEqual(1, a[2, 2]);
+            Assert.AreEqual(0, a[3, 2]);
         }
 
         [TestMethod]
         public void ConstractOnesMatrixRectangleDouble()
         {
-            Assert.ThrowsException<MatrixException>(() => new Matrix<double>((uint)7, (uint)5, MatrixType.ones));
+            Assert.ThrowsException<MatrixException>(() => new Matrix<double>(7, 5, MatrixType.Ones));
         }
 
         [TestMethod]
         public void ConstractZerosMatrixNormDouble()
         {
-            Matrix<double> A = new Matrix<double>((uint)7, (uint)5, MatrixType.zeros);
+            var a = new Matrix<double>(7, 5, MatrixType.Zeros);
 
-            double[,] Matr = new double[5, 7];
+            var matr = new double[5, 7];
 
-            CollectionAssert.AreEqual(Matr, A.Get2DArray());
+            CollectionAssert.AreEqual(matr, a.Get2DArray());
         }
 
         [TestMethod]
         public void ConstractUsersMatrixNormDouble()
         {
-            double[,] Matr = new double[,] { { 1, 2, 3 }, { 4, 5, 6 } };
-            Matrix<double> A = new Matrix<double>((uint)2, (uint)3, Matr);
+            var matr = new double[,] { { 1, 2, 3 }, { 4, 5, 6 } };
+            var a = new Matrix<double>(2, 3, matr);
 
-            CollectionAssert.AreEqual(Matr, A.Get2DArray());
+            CollectionAssert.AreEqual(matr, a.Get2DArray());
         }
 
         [TestMethod]
         public void MethodGetSizeMatrixDouble()
         {
-            Matrix<double> A = new Matrix<double>((uint)5, (uint)5, MatrixType.ones);
+            var a = new Matrix<double>(5, 5, MatrixType.Ones);
 
-            Assert.AreEqual((uint)5, A.GetCountOfColumns());
-            Assert.AreEqual((uint)5, A.GetCountOfRows());
+            Assert.AreEqual(5, a.CountOfColumns);
+            Assert.AreEqual(5, a.CountOfRows);
         }
 
         [TestMethod]
         public void MethodGetMatrixRectangleDouble()
         {
-            double[,] Matr = new double[,] { { 1, 2, 3 }, { 4, 5, 6 } };
-            Matrix<double> A = new Matrix<double>((uint)2, (uint)3, Matr);
-            double[,] MatrA = A.Get2DArray();
-            MatrA[1, 1] = 10;
+            var matr = new double[,] { { 1, 2, 3 }, { 4, 5, 6 } };
+            var a = new Matrix<double>(2, 3, matr);
+            var matrA = a.Get2DArray();
+            matrA[1, 1] = 10;
 
-            Assert.AreEqual(Matr[1, 1], A[1, 1]);
+            Assert.AreEqual(matr[1, 1], a[1, 1]);
         }
 
     }

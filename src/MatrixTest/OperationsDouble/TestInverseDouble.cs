@@ -11,38 +11,38 @@ namespace MatrixTest.OperationsDouble
         [TestMethod]
         public void InverseOnesMatrix()
         {
-            Matrix<double> A = new Matrix<double>((uint)5, (uint)5, MatrixType.ones);
+            var a = new Matrix<double>(5, 5, MatrixType.Ones);
 
-            InverseMatrix<double> Matr = new InverseMatrix<double>(A);
+            var matr = new InverseMatrix<double>(a);
 
-            Matrix<double> Inverse = Matr.Calculate();
+            var inverse = matr.Calculate();
 
-            CollectionAssert.AreEqual(A.Get2DArray(), Inverse.Get2DArray());
+            CollectionAssert.AreEqual(a.Get2DArray(), inverse.Get2DArray());
         }
 
         [TestMethod]
         public void InverseUsersMatrix0Double()
         {
-            double[,] matrOfArray = new double[,] { { 2, 6, 5 }, { 5, 3, -2 }, { 7, 4, -3 } };
-            double[,] resultMatr = new double[,] { { 1, -38, 27 }, { -1, 41, -29 }, { 1, -34, 24 } };
-            Matrix<double> A = new Matrix<double>((uint)3, (uint)3, matrOfArray);
+            var matrOfArray = new double[,] { { 2, 6, 5 }, { 5, 3, -2 }, { 7, 4, -3 } };
+            var resultMatr = new double[,] { { 1, -38, 27 }, { -1, 41, -29 }, { 1, -34, 24 } };
+            var a = new Matrix<double>(3, 3, matrOfArray);
 
-            InverseMatrix<double> Matr = new InverseMatrix<double>(A);
+            var matr = new InverseMatrix<double>(a);
 
-            Matrix<double> Inverse = Matr.Calculate();
+            var inverse = matr.Calculate();
 
-            CollectionAssert.AreEqual(resultMatr, Inverse.Get2DArray());
+            CollectionAssert.AreEqual(resultMatr, inverse.Get2DArray());
         }
         [TestMethod]
         public void InverseUsersMatrixNumbDouble()
         {
 
-            double[,] matrOfArray = new double[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-            Matrix<double> A = new Matrix<double>((uint)3, (uint)3, matrOfArray);
+            var matrOfArray = new double[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+            var a = new Matrix<double>(3, 3, matrOfArray);
 
-            InverseMatrix<double> Matr = new InverseMatrix<double>(A);
+            var matr = new InverseMatrix<double>(a);
 
-            Matrix<double> inverse = Matr.Calculate();
+            var inverse = matr.Calculate();
 
             Assert.AreEqual(-1, inverse[0,0]);
         }
@@ -50,36 +50,36 @@ namespace MatrixTest.OperationsDouble
         [TestMethod]
         public void InverseExceptionDouble()
         {
-            double[,] matrOfArray = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-            Matrix<double> A = new Matrix<double>((uint)3, (uint)3, matrOfArray);
-            InverseMatrix<double> IM = new InverseMatrix<double>(A);
+            var matrOfArray = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+            var a = new Matrix<double>(3, 3, matrOfArray);
+            var im = new InverseMatrix<double>(a);
 
-            bool Except = false;
+            var except = false;
 
             try
             {
-                Matrix<double> M = IM.Calculate();
+                var m = im.Calculate();
             }
             catch (MatrixException)
             {
-                Except = true;
+                except = true;
             }
 
-            Assert.IsTrue(Except);
+            Assert.IsTrue(except);
         }
 
         [TestMethod]
         public void GetSetSumMatrixDouble()
         {
-            Matrix<double> A = new Matrix<double>((uint)4, (uint)5, MatrixType.zeros);
+            var a = new Matrix<double>(4, 5, MatrixType.Zeros);
 
-            double[,] MatrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
-            Matrix<double> C = new Matrix<double>((uint)4, (uint)3, MatrA);
-            InverseMatrix<double> SM = new InverseMatrix<double>(A);
+            var matrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
+            var c = new Matrix<double>(4, 3, matrA);
+            var sm = new InverseMatrix<double>(a);
 
-            SM.MatrixOperand = C;
+            sm.MatrixOperand = c;
 
-            CollectionAssert.AreEqual(SM.MatrixOperand.Get2DArray(), C.Get2DArray());
+            CollectionAssert.AreEqual(sm.MatrixOperand.Get2DArray(), c.Get2DArray());
 
         }
 

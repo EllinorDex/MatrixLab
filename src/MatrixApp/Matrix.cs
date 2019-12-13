@@ -23,14 +23,14 @@ namespace MatrixApp
             _numberOfRows = numberOfRows;
             _numberOfColumns = numberOfColumns;
             _resultMatrixValues = new int[_numberOfRows, _numberOfColumns];
-            for (int i = 0; i < matrixValues.GetLength(0); ++i)
-                for (int j = 0; j < matrixValues.GetLength(1); ++j)
+            for (var i = 0; i < matrixValues.GetLength(0); ++i)
+                for (var j = 0; j < matrixValues.GetLength(1); ++j)
                     _resultMatrixValues[i, j] = matrixValues[i, j];
             _comboBoxValue = "Result";
             _operand = "Result";
 
-            _resultMatrix = new MatrixLib.Matrix<int>((uint)_resultMatrixValues.GetLength(0),
-                (uint)_resultMatrixValues.GetLength(1), _resultMatrixValues);
+            _resultMatrix = new MatrixLib.Matrix<int>(_resultMatrixValues.GetLength(0),
+                _resultMatrixValues.GetLength(1), _resultMatrixValues);
         }
 
         public Matrix(NumericUpDown firstNumericUpDown, NumericUpDown secondNumericUpDown, ComboBox comboBox, string operand)
@@ -48,8 +48,8 @@ namespace MatrixApp
             _numberOfRows = numberOfRows;
             _numberOfColumns = numberOfColumns;
             _resultMatrixValues = new int[_numberOfRows, _numberOfColumns];
-            for (int i = 0; i < matrixValues.GetLength(0); ++i)
-                for (int j = 0; j < matrixValues.GetLength(1); ++j)
+            for (var i = 0; i < matrixValues.GetLength(0); ++i)
+                for (var j = 0; j < matrixValues.GetLength(1); ++j)
                     _resultMatrixValues[i, j] = matrixValues[i, j];
             _comboBoxValue = "Loaded";
             _operand = operand;
@@ -65,28 +65,28 @@ namespace MatrixApp
                 || _numberOfColumns > _rightMatrix.Get2DArray().GetLength(1)
                 || _numberOfRows > _resultMatrix.Get2DArray().GetLength(0) || _numberOfColumns > _resultMatrix.Get2DArray().GetLength(1))
             {
-                for (int i = 0; i < _numberOfRows; ++i)
-                    for (int j = 0; j < _numberOfColumns; ++j)
+                for (var i = 0; i < _numberOfRows; ++i)
+                    for (var j = 0; j < _numberOfColumns; ++j)
                         _userMatrixValues[i, j] = 1;
             }
 
             else if (_resultMatrix != null && _operand == "Left Matrix")
             {
-                for (int i = 0; i < _numberOfRows; ++i)
-                    for (int j = 0; j < _numberOfColumns; ++j)
+                for (var i = 0; i < _numberOfRows; ++i)
+                    for (var j = 0; j < _numberOfColumns; ++j)
                         _userMatrixValues[i, j] = _resultMatrix.Get2DArray()[i, j];
 
-                _leftMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, _userMatrixValues);
-                _resultMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, _userMatrixValues);
+                _leftMatrix = new MatrixLib.Matrix<int>(_numberOfRows, _numberOfColumns, _userMatrixValues);
+                _resultMatrix = new MatrixLib.Matrix<int>(_numberOfRows, _numberOfColumns, _userMatrixValues);
             }
 
             else if (_rightMatrix != null && _operand == "Right Matrix")
             {
-                for (int i = 0; i < _numberOfRows; ++i)
-                    for (int j = 0; j < _numberOfColumns; ++j)
+                for (var i = 0; i < _numberOfRows; ++i)
+                    for (var j = 0; j < _numberOfColumns; ++j)
                         _userMatrixValues[i, j] = _rightMatrix.Get2DArray()[i, j];
 
-                _rightMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, _userMatrixValues);
+                _rightMatrix = new MatrixLib.Matrix<int>(_numberOfRows, _numberOfColumns, _userMatrixValues);
             }
             
             switch(_comboBoxValue)
@@ -116,9 +116,9 @@ namespace MatrixApp
         {
             dataGridView1.RowCount = _numberOfRows;
             dataGridView1.ColumnCount = _numberOfColumns;
-            for (int i = 0; i < _numberOfRows; ++i)
+            for (var i = 0; i < _numberOfRows; ++i)
             {
-                for (int j = 0; j < _numberOfColumns; ++j)
+                for (var j = 0; j < _numberOfColumns; ++j)
                     dataGridView1.Rows[i].Cells[j].Value = _userMatrixValues[i, j];
             }
         }
@@ -127,9 +127,9 @@ namespace MatrixApp
         {
             dataGridView1.RowCount = _numberOfRows;
             dataGridView1.ColumnCount = _numberOfColumns;
-            for (int i = 0; i < _numberOfRows; ++i)
+            for (var i = 0; i < _numberOfRows; ++i)
             {
-                for (int j = 0; j < _numberOfColumns; ++j)
+                for (var j = 0; j < _numberOfColumns; ++j)
                     dataGridView1.Rows[i].Cells[j].Value = _resultMatrixValues[i, j];
             }
         }
@@ -138,9 +138,9 @@ namespace MatrixApp
         {
             dataGridView1.RowCount = _numberOfRows;
             dataGridView1.ColumnCount = _numberOfColumns;
-            for (int i = 0; i < _numberOfRows; ++i)
+            for (var i = 0; i < _numberOfRows; ++i)
             {
-                for (int j = 0; j < _numberOfColumns; ++j)
+                for (var j = 0; j < _numberOfColumns; ++j)
                 {
                     if (i == j)
                         dataGridView1.Rows[i].Cells[j].Value = 1;
@@ -157,9 +157,9 @@ namespace MatrixApp
         {
             dataGridView1.RowCount = _numberOfRows;
             dataGridView1.ColumnCount = _numberOfColumns;
-            for (int i = 0; i < _numberOfRows; ++i)
+            for (var i = 0; i < _numberOfRows; ++i)
             {
-                for (int j = 0; j < _numberOfColumns; ++j)
+                for (var j = 0; j < _numberOfColumns; ++j)
                 {
                     if (i == j)
                         dataGridView1.Rows[i].Cells[j].Value = 1;
@@ -175,9 +175,9 @@ namespace MatrixApp
         {
             dataGridView1.RowCount = _numberOfRows;
             dataGridView1.ColumnCount = _numberOfColumns;
-            for (int i = 0; i < _numberOfRows; ++i)
+            for (var i = 0; i < _numberOfRows; ++i)
             {
-                for (int j = 0; j < _numberOfColumns; ++j)
+                for (var j = 0; j < _numberOfColumns; ++j)
                 {
                     dataGridView1.Rows[i].Cells[j].Value = 0;
                     dataGridView1.Rows[i].Cells[j].ReadOnly = true;
@@ -189,9 +189,9 @@ namespace MatrixApp
         {
             dataGridView1.RowCount = _numberOfRows;
             dataGridView1.ColumnCount = _numberOfColumns;
-            for (int i = 0; i < _numberOfRows; ++i)
+            for (var i = 0; i < _numberOfRows; ++i)
             {
-                for (int j = 0; j < _numberOfColumns; ++j)
+                for (var j = 0; j < _numberOfColumns; ++j)
                 {
                     dataGridView1.Rows[i].Cells[j].Value = _resultMatrixValues[i, j];
                     dataGridView1.Rows[i].Cells[j].ReadOnly = true;
@@ -204,28 +204,28 @@ namespace MatrixApp
             if (_comboBoxValue == "Custom" || _comboBoxValue == "Loaded" || _comboBoxValue == "Diagonal")
             {
                 if (_operand == "Left Matrix")
-                    _leftMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, matrixWrite());
+                    _leftMatrix = new MatrixLib.Matrix<int>(_numberOfRows, _numberOfColumns, matrixWrite());
 
                 if (_operand == "Right Matrix")
-                    _rightMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, matrixWrite());
+                    _rightMatrix = new MatrixLib.Matrix<int>(_numberOfRows, _numberOfColumns, matrixWrite());
             }
 
             if (_comboBoxValue == "Unit")
             {
                 if (_operand == "Left Matrix")
-                    _leftMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.ones);
+                    _leftMatrix = new MatrixLib.Matrix<int>(_numberOfRows, _numberOfColumns, MatrixLib.MatrixType.Ones);
 
                 if (_operand == "Right Matrix")
-                    _rightMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.ones);
+                    _rightMatrix = new MatrixLib.Matrix<int>(_numberOfRows, _numberOfColumns, MatrixLib.MatrixType.Ones);
             }
 
             if (_comboBoxValue == "Zero")
             {
                 if (_operand == "Left Matrix")
-                    _leftMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.zeros);
+                    _leftMatrix = new MatrixLib.Matrix<int>(_numberOfRows, _numberOfColumns, MatrixLib.MatrixType.Zeros);
 
                 if (_operand == "Right Matrix")
-                    _rightMatrix = new MatrixLib.Matrix<int>((uint)_numberOfRows, (uint)_numberOfColumns, MatrixLib.MatrixType.zeros);
+                    _rightMatrix = new MatrixLib.Matrix<int>(_numberOfRows, _numberOfColumns, MatrixLib.MatrixType.Zeros);
             }
 
             Close();
@@ -233,10 +233,10 @@ namespace MatrixApp
 
         int[,] matrixWrite()
         {
-            int[,] arrayOfValues = new int[_numberOfRows, _numberOfColumns];
-            for (int i = 0; i < _numberOfRows; ++i)
+            var arrayOfValues = new int[_numberOfRows, _numberOfColumns];
+            for (var i = 0; i < _numberOfRows; ++i)
             {
-                for (int j = 0; j < _numberOfColumns; ++j)
+                for (var j = 0; j < _numberOfColumns; ++j)
                 {
                     try
                     {

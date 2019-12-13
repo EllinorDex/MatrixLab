@@ -11,11 +11,11 @@ namespace MatrixTest.OperationsDouble
         public void DeteminantOnesMatrix()
         {
             
-            Matrix<double> A = new Matrix<double>((uint)5, (uint)5, MatrixType.ones);
+            var a = new Matrix<double>(5,  5, MatrixType.Ones);
 
-            Determinant<double> Matr = new Determinant<double>(A);
+            var matr = new Determinant<double>(a);
 
-            double detem = Matr.Calculate();
+            var detem = matr.Calculate();
 
             Assert.AreEqual(1, detem);
         }
@@ -23,12 +23,12 @@ namespace MatrixTest.OperationsDouble
         [TestMethod]
         public void DeteminantUsersMatrix0()
         {
-            double[,] matrOfArray = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-            Matrix<double> A = new Matrix<double>((uint)3, (uint)3, matrOfArray);
+            var matrOfArray = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+            var a = new Matrix<double>(3, 3, matrOfArray);
 
-            Determinant<double> Matr = new Determinant<double>(A);
+            var matr = new Determinant<double>(a);
 
-            double detem = Matr.Calculate();
+            var detem = matr.Calculate();
 
             Assert.AreEqual(0, detem);
         }
@@ -36,12 +36,12 @@ namespace MatrixTest.OperationsDouble
         [TestMethod]
         public void DeteminantUsersMatrixNumb()
         {
-            double[,] matrOfArray = new double[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-            Matrix<double> A = new Matrix<double>((uint)3, (uint)3, matrOfArray);
+            var matrOfArray = new double[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+            var a = new Matrix<double>(3, 3, matrOfArray);
 
-            Determinant<double> Matr = new Determinant<double>(A);
+            var matr = new Determinant<double>(a);
 
-            double detem = Matr.Calculate();
+            var detem = matr.Calculate();
 
             Assert.AreEqual(3, detem);
         }
@@ -49,37 +49,37 @@ namespace MatrixTest.OperationsDouble
         [TestMethod]
         public void DeteminantException()
         {
-            double[,] matrOfArray = new double[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 7, 8, 9 } };
-            Matrix<double> A = new Matrix<double>((uint)4, (uint)3, matrOfArray);
+            var matrOfArray = new double[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 7, 8, 9 } };
+            var a = new Matrix<double>(4, 3, matrOfArray);
 
-            Determinant<double> DM = new Determinant<double>(A);
+            var dm = new Determinant<double>(a);
 
-            bool Except = false;
+            var except = false;
 
             try
             {
-                double M = DM.Calculate();
+                var m = dm.Calculate();
             }
             catch (MatrixException)
             {
-                Except = true;
+                except = true;
             }
 
-            Assert.IsTrue(Except);
+            Assert.IsTrue(except);
         }
 
         [TestMethod]
         public void GetSetDeterminantMatrixDouble()
         {
-            Matrix<double> A = new Matrix<double>((uint)4, (uint)5, MatrixType.zeros);
+            var a = new Matrix<double>(4, 5, MatrixType.Zeros);
 
-            double[,] MatrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
-            Matrix<double> C = new Matrix<double>((uint)4, (uint)3, MatrA);
-            Determinant<double> SM = new Determinant<double>(A);
+            var matrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
+            var c = new Matrix<double>(4, 3, matrA);
+            var sm = new Determinant<double>(a);
 
-            SM.MatrixOperand = C;
+            sm.MatrixOperand = c;
 
-            CollectionAssert.AreEqual(SM.MatrixOperand.Get2DArray(), C.Get2DArray());
+            CollectionAssert.AreEqual(sm.MatrixOperand.Get2DArray(), c.Get2DArray());
 
         }
     }

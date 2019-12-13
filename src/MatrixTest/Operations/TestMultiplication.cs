@@ -10,53 +10,53 @@ namespace MatrixTest.Operations
         [TestMethod]
         public void MultiplicationZerosMatrix()
         {
-            int[,] resultMatr = new int[5, 3];
-            Matrix<int> A = new Matrix<int>((uint)3, (uint)7, MatrixType.zeros);
-            Matrix<int> B = new Matrix<int>((uint)7, (uint)5, MatrixType.zeros);
+            var resultMatr = new int[5, 3];
+            var a = new Matrix<int>(3, 7, MatrixType.Zeros);
+            var b = new Matrix<int>(7, 5, MatrixType.Zeros);
 
-            Multiplication<int> Mult = new Multiplication<int>(A, B);
+            var mult = new Multiplication<int>(a, b);
 
-            Matrix<int> C = Mult.Calculate();
+            var c = mult.Calculate();
 
-            CollectionAssert.AreEqual(resultMatr, C.Get2DArray());
+            CollectionAssert.AreEqual(resultMatr, c.Get2DArray());
         }
 
         [TestMethod]
         public void MultiplicationUsersMatrix()
         {
-            int[,] MatrA = new[,] { { 1, 2 }, { 4, 5 }, { 7, 8 } };
-            int[,] MatrB = new[,] { { 1, 3 }, { 2, 4 } };
-            int[,] resultMatr = new int[,] { { 5, 11 }, { 14, 32 }, { 23, 53 } };
-            Matrix<int> A = new Matrix<int>((uint)3, (uint)2, MatrA);
-            Matrix<int> B = new Matrix<int>((uint)2, (uint)2, MatrB);
+            var matrA = new[,] { { 1, 2 }, { 4, 5 }, { 7, 8 } };
+            var matrB = new[,] { { 1, 3 }, { 2, 4 } };
+            var resultMatr = new int[,] { { 5, 11 }, { 14, 32 }, { 23, 53 } };
+            var a = new Matrix<int>(3, 2, matrA);
+            var b = new Matrix<int>(2, 2, matrB);
 
-            Multiplication<int> Mult = new Multiplication<int>(A, B);
+            var mult = new Multiplication<int>(a, b);
 
-            Matrix<int> C = Mult.Calculate();
+            var c = mult.Calculate();
 
-            CollectionAssert.AreEqual(resultMatr, C.Get2DArray());
+            CollectionAssert.AreEqual(resultMatr, c.Get2DArray());
         }
 
         //Кирилл, в этом тесте же вроде не должно выкидываться исключение
         [TestMethod]
         public void MultMatrixException()
         {
-            Matrix<int> A = new Matrix<int>((uint)4, (uint)5, MatrixType.zeros);
-            Matrix<int> B = new Matrix<int>((uint)4, (uint)5, MatrixType.zeros);
-            Multiplication<int> Mult = new Multiplication<int>(A, B);
+            var a = new Matrix<int>(4, 5, MatrixType.Zeros);
+            var b = new Matrix<int>(4, 5, MatrixType.Zeros);
+            var mult = new Multiplication<int>(a, b);
 
-            bool Except = false;
+            var except = false;
 
             try
             {
-                Matrix<int> M = Mult.Calculate();
+                var m = mult.Calculate();
             }
             catch (MatrixException)
             {
-                Except = true;
+                except = true;
             }
 
-            Assert.IsTrue(Except);
+            Assert.IsTrue(except);
         }
     }
 }

@@ -11,70 +11,70 @@ namespace MatrixTest.OperationsDouble
         [TestMethod]
         public void SumZerosMatrixDouble()
         {
-            double[,] resultMatr = new double[5, 7];
-            Matrix<double> A = new Matrix<double>((uint)5, (uint)7, MatrixType.zeros);
-            Matrix<double> B = new Matrix<double>((uint)5, (uint)7, MatrixType.zeros);
+            var resultMatr = new double[5, 7];
+            var a = new Matrix<double>(5, 7, MatrixType.Zeros);
+            var b = new Matrix<double>(5, 7, MatrixType.Zeros);
 
-            Sum<double> sum = new Sum<double>(A, B);
+            var sum = new Sum<double>(a, b);
 
-            Matrix<double> C = sum.Calculate();
+            var c = sum.Calculate();
 
-            CollectionAssert.AreEqual(resultMatr, C.Get2DArray());
+            CollectionAssert.AreEqual(resultMatr, c.Get2DArray());
         }
 
         [TestMethod]
         public void SumUsersMatrixDouble()
         {
-            double[,] MatrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
-            double[,] resultMatr = new double[,] { { 2, 4, 6 }, { 8, 10, 12 }, { 14, 16, 18 }, { 20, 22, 24 } };
-            Matrix<double> A = new Matrix<double>((uint)4, (uint)3, MatrA);
-            Matrix<double> B = new Matrix<double>((uint)4, (uint)3, MatrA);
+            var matrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
+            var resultMatr = new double[,] { { 2, 4, 6 }, { 8, 10, 12 }, { 14, 16, 18 }, { 20, 22, 24 } };
+            var a = new Matrix<double>(4, 3, matrA);
+            var b = new Matrix<double>(4, 3, matrA);
 
-            Sum<double> sum = new Sum<double>(A, B);
+            var sum = new Sum<double>(a, b);
 
-            Matrix<double> C = sum.Calculate();
+            var c = sum.Calculate();
 
-            CollectionAssert.AreEqual(resultMatr, C.Get2DArray());
+            CollectionAssert.AreEqual(resultMatr, c.Get2DArray());
         }
 
         [TestMethod]
         public void SumMatrixExceptionDouble()
         {
-            Matrix<double> A = new Matrix<double>((uint)4, (uint)5, MatrixType.zeros);
-            Matrix<double> B = new Matrix<double>((uint)5, (uint)4, MatrixType.zeros);
-            Sum<double> SM = new Sum<double>(A, B);
+            var a = new Matrix<double>(4, 5, MatrixType.Zeros);
+            var b = new Matrix<double>(5, 4, MatrixType.Zeros);
+            var sm = new Sum<double>(a, b);
 
-            bool Except = false;
+            var except = false;
 
             try
             {
-                Matrix<double> M = SM.Calculate();
+                var m = sm.Calculate();
             }
             catch (MatrixException)
             {
-                Except = true;
+                except = true;
             }
 
-            Assert.IsTrue(Except);
+            Assert.IsTrue(except);
         }
 
         [TestMethod]
         public void GetSetSumMatrixDouble()
         {
-            Matrix<double> A = new Matrix<double>((uint)4, (uint)5, MatrixType.zeros);
-            Matrix<double> B = new Matrix<double>((uint)5, (uint)5, MatrixType.ones);
+            var a = new Matrix<double>(4, 5, MatrixType.Zeros);
+            var b = new Matrix<double>(5, 5, MatrixType.Ones);
 
-            double[,] MatrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
-            double[,] resultMatr = new double[,] { { 2, 4, 6 }, { 8, 10, 12 }, { 14, 16, 18 }, { 20, 22, 24 } };
-            Matrix<double> C = new Matrix<double>((uint)4, (uint)3, MatrA);
-            Matrix<double> D = new Matrix<double>((uint)4, (uint)3, MatrA);
-            Sum<double> SM = new Sum<double>(A, B);
+            var matrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
+            var resultMatr = new double[,] { { 2, 4, 6 }, { 8, 10, 12 }, { 14, 16, 18 }, { 20, 22, 24 } };
+            var c = new Matrix<double>(4, 3, matrA);
+            var d = new Matrix<double>(4, 3, matrA);
+            var sm = new Sum<double>(a, b);
 
-            SM.MatrixLeft = C;
-            SM.MatrixRight = D;
+            sm.MatrixLeft = c;
+            sm.MatrixRight = d;
 
-            CollectionAssert.AreEqual(SM.MatrixLeft.Get2DArray(), C.Get2DArray());
-            CollectionAssert.AreEqual(SM.MatrixRight.Get2DArray(), C.Get2DArray());
+            CollectionAssert.AreEqual(sm.MatrixLeft.Get2DArray(), c.Get2DArray());
+            CollectionAssert.AreEqual(sm.MatrixRight.Get2DArray(), c.Get2DArray());
 
         }
     }

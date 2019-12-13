@@ -32,10 +32,10 @@ namespace MatrixApp
 
         private void tabControl1_DrawItem(Object sender, DrawItemEventArgs e)
         {
-            Graphics g = e.Graphics;
+            var g = e.Graphics;
             Brush _textBrush;
-            TabPage _tabPage = tabControl1.TabPages[e.Index];
-            Rectangle _tabBounds = tabControl1.GetTabRect(e.Index);
+            var _tabPage = tabControl1.TabPages[e.Index];
+            var _tabBounds = tabControl1.GetTabRect(e.Index);
 
             if (e.State == DrawItemState.Selected)
             {
@@ -48,9 +48,9 @@ namespace MatrixApp
                 e.DrawBackground();
             }
 
-            Font _tabFont = new Font("Arial", 30.0f, FontStyle.Bold, GraphicsUnit.Pixel);
+            var _tabFont = new Font("Arial", 30.0f, FontStyle.Bold, GraphicsUnit.Pixel);
 
-            StringFormat _stringFlags = new StringFormat();
+            var _stringFlags = new StringFormat();
             _stringFlags.Alignment = StringAlignment.Center;
             _stringFlags.LineAlignment = StringAlignment.Center;
             g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
@@ -58,23 +58,23 @@ namespace MatrixApp
 
         private void openLeftMatrixToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            var openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Text files(*.txt)|*.txt";
             if (openFileDialog1.ShowDialog() != DialogResult.OK) return;
 
-            string[] matrix = File.ReadAllLines(openFileDialog1.FileName);
-            int numberOfRows = matrix.Length;
-            int numberOfColumns = matrix[0].Split(' ').Length;
-            int[,] arrayOfMatrixValues = new int[numberOfRows, numberOfColumns];
+            var matrix = File.ReadAllLines(openFileDialog1.FileName);
+            var numberOfRows = matrix.Length;
+            var numberOfColumns = matrix[0].Split(' ').Length;
+            var arrayOfMatrixValues = new int[numberOfRows, numberOfColumns];
             string[] matrixRow = {};
-            for (int i = 0; i < numberOfRows; ++i)
+            for (var i = 0; i < numberOfRows; ++i)
             {
                 matrixRow = matrix[i].Split(' ');
                 try
                 {
                     if (matrix[i].Split(' ').Length == numberOfColumns)
                     {
-                        for (int j = 0; j < numberOfColumns; ++j)
+                        for (var j = 0; j < numberOfColumns; ++j)
                             arrayOfMatrixValues[i, j] = Convert.ToInt32(matrixRow[j]);
                     }
                     else
@@ -89,29 +89,29 @@ namespace MatrixApp
                     return;
                 }
             }
-            Matrix form = new Matrix(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Left Matrix");
+            var form = new Matrix(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Left Matrix");
             form.ShowDialog();
         }
 
         private void openRightMatrixToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            var openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Text files(*.txt)|*.txt";
             if (openFileDialog1.ShowDialog() != DialogResult.OK) return;
 
-            string[] matrix = File.ReadAllLines(openFileDialog1.FileName);
-            int numberOfRows = matrix.Length;
-            int numberOfColumns = matrix[0].Split(' ').Length;
-            int[,] arrayOfMatrixValues = new int[numberOfRows, numberOfColumns];
+            var matrix = File.ReadAllLines(openFileDialog1.FileName);
+            var numberOfRows = matrix.Length;
+            var numberOfColumns = matrix[0].Split(' ').Length;
+            var arrayOfMatrixValues = new int[numberOfRows, numberOfColumns];
             string[] matrixRow = {};
-            for (int i = 0; i < numberOfRows; ++i)
+            for (var i = 0; i < numberOfRows; ++i)
             {
                 matrixRow = matrix[i].Split(' ');
                 try
                 {
                     if (matrix[i].Split(' ').Length == numberOfColumns)
                     {
-                        for (int j = 0; j < numberOfColumns; ++j)
+                        for (var j = 0; j < numberOfColumns; ++j)
                             arrayOfMatrixValues[i, j] = Convert.ToInt32(matrixRow[j]);
                     }
                     else
@@ -126,7 +126,7 @@ namespace MatrixApp
                     return;
                 }
             }
-            Matrix form = new Matrix(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Right Matrix");
+            var form = new Matrix(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Right Matrix");
             form.ShowDialog();
         }
 
@@ -188,7 +188,7 @@ namespace MatrixApp
                         return;
                     }
                 }
-                Matrix form = new Matrix(numericUpDown1, numericUpDown2, comboBox1, "Left Matrix");
+                var form = new Matrix(numericUpDown1, numericUpDown2, comboBox1, "Left Matrix");
                 form.ShowDialog();
             }
             else
@@ -207,7 +207,7 @@ namespace MatrixApp
                         return;
                     }
                 }
-                Matrix form = new Matrix(numericUpDown3, numericUpDown4, comboBox2, "Right Matrix");
+                var form = new Matrix(numericUpDown3, numericUpDown4, comboBox2, "Right Matrix");
                 form.ShowDialog();
             }
             else
@@ -218,9 +218,9 @@ namespace MatrixApp
         {
             try
             {
-                MatrixLib.Sum<int> matrix = new MatrixLib.Sum<int>(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
-                MatrixLib.Matrix<int> resultMatrix = matrix.Calculate();
-                Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
+                var matrix = new MatrixLib.Sum<int>(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
+                var resultMatrix = matrix.Calculate();
+                var form = new Matrix(resultMatrix.CountOfRows, resultMatrix.CountOfColumns, resultMatrix.Get2DArray());
                 form.ShowDialog();
             }
             catch (NullReferenceException)
@@ -245,7 +245,7 @@ namespace MatrixApp
                         return;
                     }
                 }
-                Matrix form = new Matrix(numericUpDown5, numericUpDown6, comboBox3, "Left Matrix");
+                var form = new Matrix(numericUpDown5, numericUpDown6, comboBox3, "Left Matrix");
                 form.ShowDialog();
             }
             else
@@ -264,7 +264,7 @@ namespace MatrixApp
                         return;
                     }
                 }
-                Matrix form = new Matrix(numericUpDown7, numericUpDown8, comboBox4, "Right Matrix");
+                var form = new Matrix(numericUpDown7, numericUpDown8, comboBox4, "Right Matrix");
                 form.ShowDialog();
             }
             else
@@ -275,9 +275,9 @@ namespace MatrixApp
         {
             try
             {
-                MatrixLib.Multiplication<int> matrix = new MatrixLib.Multiplication<int>(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
-                MatrixLib.Matrix<int> resultMatrix = matrix.Calculate();
-                Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
+                var matrix = new MatrixLib.Multiplication<int>(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
+                var resultMatrix = matrix.Calculate();
+                var form = new Matrix(resultMatrix.CountOfRows, resultMatrix.CountOfColumns, resultMatrix.Get2DArray());
                 form.ShowDialog();
             }
             catch (NullReferenceException)
@@ -302,7 +302,7 @@ namespace MatrixApp
                         return;
                     }
                 }
-                Matrix form = new Matrix(numericUpDown9, numericUpDown10, comboBox5, "Left Matrix");
+                var form = new Matrix(numericUpDown9, numericUpDown10, comboBox5, "Left Matrix");
                 form.ShowDialog();
             }
             else
@@ -313,9 +313,9 @@ namespace MatrixApp
         {
             try
             { 
-                MatrixLib.InverseMatrix<int> matrix = new MatrixLib.InverseMatrix<int>(Matrix.GetLeftMatrix());
-                MatrixLib.Matrix<int> resultMatrix = matrix.Calculate();
-                Matrix form = new Matrix((int)resultMatrix.GetCountOfRows(), (int)resultMatrix.GetCountOfColumns(), resultMatrix.Get2DArray());
+                var matrix = new MatrixLib.InverseMatrix<int>(Matrix.GetLeftMatrix());
+                var resultMatrix = matrix.Calculate();
+                var form = new Matrix(resultMatrix.CountOfRows, resultMatrix.CountOfColumns, resultMatrix.Get2DArray());
                 form.ShowDialog();
             }
             catch (NullReferenceException)
@@ -340,7 +340,7 @@ namespace MatrixApp
                         return;
                     }
                 }
-                Matrix form = new Matrix(numericUpDown11, numericUpDown12, comboBox6, "Left Matrix");
+                var form = new Matrix(numericUpDown11, numericUpDown12, comboBox6, "Left Matrix");
                 form.ShowDialog();
             }
             else
@@ -351,8 +351,8 @@ namespace MatrixApp
         {
             try
             {
-                MatrixLib.Determinant<int> matrix = new MatrixLib.Determinant<int>(Matrix.GetLeftMatrix());
-                int determinant = matrix.Calculate();
+                var matrix = new MatrixLib.Determinant<int>(Matrix.GetLeftMatrix());
+                var determinant = matrix.Calculate();
                 MessageBox.Show("The determinant of the matrix is " + determinant.ToString() + '.', "Determinant");
             }
             catch (NullReferenceException)

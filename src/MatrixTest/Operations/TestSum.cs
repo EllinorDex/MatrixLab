@@ -11,51 +11,51 @@ namespace MatrixTest.Operations
         [TestMethod]
         public void SumZerosMatrix()
         {
-            int[,] resultMatr = new int[5, 7];
-            Matrix<int> A = new Matrix<int>((uint)5, (uint)7, MatrixType.zeros);
-            Matrix<int> B = new Matrix<int>((uint)5, (uint)7, MatrixType.zeros);
+            var resultMatr = new int[5, 7];
+            var a = new Matrix<int>(5, 7, MatrixType.Zeros);
+            var b = new Matrix<int>(5, 7, MatrixType.Zeros);
 
-            Sum<int> sum = new Sum<int>(A, B);
+            var sum = new Sum<int>(a, b);
 
-            Matrix<int> C = sum.Calculate();
+            var c = sum.Calculate();
 
-            CollectionAssert.AreEqual(resultMatr, C.Get2DArray());
+            CollectionAssert.AreEqual(resultMatr, c.Get2DArray());
         }
 
         [TestMethod]
         public void SumUsersMatrix()
         {
-            int[,] MatrA = new[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
-            int[,] resultMatr = new int[,] { { 2, 4, 6 }, { 8, 10, 12 }, { 14, 16, 18 }, { 20, 22, 24 } };
-            Matrix<int> A = new Matrix<int>((uint)4, (uint)3, MatrA);
-            Matrix<int> B = new Matrix<int>((uint)4, (uint)3, MatrA);
+            var matrA = new[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
+            var resultMatr = new int[,] { { 2, 4, 6 }, { 8, 10, 12 }, { 14, 16, 18 }, { 20, 22, 24 } };
+            var a = new Matrix<int>(4, 3, matrA);
+            var b = new Matrix<int>(4, 3, matrA);
 
-            Sum<int> sum = new Sum<int>(A, B);
+            var sum = new Sum<int>(a, b);
 
-            Matrix<int> C = sum.Calculate();
+            var c = sum.Calculate();
 
-            CollectionAssert.AreEqual(resultMatr, C.Get2DArray());
+            CollectionAssert.AreEqual(resultMatr, c.Get2DArray());
         }
 
         [TestMethod]
         public void SumMatrixException()
         {
-            Matrix<int> A = new Matrix<int>((uint)4, (uint)5, MatrixType.zeros);
-            Matrix<int> B = new Matrix<int>((uint)4, (uint)4, MatrixType.zeros);
-            Sum<int> SM = new Sum<int>(A, B);
+            var a = new Matrix<int>(4, 5, MatrixType.Zeros);
+            var b = new Matrix<int>(4, 4, MatrixType.Zeros);
+            var sm = new Sum<int>(a, b);
 
-            bool Except = false;
+            var except = false;
 
             try
             {
-                Matrix<int> M = SM.Calculate();
+                var m = sm.Calculate();
             }
             catch (MatrixException)
             {
-                Except = true;
+                except = true;
             }
 
-            Assert.IsTrue(Except);
+            Assert.IsTrue(except);
         }
 
     }

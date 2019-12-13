@@ -35,19 +35,19 @@ namespace MatrixLib
         public Matrix<T> Calculate()
         {
             IsCorrect(_matrixLeft, _matrixRight);
-            OperWithMatr op     = new OperWithMatr();
-            Converter<T> converter = new Converter<T>();
+            var op     = new OperWithMatr();
+            var converter = new Converter<T>();
 
-            MWArray[] result = op.Sum(1, converter.ConvertFromMatrixToMLMatrix(_matrixLeft), converter.ConvertFromMatrixToMLMatrix(_matrixRight));
-            T[,] resultArr = converter.ConvertFromMLMatrixToMatrix(result[0]);
+            var result = op.Sum(1, converter.ConvertFromMatrixToMlMatrix(_matrixLeft), converter.ConvertFromMatrixToMlMatrix(_matrixRight));
+            var resultArr = converter.ConvertFromMlMatrixToMatrix(result[0]);
 
-            return new Matrix<T>(_matrixLeft.GetCountOfRows(), _matrixLeft.GetCountOfColumns(), resultArr);
+            return new Matrix<T>(_matrixLeft.CountOfRows, _matrixLeft.CountOfColumns, resultArr);
         }
 
         //Проверка корректности операции
         private void IsCorrect(Matrix<T> matrixLeft, Matrix<T> matrixRight)
         {
-            if (matrixLeft.GetCountOfRows() != matrixRight.GetCountOfRows() || matrixLeft.GetCountOfColumns() != matrixRight.GetCountOfColumns())
+            if (matrixLeft.CountOfRows != matrixRight.CountOfRows || matrixLeft.CountOfColumns != matrixRight.CountOfColumns)
                 throw new MatrixException("The operation cannot be performed. Incorrect sizes of operands.");
         }
     }

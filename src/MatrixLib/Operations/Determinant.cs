@@ -26,11 +26,11 @@ namespace MatrixLib
         public T Calculate()
         {
             IsCorrect(_matrixOperand);
-            OperWithMatr op        = new OperWithMatr();
-            Converter<T> converter = new Converter<T>();
+            var op        = new OperWithMatr();
+            var converter = new Converter<T>();
 
-            MWArray[] result = op.Determinant(1, converter.ConvertFromMatrixToMLMatrix(_matrixOperand));
-            T resultScal   = converter.ConvertFromMLMatrixToScalar(result[0]);
+            var result = op.Determinant(1, converter.ConvertFromMatrixToMlMatrix(_matrixOperand));
+            var resultScal   = converter.ConvertFromMlMatrixToScalar(result[0]);
 
             return resultScal;
         }
@@ -38,7 +38,7 @@ namespace MatrixLib
         //Проверка корректности операции
         private void IsCorrect(Matrix<T> matrixOperand)
         {
-            if (matrixOperand.GetCountOfColumns() != matrixOperand.GetCountOfRows())
+            if (matrixOperand.CountOfColumns != matrixOperand.CountOfRows)
                 throw new MatrixException("The operation cannot be performed. Incorrect sizes of operand.");
         }
     }

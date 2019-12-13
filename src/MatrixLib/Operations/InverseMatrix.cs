@@ -26,22 +26,22 @@ namespace MatrixLib
         public Matrix<T> Calculate()
         {
             IsCorrect(_matrixOperand);
-            OperWithMatr op     = new OperWithMatr();
-            Converter<T> converter = new Converter<T>();
+            var op     = new OperWithMatr();
+            var converter = new Converter<T>();
 
-            MWArray[] result = op.InverseMatrix(1, converter.ConvertFromMatrixToMLMatrix(_matrixOperand));
-            T[,] resultArr = converter.ConvertFromMLMatrixToMatrix(result[0]);
+            var result = op.InverseMatrix(1, converter.ConvertFromMatrixToMlMatrix(_matrixOperand));
+            var resultArr = converter.ConvertFromMlMatrixToMatrix(result[0]);
 
-            return new Matrix<T>(_matrixOperand.GetCountOfRows(), _matrixOperand.GetCountOfColumns(), resultArr);
+            return new Matrix<T>(_matrixOperand.CountOfRows, _matrixOperand.CountOfColumns, resultArr);
         }
 
         //Проверка корректности операции
         private void IsCorrect(Matrix<T> matrixOperand)
         {
-            if (matrixOperand.GetCountOfColumns() != matrixOperand.GetCountOfRows())
+            if (matrixOperand.CountOfColumns != matrixOperand.CountOfRows)
                 throw new MatrixException("The operation cannot be performed. Incorrect sizes of operand.");
-            Determinant<T> det = new Determinant<T>(matrixOperand);
-            if ((int)Convert.ChangeType(det.Calculate(),typeof(int)) == (int)Convert.ChangeType(default(T),typeof(int)))
+            var det = new Determinant<T>(matrixOperand);
+            if ((double)Convert.ChangeType(det.Calculate(),typeof(double)) == (double)Convert.ChangeType(default(T),typeof(double)));
                 throw new MatrixException("The operation cannot be performed. Incorrect matrix.");
         }
     }

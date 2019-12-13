@@ -10,72 +10,72 @@ namespace MatrixTest.OperationsDouble
         [TestMethod]
         public void MultiplicationZerosMatrixDouble()
         {
-            double[,] resultMatr = new double[5, 3];
-            Matrix<double> A = new Matrix<double>((uint)3, (uint)7, MatrixType.zeros);
-            Matrix<double> B = new Matrix<double>((uint)7, (uint)5, MatrixType.zeros);
+            var resultMatr = new double[5, 3];
+            var a = new Matrix<double>( 3, 7, MatrixType.Zeros);
+            var b = new Matrix<double>(7, 5, MatrixType.Zeros);
 
-            Multiplication<double> Mult = new Multiplication<double>(A, B);
+            var mult = new Multiplication<double>(a, b);
 
-            Matrix<double> C = Mult.Calculate();
+            var c = mult.Calculate();
 
-            CollectionAssert.AreEqual(resultMatr, C.Get2DArray());
+            CollectionAssert.AreEqual(resultMatr, c.Get2DArray());
         }
 
         [TestMethod]
         public void MultiplicationUsersMatrixDouble()
         {
-            double[,] MatrA = new double[,] { { 1, 2 }, { 4, 5 }, { 7, 8 } };
-            double[,] MatrB = new double[,] { { 1, 3 }, { 2, 4 } };
-            double[,] resultMatr = new double[,] { { 5, 11 }, { 14, 32 }, { 23, 53 } };
-            Matrix<double> A = new Matrix<double>((uint)3, (uint)2, MatrA);
-            Matrix<double> B = new Matrix<double>((uint)2, (uint)2, MatrB);
+            var matrA = new double[,] { { 1, 2 }, { 4, 5 }, { 7, 8 } };
+            var matrB = new double[,] { { 1, 3 }, { 2, 4 } };
+            var resultMatr = new double[,] { { 5, 11 }, { 14, 32 }, { 23, 53 } };
+            var a = new Matrix<double>(3, 2, matrA);
+            var b = new Matrix<double>(2, 2, matrB);
 
-            Multiplication<double> Mult = new Multiplication<double>(A, B);
+            var mult = new Multiplication<double>(a, b);
 
-            Matrix<double> C = Mult.Calculate();
+            var c = mult.Calculate();
 
-            CollectionAssert.AreEqual(resultMatr, C.Get2DArray());
+            CollectionAssert.AreEqual(resultMatr, c.Get2DArray());
         }
 
         //Кирилл, в этом тесте же вроде не должно выкидываться исключение
         [TestMethod]
         public void MultMatrixExceptionDouble()
         {
-            Matrix<double> A = new Matrix<double>((uint)4, (uint)5, MatrixType.zeros);
-            Matrix<double> B = new Matrix<double>((uint)4, (uint)5, MatrixType.zeros);
-            Multiplication<double> Mult = new Multiplication<double>(A, B);
+            var a = new Matrix<double>(4, 5, MatrixType.Zeros);
+            var b = new Matrix<double>(4, 5, MatrixType.Zeros);
+            var mult = new Multiplication<double>(a, b);
 
-            bool Except = false;
+            var except = false;
 
             try
             {
-                Matrix<double> M = Mult.Calculate();
+                var m = mult.Calculate();
             }
             catch (MatrixException)
             {
-                Except = true;
+                except = true;
             }
 
-            Assert.IsTrue(Except);
+            Assert.IsTrue(except);
         }
 
         [TestMethod]
         public void GetSetMultMatrixDouble()
         {
-            Matrix<double> A = new Matrix<double>((uint)4, (uint)5, MatrixType.zeros);
-            Matrix<double> B = new Matrix<double>((uint)5, (uint)5, MatrixType.ones);
+            var a = new Matrix<double>(4, 5, MatrixType.Zeros);
+            var b = new Matrix<double>(5, 5, MatrixType.Ones);
 
-            double[,] MatrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
-            Matrix<double> C = new Matrix<double>((uint)4, (uint)3, MatrA);
-            Matrix<double> D = new Matrix<double>((uint)4, (uint)3, MatrA);
-            Multiplication<double> SM = new Multiplication<double>(A, B);
+            var matrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
+            var c = new Matrix<double>(4, 3, matrA);
+            var d = new Matrix<double>(4, 3, matrA);
+            var sm = new Multiplication<double>(a, b);
 
-            SM.MatrixLeft = C;
+            sm.MatrixLeft = c;
             //
-            SM.MatrixRight = D;
+            sm.MatrixRight = d;
 
-            CollectionAssert.AreEqual(SM.MatrixLeft.Get2DArray(), C.Get2DArray());
-            CollectionAssert.AreEqual(SM.MatrixRight.Get2DArray(), C.Get2DArray());
+            CollectionAssert.AreEqual(sm.MatrixLeft.Get2DArray(), c.Get2DArray());
+            CollectionAssert.AreEqual(sm.MatrixRight.Get2DArray(), c.Get2DArray());
 
         }
 

@@ -11,11 +11,11 @@ namespace MatrixTest.Operations
         public void DeteminantOnesMatrix()
         {
             
-            Matrix<int> A = new Matrix<int>((uint)5, (uint)5, MatrixType.ones);
+            var a = new Matrix<int>(5, 5, MatrixType.Ones);
 
-            Determinant<int> Matr = new Determinant<int>(A);
+            var matr = new Determinant<int>(a);
 
-            int  detem = Matr.Calculate();
+            var  detem = matr.Calculate();
 
             Assert.AreEqual(1, detem);
         }
@@ -23,12 +23,12 @@ namespace MatrixTest.Operations
         [TestMethod]
         public void DeteminantUsersMatrix0()
         {
-            int[,] matrOfArray = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-            Matrix<int> A = new Matrix<int>((uint)3, (uint)3, matrOfArray);
+            var matrOfArray = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+            var a = new Matrix<int>(3, 3, matrOfArray);
 
-            Determinant<int> Matr = new Determinant<int>(A);
+            var matr = new Determinant<int>(a);
 
-            int detem = Matr.Calculate();
+            var detem = matr.Calculate();
 
             Assert.AreEqual(0, detem);
         }
@@ -36,12 +36,12 @@ namespace MatrixTest.Operations
         [TestMethod]
         public void DeteminantUsersMatrixNumb()
         {
-            int[,] matrOfArray = new int[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-            Matrix<int> A = new Matrix<int>((uint)3, (uint)3, matrOfArray);
+            var matrOfArray = new int[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+            var a = new Matrix<int>(3, 3, matrOfArray);
 
-            Determinant<int> Matr = new Determinant<int>(A);
+            var matr = new Determinant<int>(a);
 
-            int detem = Matr.Calculate();
+            var detem = matr.Calculate();
 
             Assert.AreEqual(3, detem);
         }
@@ -49,23 +49,23 @@ namespace MatrixTest.Operations
         [TestMethod]
         public void DeteminantException()
         {
-            int[,] matrOfArray = new int[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 7, 8, 9 } };
-            Matrix<int> A = new Matrix<int>((uint)4, (uint)3, matrOfArray);
+            var matrOfArray = new int[,] { { 0, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 7, 8, 9 } };
+            var a = new Matrix<int>(4, 3, matrOfArray);
 
-            Determinant<int> DM = new Determinant<int>(A);
+            var dm = new Determinant<int>(a);
 
-            bool Except = false;
+            var except = false;
 
             try
             {
-                int M = DM.Calculate();
+                var m = dm.Calculate();
             }
             catch (MatrixException)
             {
-                Except = true;
+                except = true;
             }
 
-            Assert.IsTrue(Except);
+            Assert.IsTrue(except);
         }
     }
 }
