@@ -11,8 +11,8 @@ namespace MatrixTest.OperationsDouble
         public void MultiplicationZerosMatrixDouble()
         {
             var resultMatr = new double[5, 3];
-            var a = new Matrix<double>( 3, 7, MatrixType.Zeros);
-            var b = new Matrix<double>(7, 5, MatrixType.Zeros);
+            var a = Matrix<double>.CreateZeroMatrix(3, 7);
+            var b = Matrix<double>.CreateZeroMatrix(7, 5);
 
             var mult = new Multiplication<double>(a, b);
 
@@ -41,8 +41,8 @@ namespace MatrixTest.OperationsDouble
         [TestMethod]
         public void MultMatrixExceptionDouble()
         {
-            var a = new Matrix<double>(4, 5, MatrixType.Zeros);
-            var b = new Matrix<double>(4, 5, MatrixType.Zeros);
+            var a = Matrix<double>.CreateZeroMatrix(4,5);
+            var b = Matrix<double>.CreateZeroMatrix(4, 5);
             var mult = new Multiplication<double>(a, b);
 
             var except = false;
@@ -62,8 +62,8 @@ namespace MatrixTest.OperationsDouble
         [TestMethod]
         public void GetSetMultMatrixDouble()
         {
-            var a = new Matrix<double>(4, 5, MatrixType.Zeros);
-            var b = new Matrix<double>(5, 5, MatrixType.Ones);
+            var a = Matrix<double>.CreateZeroMatrix(4, 5);
+            var b = Matrix<double>.CreateOnesMatrix(5, 5);
 
             var matrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
             var c = new Matrix<double>(4, 3, matrA);

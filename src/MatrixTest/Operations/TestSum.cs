@@ -12,8 +12,8 @@ namespace MatrixTest.Operations
         public void SumZerosMatrix()
         {
             var resultMatr = new int[5, 7];
-            var a = new Matrix<int>(5, 7, MatrixType.Zeros);
-            var b = new Matrix<int>(5, 7, MatrixType.Zeros);
+            var a = Matrix<int>.CreateZeroMatrix(5, 7);
+            var b = Matrix<int>.CreateZeroMatrix(5, 7);
 
             var sum = new Sum<int>(a, b);
 
@@ -40,8 +40,8 @@ namespace MatrixTest.Operations
         [TestMethod]
         public void SumMatrixException()
         {
-            var a = new Matrix<int>(4, 5, MatrixType.Zeros);
-            var b = new Matrix<int>(4, 4, MatrixType.Zeros);
+            var a = Matrix<int>.CreateZeroMatrix(4, 5);
+            var b = Matrix<int>.CreateZeroMatrix(4, 4);
             var sm = new Sum<int>(a, b);
 
             var except = false;

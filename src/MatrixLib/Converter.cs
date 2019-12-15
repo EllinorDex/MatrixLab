@@ -6,18 +6,18 @@ using System.Runtime.CompilerServices;
 
 namespace MatrixLib
 {
-    //Конвертация C# <-> MATLAB
-    internal class Converter<T> where T: IConvertible
+    //Convert C# <-> MATLAB
+    internal static class Converter<T> where T: IConvertible
     {
         //Конвертация из матрицы в встроенный тип MatLab
-        public MWArray ConvertFromMatrixToMlMatrix(Matrix<T> matrix)
+        public static MWArray ConvertFromMatrixToMlMatrix(Matrix<T> matrix)
         {
             var mwnArr = new MWNumericArray((Array)matrix.Get2DArray());
             return (MWArray)mwnArr;
         }
 
         //Конвертация из встроенного типа MatLab в матрицу
-        public T[,] ConvertFromMlMatrixToMatrix(MWArray mwMatrix)
+        public static T[,] ConvertFromMlMatrixToMatrix(MWArray mwMatrix)
         {
             var matrix = (double[,])mwMatrix.ToArray();
             var length1      = matrix.GetLength(0);
@@ -31,7 +31,7 @@ namespace MatrixLib
         }
 
         //Конвертация из встроенного типа MatLab в скаляр
-        public T ConvertFromMlMatrixToScalar(MWArray mwMatrix)
+        public static T ConvertFromMlMatrixToScalar(MWArray mwMatrix)
         {
             var matrix = (double[,])mwMatrix.ToArray();
             var res            = (T)Convert.ChangeType(Math.Round(matrix[0, 0], 3), typeof(T));

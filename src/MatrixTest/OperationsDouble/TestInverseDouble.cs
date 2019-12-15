@@ -11,7 +11,7 @@ namespace MatrixTest.OperationsDouble
         [TestMethod]
         public void InverseOnesMatrix()
         {
-            var a = new Matrix<double>(5, 5, MatrixType.Ones);
+            var a = Matrix<double>.CreateOnesMatrix(5, 5);
 
             var matr = new InverseMatrix<double>(a);
 
@@ -71,7 +71,7 @@ namespace MatrixTest.OperationsDouble
         [TestMethod]
         public void GetSetSumMatrixDouble()
         {
-            var a = new Matrix<double>(4, 5, MatrixType.Zeros);
+            var a = Matrix<double>.CreateZeroMatrix(4, 5);
 
             var matrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
             var c = new Matrix<double>(4, 3, matrA);

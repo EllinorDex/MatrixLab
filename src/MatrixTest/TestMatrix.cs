@@ -12,7 +12,7 @@ namespace MatrixTest
         public void ConstractOnesMatrixNorm()
         { 
             //Лучше сделать сравнение с двумерным массивом(1 ассерт + полная проверка)
-            var a = new Matrix<int>(5, 5, MatrixType.Ones);
+            var a = Matrix<int>.CreateOnesMatrix(4, 4);
 
             Assert.AreEqual(1, a[2, 2]);
             Assert.AreEqual(0, a[3, 2]);
@@ -21,13 +21,13 @@ namespace MatrixTest
         [TestMethod]
         public void ConstractOnesMatrixRectangle()
         {
-            Assert.ThrowsException<MatrixException>(() => new Matrix<int>(7, 5, MatrixType.Ones));
+            Assert.ThrowsException<MatrixException>(() => Matrix<int>.CreateOnesMatrix(7, 5));
         }
 
         [TestMethod]
         public void ConstractZerosMatrixNorm()
         {
-            var a = new Matrix<int>(7, 5, MatrixType.Zeros);
+            var a = Matrix<int>.CreateZeroMatrix(5, 7);
 
             var matr = new int[5, 7];
 
@@ -46,8 +46,8 @@ namespace MatrixTest
         [TestMethod]
         public void MethodGetSizeMatrix()
         {
-            var a = new Matrix<int>(5, 5, MatrixType.Ones);
-            
+            var a = Matrix<int>.CreateOnesMatrix(5, 5);
+
             Assert.AreEqual(5, a.CountOfColumns);
             Assert.AreEqual(5, a.CountOfRows);
         }

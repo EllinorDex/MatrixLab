@@ -11,7 +11,7 @@ namespace MatrixTest.Operations
         [TestMethod]
         public void InverseOnesMatrix()
         {
-            var a = new Matrix<int>(5, 5, MatrixType.Ones);
+            var a = Matrix<int>.CreateOnesMatrix(5, 5);
 
             var matr = new InverseMatrix<int>(a);
 

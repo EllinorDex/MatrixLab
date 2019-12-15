@@ -11,8 +11,8 @@ namespace MatrixTest.Operations
         public void MultiplicationZerosMatrix()
         {
             var resultMatr = new int[5, 3];
-            var a = new Matrix<int>(3, 7, MatrixType.Zeros);
-            var b = new Matrix<int>(7, 5, MatrixType.Zeros);
+            var a = Matrix<int>.CreateZeroMatrix(3, 7);
+            var b = Matrix<int>.CreateZeroMatrix(7, 5);
 
             var mult = new Multiplication<int>(a, b);
 
@@ -41,8 +41,8 @@ namespace MatrixTest.Operations
         [TestMethod]
         public void MultMatrixException()
         {
-            var a = new Matrix<int>(4, 5, MatrixType.Zeros);
-            var b = new Matrix<int>(4, 5, MatrixType.Zeros);
+            var a = Matrix<int>.CreateZeroMatrix(4, 5);
+            var b = Matrix<int>.CreateZeroMatrix(4, 5);
             var mult = new Multiplication<int>(a, b);
 
             var except = false;

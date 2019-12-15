@@ -213,19 +213,19 @@ namespace MatrixApp
             if (_comboBoxValue == "Unit")
             {
                 if (_operand == "Left Matrix")
-                    _leftMatrix = new MatrixLib.Matrix<int>(_numberOfRows, _numberOfColumns, MatrixLib.MatrixType.Ones);
+                    _leftMatrix = MatrixLib.Matrix<int>.CreateOnesMatrix(_numberOfRows, _numberOfColumns);
 
                 if (_operand == "Right Matrix")
-                    _rightMatrix = new MatrixLib.Matrix<int>(_numberOfRows, _numberOfColumns, MatrixLib.MatrixType.Ones);
+                    _rightMatrix = MatrixLib.Matrix<int>.CreateOnesMatrix(_numberOfRows, _numberOfColumns);
             }
 
             if (_comboBoxValue == "Zero")
             {
                 if (_operand == "Left Matrix")
-                    _leftMatrix = new MatrixLib.Matrix<int>(_numberOfRows, _numberOfColumns, MatrixLib.MatrixType.Zeros);
+                    _leftMatrix = MatrixLib.Matrix<int>.CreateZeroMatrix(_numberOfRows, _numberOfColumns);
 
                 if (_operand == "Right Matrix")
-                    _rightMatrix = new MatrixLib.Matrix<int>(_numberOfRows, _numberOfColumns, MatrixLib.MatrixType.Zeros);
+                    _rightMatrix = MatrixLib.Matrix<int>.CreateZeroMatrix(_numberOfRows, _numberOfColumns);
             }
 
             Close();

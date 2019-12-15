@@ -12,8 +12,8 @@ namespace MatrixTest.OperationsDouble
         public void SumZerosMatrixDouble()
         {
             var resultMatr = new double[5, 7];
-            var a = new Matrix<double>(5, 7, MatrixType.Zeros);
-            var b = new Matrix<double>(5, 7, MatrixType.Zeros);
+            var a = Matrix<double>.CreateZeroMatrix(5, 7);
+            var b = Matrix<double>.CreateZeroMatrix(5, 7);
 
             var sum = new Sum<double>(a, b);
 
@@ -40,8 +40,8 @@ namespace MatrixTest.OperationsDouble
         [TestMethod]
         public void SumMatrixExceptionDouble()
         {
-            var a = new Matrix<double>(4, 5, MatrixType.Zeros);
-            var b = new Matrix<double>(5, 4, MatrixType.Zeros);
+            var a = Matrix<double>.CreateZeroMatrix(4, 5);
+            var b = Matrix<double>.CreateZeroMatrix(5, 4);
             var sm = new Sum<double>(a, b);
 
             var except = false;
@@ -61,8 +61,8 @@ namespace MatrixTest.OperationsDouble
         [TestMethod]
         public void GetSetSumMatrixDouble()
         {
-            var a = new Matrix<double>(4, 5, MatrixType.Zeros);
-            var b = new Matrix<double>(5, 5, MatrixType.Ones);
+            var a = Matrix<double>.CreateZeroMatrix(4, 5);
+            var b = Matrix<double>.CreateZeroMatrix(5, 5);
 
             var matrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
             var resultMatr = new double[,] { { 2, 4, 6 }, { 8, 10, 12 }, { 14, 16, 18 }, { 20, 22, 24 } };
