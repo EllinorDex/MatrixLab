@@ -45,18 +45,7 @@ namespace MatrixTest.Operations
             var b = new Matrix<int>(4, 5, MatrixType.Zeros);
             var mult = new Multiplication<int>(a, b);
 
-            var except = false;
-
-            try
-            {
-                var m = mult.Calculate();
-            }
-            catch (MatrixException)
-            {
-                except = true;
-            }
-
-            Assert.IsTrue(except);
+            Assert.ThrowsException<MatrixException>(() => mult.Calculate());
         }
     }
 }
