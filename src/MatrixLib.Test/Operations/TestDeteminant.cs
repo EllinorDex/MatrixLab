@@ -10,7 +10,7 @@ namespace MatrixLib.Test.Operations
         public void DeteminantOnesMatrix()
         {
             
-            var a = Matrix<int>.CreateOnesMatrix(5, 5);
+            var a = Matrix<int>.CreateOnesMatrix(3, 3);
 
             var matr = new Determinant<int>(a);
 

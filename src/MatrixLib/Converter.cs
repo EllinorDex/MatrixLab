@@ -13,6 +13,11 @@ namespace MatrixLib
     internal static class Converter<T> where T : IConvertible
     {
         /// <summary>
+        /// Number of decimal places after rounding.
+        /// </summary>
+        private const int RoundNumber = 6;
+
+        /// <summary>
         /// Convert from Matrix to built-in type MatLab
         /// </summary>
         /// <param name="matrix">matrix</param>
@@ -37,7 +42,7 @@ namespace MatrixLib
             var res = new T[length1, length2];
             for (var i = 0; i < length1; ++i)
                 for (var j = 0; j < length2; ++j)
-                    res[i, j] = (T)Convert.ChangeType(Math.Round(matrix[i, j], 3), typeof(T));
+                    res[i, j] = (T)Convert.ChangeType(Math.Round(matrix[i, j], RoundNumber), typeof(T));
             return res;
         }
 
@@ -49,7 +54,7 @@ namespace MatrixLib
         public static T ConvertFromMlMatrixToScalar(MWArray mwMatrix)
         {
             var matrix = (double[,])mwMatrix.ToArray();
-            var res = (T)Convert.ChangeType(Math.Round(matrix[0, 0], 3), typeof(T));
+            var res = (T)Convert.ChangeType(Math.Round(matrix[0, 0], RoundNumber), typeof(T));
 
             return res;
         }

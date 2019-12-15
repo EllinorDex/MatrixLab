@@ -27,9 +27,8 @@ namespace MatrixLib.Operations
         public T Calculate()
         {
             IsCorrect(MatrixOperand);
-            var op = new OperWithMatr();
 
-            var result = op.Determinant(1, Converter<T>.ConvertFromMatrixToMlMatrix(MatrixOperand));
+            var result = MatLabOperation.MlOperation.Determinant(1, Converter<T>.ConvertFromMatrixToMlMatrix(MatrixOperand));
             var resultScal = Converter<T>.ConvertFromMlMatrixToScalar(result[0]);
 
             return resultScal;

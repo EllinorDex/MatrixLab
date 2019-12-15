@@ -30,9 +30,8 @@ namespace MatrixLib.Operations
         public Matrix<T> Calculate()
         {
             IsCorrect(MatrixLeft, MatrixRight);
-            var op = new OperWithMatr();
 
-            var result = op.Multiplication(1, Converter<T>.ConvertFromMatrixToMlMatrix(MatrixLeft), Converter<T>.ConvertFromMatrixToMlMatrix(MatrixRight));
+            var result = MatLabOperation.MlOperation.Multiplication(1, Converter<T>.ConvertFromMatrixToMlMatrix(MatrixLeft), Converter<T>.ConvertFromMatrixToMlMatrix(MatrixRight));
             var resultArr = Converter<T>.ConvertFromMlMatrixToMatrix(result[0]);
 
             return new Matrix<T>(MatrixLeft.CountOfRows, MatrixRight.CountOfColumns, resultArr);

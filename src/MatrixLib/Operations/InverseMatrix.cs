@@ -26,9 +26,8 @@ namespace MatrixLib.Operations
         public Matrix<T> Calculate()
         {
             IsCorrect(MatrixOperand);
-            var op = new OperWithMatr();
 
-            var result = op.InverseMatrix(1, Converter<T>.ConvertFromMatrixToMlMatrix(MatrixOperand));
+            var result = MatLabOperation.MlOperation.InverseMatrix(1, Converter<T>.ConvertFromMatrixToMlMatrix(MatrixOperand));
             var resultArr = Converter<T>.ConvertFromMlMatrixToMatrix(result[0]);
 
             return new Matrix<T>(MatrixOperand.CountOfRows, MatrixOperand.CountOfColumns, resultArr);
@@ -43,7 +42,7 @@ namespace MatrixLib.Operations
             if (matrixOperand.CountOfColumns != matrixOperand.CountOfRows)
                 throw new MatrixException("The operation cannot be performed. Incorrect sizes of operand.");
             var det = new Determinant<T>(matrixOperand);
-            if (Math.Abs((double)Convert.ChangeType(det.Calculate(), typeof(double)) - 0) < 1e-3)
+            if (Math.Abs((double)Convert.ChangeType(det.Calculate(), typeof(double)) - 0) < double.Epsilon)
                 throw new MatrixException("The operation cannot be performed. Incorrect matrix.");
         }
     }

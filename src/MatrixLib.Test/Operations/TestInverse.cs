@@ -26,10 +26,10 @@ namespace MatrixLib.Test.Operations
             var a = new Matrix<int>(3, 3, matrOfArray);
 
             var matr = new InverseMatrix<int>(a);
-
+            var ad = new Matrix<int>(3, 3, resultMatr);
             var inverse = matr.Calculate();
 
-            CollectionAssert.AreEqual(resultMatr, inverse.Get2DArray());
+            Assert.AreEqual(ad, inverse);
         }
         [TestMethod]
         public void InverseUsersMatrixNumb()
