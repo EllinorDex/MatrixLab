@@ -1,8 +1,7 @@
-﻿using MatrixLib;
+﻿using MatrixLib.Operations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
 
-namespace MatrixTest.OperationsDouble
+namespace MatrixLib.Test.OperationsDouble
 {
     [TestClass]
     public class TestSumDouble
@@ -54,7 +53,6 @@ namespace MatrixTest.OperationsDouble
             var b = Matrix<double>.CreateZeroMatrix(5, 5);
 
             var matrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
-            var resultMatr = new double[,] { { 2, 4, 6 }, { 8, 10, 12 }, { 14, 16, 18 }, { 20, 22, 24 } };
             var c = new Matrix<double>(4, 3, matrA);
             var d = new Matrix<double>(4, 3, matrA);
             var sm = new Sum<double>(a, b);

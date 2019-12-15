@@ -1,9 +1,7 @@
-﻿using MatrixLib;
+﻿using MatrixLib.Operations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
-using Moq;
 
-namespace MatrixTest.OperationsDouble
+namespace MatrixLib.Test.OperationsDouble
 {
     [TestClass]
     public class TestInverseDouble

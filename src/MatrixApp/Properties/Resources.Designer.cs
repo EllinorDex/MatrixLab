@@ -59,5 +59,134 @@ namespace MatrixApp.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на The matrix you tried to load from the file is not set correctly..
+        /// </summary>
+        internal static string res01 {
+            get {
+                return ResourceManager.GetString("res01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на You entered an invalid character as a matrix element.
+        ///Don&apos;t do that. Please, check the elements of the matrix you set..
+        /// </summary>
+        internal static string res02 {
+            get {
+                return ResourceManager.GetString("res02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Error!.
+        /// </summary>
+        internal static string res03 {
+            get {
+                return ResourceManager.GetString("res03", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Custom.
+        /// </summary>
+        internal static string res04 {
+            get {
+                return ResourceManager.GetString("res04", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Text files(*.txt)|*.txt.
+        /// </summary>
+        internal static string res05 {
+            get {
+                return ResourceManager.GetString("res05", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на This program allows you to perform simple matrix calculations. For this you need:
+        ///
+        ///1) Select the operation you need;
+        ///
+        ///2) Set the number of rows and columns in the matrix;
+        ///
+        ///3) Select one of the proposed matrix types. If your matrix is random, then select a custom matrix type;
+        ///
+        ///4) In the window that appears, set the matrix elements;
+        ///
+        ///5) Click the button Calculate!.
+        /// </summary>
+        internal static string res06 {
+            get {
+                return ResourceManager.GetString("res06", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Three beginning programmers from Belarus and Ukraine..
+        /// </summary>
+        internal static string res07 {
+            get {
+                return ResourceManager.GetString("res07", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Please, help two poor Belarusians and one Ukrainian. 
+        ///Sberbank Online: +7-977-763-62-91.
+        /// </summary>
+        internal static string res08 {
+            get {
+                return ResourceManager.GetString("res08", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на The number of rows should be equal to the number of columns for diagonal and unit matrices..
+        /// </summary>
+        internal static string res09 {
+            get {
+                return ResourceManager.GetString("res09", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Please set all the necessary parameters to build the matrix..
+        /// </summary>
+        internal static string res10 {
+            get {
+                return ResourceManager.GetString("res10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Please, set all the necessary matrices to perform the operation..
+        /// </summary>
+        internal static string res11 {
+            get {
+                return ResourceManager.GetString("res11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Please, set the matrix to perform the operation..
+        /// </summary>
+        internal static string res12 {
+            get {
+                return ResourceManager.GetString("res12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на The determinant of the matrix is .
+        /// </summary>
+        internal static string res13 {
+            get {
+                return ResourceManager.GetString("res13", resourceCulture);
+            }
+        }
     }
 }

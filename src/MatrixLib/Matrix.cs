@@ -3,15 +3,10 @@
 namespace MatrixLib
 {
     /// <summary>
-    /// Type of Matrix.
+    /// Сlass Matrix representing a mathematical object matrix.
     /// </summary>
-    public enum MatrixType { Ones = 1, Zeros = 2 };
-
-    /// <summary>
-    /// General class in this project
-    /// </summary>
-    /// <typeparam name="T">Type of data.</typeparam>
-    public class Matrix<T> where T: IConvertible
+    /// <typeparam name="T">Type of values.</typeparam>
+    public class Matrix<T> where T : IConvertible
     {
         public int CountOfRows { get; }
         public int CountOfColumns { get; }
@@ -22,7 +17,7 @@ namespace MatrixLib
         /// </summary>
         /// <param name="countOfRows">The count of matrix rows.</param>
         /// <param name="countOfColumns">The count of matrix columns.</param>
-        /// <param name="matrix"></param>
+        /// <param name="matrix">Two-dimensional array of matrix values.</param>
         public Matrix(int countOfRows, int countOfColumns, T[,] matrix)
         {
             IsCorrect(countOfRows, countOfColumns, matrix);
@@ -49,12 +44,12 @@ namespace MatrixLib
         /// <returns>Two-dimensional array of matrix values.</returns>
         public T[,] Get2DArray()
         {
-            var res = new T[CountOfRows, CountOfColumns];
+            var d2Array = new T[CountOfRows, CountOfColumns];
             for (var i = 0; i < CountOfRows; ++i)
                 for (var j = 0; j < CountOfColumns; ++j)
-                    res[i, j] = _matrix[i, j];
+                    d2Array[i, j] = _matrix[i, j];
 
-            return res;
+            return d2Array;
         }
 
         /// <summary>
@@ -65,6 +60,9 @@ namespace MatrixLib
         /// <param name="matrix">Two-dimensional array of matrix values.</param>
         private static void IsCorrect(int countOfRows, int countOfColumns, T[,] matrix)
         {
+            if (countOfRows <= 0 || countOfColumns <= 0)
+                throw new MatrixException("Unable to create matrix.Invalid sizes.");
+
             if (matrix.GetLength(0) != countOfRows || matrix.GetLength(1) != countOfColumns)
                 throw new MatrixException("Unable to create matrix.Incompatible size and 2dArray.");
         }
@@ -77,11 +75,11 @@ namespace MatrixLib
         /// <returns>Created matrix.</returns>
         public static Matrix<T> CreateOnesMatrix(int countOfRows, int countOfColumns)
         {
-            if(countOfRows != countOfColumns)
+            if (countOfRows != countOfColumns)
                 throw new MatrixException("Unable to create matrix. Invalid sizes.");
 
             var d2Array = new T[countOfRows, countOfColumns];
-            for (int i = 0; i < countOfColumns; ++i)
+            for (var i = 0; i < countOfColumns; ++i)
                 d2Array[i, i] = (T)Convert.ChangeType(1, typeof(T));
 
             return new Matrix<T>(countOfRows, countOfColumns, d2Array);
@@ -96,8 +94,8 @@ namespace MatrixLib
         public static Matrix<T> CreateZeroMatrix(int countOfRows, int countOfColumns)
         {
             var d2Array = new T[countOfRows, countOfColumns];
-            for (int i = 0; i < countOfRows; ++i)
-                for (int j = 0; j < countOfColumns; ++j)
+            for (var i = 0; i < countOfRows; ++i)
+                for (var j = 0; j < countOfColumns; ++j)
                     d2Array[i, j] = default(T);
 
             return new Matrix<T>(countOfRows, countOfColumns, d2Array);

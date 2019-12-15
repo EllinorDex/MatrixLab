@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MatrixLib
+namespace MatrixLib.Operations
 {
     //Интерфейс операции, возвращающающей матрицу
     interface IOperationThatReturnMatrix<T> where T : IConvertible

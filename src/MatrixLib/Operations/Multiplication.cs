@@ -1,30 +1,36 @@
-﻿using MathWorks.MATLAB.NET.Arrays;
-using Operations;
+﻿using Operations;
 using System;
 
-namespace MatrixLib
+namespace MatrixLib.Operations
 {
-    //Операция умножения матриц
-    public class Multiplication<T> : IOperationThatReturnMatrix<T> where T: IConvertible
+    /// <summary>
+    /// Matrix multiplication calculation class
+    /// </summary>
+    /// <typeparam name="T">Type of values</typeparam>
+    public class Multiplication<T> : IOperationThatReturnMatrix<T> where T : IConvertible
     {
-        //Конструктор, в котором происходит формирование операндов
+        public Matrix<T> MatrixLeft { get; set; }
+        public Matrix<T> MatrixRight { get; set; }
+
+        /// <summary>
+        /// Create operation Multiplication
+        /// </summary>
+        /// <param name="matrixLeft">Left Matrix</param>
+        /// <param name="matrixRight">Right Matrix</param>
         public Multiplication(Matrix<T> matrixLeft, Matrix<T> matrixRight)
         {
-            MatrixLeft  = matrixLeft;
+            MatrixLeft = matrixLeft;
             MatrixRight = matrixRight;
         }
 
-        //Получение или изменение левого операнда
-        public Matrix<T> MatrixLeft { get; set; }
-
-        //Получение или изменение правого операнда
-        public Matrix<T> MatrixRight { get; set; }
-
-        //Подсчёт произведения
+        /// <summary>
+        /// Perform Multiplication
+        /// </summary>
+        /// <returns>Result Matrix</returns>
         public Matrix<T> Calculate()
         {
             IsCorrect(MatrixLeft, MatrixRight);
-            var op     = new OperWithMatr();
+            var op = new OperWithMatr();
 
             var result = op.Multiplication(1, Converter<T>.ConvertFromMatrixToMlMatrix(MatrixLeft), Converter<T>.ConvertFromMatrixToMlMatrix(MatrixRight));
             var resultArr = Converter<T>.ConvertFromMlMatrixToMatrix(result[0]);
@@ -32,7 +38,11 @@ namespace MatrixLib
             return new Matrix<T>(MatrixLeft.CountOfRows, MatrixRight.CountOfColumns, resultArr);
         }
 
-        //Проверка корректности операции
+        /// <summary>
+        /// Operand Validation
+        /// </summary>
+        /// <param name="matrixLeft">Left Matrix</param>
+        /// <param name="matrixRight">Right Matrix</param>
         private static void IsCorrect(Matrix<T> matrixLeft, Matrix<T> matrixRight)
         {
             if (matrixLeft.CountOfColumns != matrixRight.CountOfRows)

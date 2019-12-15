@@ -1,26 +1,32 @@
-﻿using MathWorks.MATLAB.NET.Arrays;
-using Operations;
+﻿using Operations;
 using System;
 
-namespace MatrixLib
+namespace MatrixLib.Operations
 {
-    //Операция нахождения обратной матрицы
-    public class InverseMatrix<T> : IOperationThatReturnMatrix<T> where T: IConvertible
+    /// <summary>
+    /// Inverse matrix calculation class
+    /// </summary>
+    /// <typeparam name="T">Type of values</typeparam>
+    public class InverseMatrix<T> : IOperationThatReturnMatrix<T> where T : IConvertible
     {
-        //Конструктор, в котором происходит формирование операнда
+        public Matrix<T> MatrixOperand { get; set; }
+        /// <summary>
+        /// Create operation InverseMatrix
+        /// </summary>
+        /// <param name="matrixOperand">Matrix</param>
         public InverseMatrix(Matrix<T> matrixOperand)
         {
             MatrixOperand = matrixOperand;
         }
 
-        //Получение или изменение операнда
-        public Matrix<T> MatrixOperand { get; set; }
-
-        //Нахождение обратной матрицы
+        /// <summary>
+        /// Perform InverseMatrix Operation
+        /// </summary>
+        /// <returns>Inverse Matrix</returns>
         public Matrix<T> Calculate()
         {
             IsCorrect(MatrixOperand);
-            var op     = new OperWithMatr();
+            var op = new OperWithMatr();
 
             var result = op.InverseMatrix(1, Converter<T>.ConvertFromMatrixToMlMatrix(MatrixOperand));
             var resultArr = Converter<T>.ConvertFromMlMatrixToMatrix(result[0]);
@@ -28,13 +34,16 @@ namespace MatrixLib
             return new Matrix<T>(MatrixOperand.CountOfRows, MatrixOperand.CountOfColumns, resultArr);
         }
 
-        //Проверка корректности операции
+        /// <summary>
+        /// Operand Validation
+        /// </summary>
+        /// <param name="matrixOperand">Matrix</param>
         private static void IsCorrect(Matrix<T> matrixOperand)
         {
             if (matrixOperand.CountOfColumns != matrixOperand.CountOfRows)
                 throw new MatrixException("The operation cannot be performed. Incorrect sizes of operand.");
             var det = new Determinant<T>(matrixOperand);
-            if (Math.Abs((double)Convert.ChangeType(det.Calculate(),typeof(double)) - (double)0) < 1e-3)
+            if (Math.Abs((double)Convert.ChangeType(det.Calculate(), typeof(double)) - 0) < 1e-3)
                 throw new MatrixException("The operation cannot be performed. Incorrect matrix.");
         }
     }

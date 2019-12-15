@@ -1,8 +1,7 @@
-﻿using MatrixLib;
+﻿using MatrixLib.Operations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
 
-namespace MatrixTest.Operations
+namespace MatrixLib.Test.Operations
 {
     [TestClass]
     public class TestMultiplication

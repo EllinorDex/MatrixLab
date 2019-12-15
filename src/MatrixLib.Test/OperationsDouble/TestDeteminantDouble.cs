@@ -1,25 +1,11 @@
-﻿using MatrixLib;
+﻿using MatrixLib.Operations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
 
-namespace MatrixTest.OperationsDouble
+namespace MatrixLib.Test.OperationsDouble
 {
     [TestClass]
     public class TestDeteminantDouble
     {
-        [TestMethod]
-        public void DeteminantOnesMatrix()
-        {
-
-            var a = Matrix<double>.CreateOnesMatrix(0, 0);
-
-            var matr = new Determinant<double>(a);
-
-            var detem = matr.Calculate();
-
-            Assert.AreEqual(1, detem);
-        }
-
         [TestMethod]
         public void DeteminantUsersMatrix0()
         {

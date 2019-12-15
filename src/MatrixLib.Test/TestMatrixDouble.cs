@@ -1,8 +1,6 @@
-﻿using MatrixLib;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-
-namespace MatrixTestDouble
+namespace MatrixLib.Test
 {
     [TestClass]
     public class TestMatrixDouble

@@ -73,7 +73,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1Click);
             // 
             // Matrix
             // 
@@ -91,12 +91,12 @@
         }
 
         #endregion
-        partial void userMatrix();
-        partial void loadedMatrix();
-        partial void diagMatrix();
-        partial void unitMatrix();
-        partial void zeroMatrix();
-        partial void resultMatrix();
+        partial void UserMatrix();
+        partial void LoadedMatrix();
+        partial void DiagMatrix();
+        partial void UnitMatrix();
+        partial void ZeroMatrix();
+        partial void ResultMatrix();
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
     }

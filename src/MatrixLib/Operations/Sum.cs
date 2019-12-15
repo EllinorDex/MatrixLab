@@ -1,30 +1,36 @@
-﻿using MathWorks.MATLAB.NET.Arrays;
-using Operations;
+﻿using Operations;
 using System;
 
-namespace MatrixLib
+namespace MatrixLib.Operations
 {
-    //Операция сложения матриц
-    public class Sum<T> : IOperationThatReturnMatrix<T> where T: IConvertible
-    {
-        //Конструктор, в котором происходит формирование операндов
+    /// <summary>
+    /// Matrix sum calculation class
+    /// </summary>
+    /// <typeparam name="T">Type of values</typeparam>
+    public class Sum<T> : IOperationThatReturnMatrix<T> where T : IConvertible
+    { 
+        public Matrix<T> MatrixLeft { get; set; }
+        public Matrix<T> MatrixRight { get; set; }
+
+        /// <summary>
+        /// Create operation Sum
+        /// </summary>
+        /// <param name="matrixLeft">Left Matrix</param>
+        /// <param name="matrixRight">Right Matrix</param>
         public Sum(Matrix<T> matrixLeft, Matrix<T> matrixRight)
         {
             MatrixLeft = matrixLeft;
             MatrixRight = matrixRight;
         }
 
-        //Получение или изменение левого операнда
-        public Matrix<T> MatrixLeft { get; set; }
-
-        //Получение или изменение правого операнда
-        public Matrix<T> MatrixRight { get; set; }
-
-        //Подсчёт суммы
+        /// <summary>
+        /// Perform Sum
+        /// </summary>
+        /// <returns>Result Matrix</returns>
         public Matrix<T> Calculate()
         {
             IsCorrect(MatrixLeft, MatrixRight);
-            var op     = new OperWithMatr();
+            var op = new OperWithMatr();
 
             var result = op.Sum(1, Converter<T>.ConvertFromMatrixToMlMatrix(MatrixLeft), Converter<T>.ConvertFromMatrixToMlMatrix(MatrixRight));
             var resultArr = Converter<T>.ConvertFromMlMatrixToMatrix(result[0]);
@@ -32,7 +38,11 @@ namespace MatrixLib
             return new Matrix<T>(MatrixLeft.CountOfRows, MatrixLeft.CountOfColumns, resultArr);
         }
 
-        //Проверка корректности операции
+        /// <summary>
+        /// Operand Validation
+        /// </summary>
+        /// <param name="matrixLeft">Left Matrix</param>
+        /// <param name="matrixRight">Right Matrix</param>
         private static void IsCorrect(Matrix<T> matrixLeft, Matrix<T> matrixRight)
         {
             if (matrixLeft.CountOfRows != matrixRight.CountOfRows || matrixLeft.CountOfColumns != matrixRight.CountOfColumns)

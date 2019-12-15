@@ -118,4 +118,56 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="res01" xml:space="preserve">
+    <value>The matrix you tried to load from the file is not set correctly.</value>
+    <comment>a</comment>
+  </data>
+  <data name="res02" xml:space="preserve">
+    <value>You entered an invalid character as a matrix element.
+Don't do that. Please, check the elements of the matrix you set.</value>
+  </data>
+  <data name="res03" xml:space="preserve">
+    <value>Error!</value>
+  </data>
+  <data name="res04" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="res05" xml:space="preserve">
+    <value>Text files(*.txt)|*.txt</value>
+  </data>
+  <data name="res06" xml:space="preserve">
+    <value>This program allows you to perform simple matrix calculations. For this you need:
+
+1) Select the operation you need;
+
+2) Set the number of rows and columns in the matrix;
+
+3) Select one of the proposed matrix types. If your matrix is random, then select a custom matrix type;
+
+4) In the window that appears, set the matrix elements;
+
+5) Click the button Calculate!</value>
+  </data>
+  <data name="res07" xml:space="preserve">
+    <value>Three beginning programmers from Belarus and Ukraine.</value>
+  </data>
+  <data name="res08" xml:space="preserve">
+    <value>Please, help two poor Belarusians and one Ukrainian. 
+Sberbank Online: +7-977-763-62-91</value>
+  </data>
+  <data name="res09" xml:space="preserve">
+    <value>The number of rows should be equal to the number of columns for diagonal and unit matrices.</value>
+  </data>
+  <data name="res10" xml:space="preserve">
+    <value>Please set all the necessary parameters to build the matrix.</value>
+  </data>
+  <data name="res11" xml:space="preserve">
+    <value>Please, set all the necessary matrices to perform the operation.</value>
+  </data>
+  <data name="res12" xml:space="preserve">
+    <value>Please, set the matrix to perform the operation.</value>
+  </data>
+  <data name="res13" xml:space="preserve">
+    <value>The determinant of the matrix is </value>
+  </data>
 </root>

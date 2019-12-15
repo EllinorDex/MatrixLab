@@ -8,8 +8,8 @@
     <ProjectGuid>{3B32436C-5F23-4536-B79B-AA124FAAEE9B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MatrixTest</RootNamespace>
-    <AssemblyName>MatrixTest</AssemblyName>
+    <RootNamespace>MatrixLib.Test</RootNamespace>
+    <AssemblyName>MatrixLib.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -26,7 +26,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\bin\$(Configuration)\$(Platform)\MatrixTest</OutputPath>
+    <OutputPath>..\..\bin\$(Configuration)\$(Platform)\MatrixLib.Test</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -34,7 +34,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\$(Configuration)\$(Platform)\MatrixTest</OutputPath>
+    <OutputPath>..\..\bin\$(Configuration)\$(Platform)\MatrixLib.Test</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
