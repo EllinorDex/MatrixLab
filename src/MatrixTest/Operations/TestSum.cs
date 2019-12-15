@@ -44,18 +44,7 @@ namespace MatrixTest.Operations
             var b = Matrix<int>.CreateZeroMatrix(4, 4);
             var sm = new Sum<int>(a, b);
 
-            var except = false;
-
-            try
-            {
-                var m = sm.Calculate();
-            }
-            catch (MatrixException)
-            {
-                except = true;
-            }
-
-            Assert.IsTrue(except);
+            Assert.ThrowsException<MatrixException>(() => sm.Calculate());
         }
 
     }

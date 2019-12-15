@@ -54,18 +54,7 @@ namespace MatrixTest.OperationsDouble
             var a = new Matrix<double>(3, 3, matrOfArray);
             var im = new InverseMatrix<double>(a);
 
-            var except = false;
-
-            try
-            {
-                var m = im.Calculate();
-            }
-            catch (MatrixException)
-            {
-                except = true;
-            }
-
-            Assert.IsTrue(except);
+            Assert.ThrowsException<MatrixException>(() => im.Calculate());
         }
 
         [TestMethod]
