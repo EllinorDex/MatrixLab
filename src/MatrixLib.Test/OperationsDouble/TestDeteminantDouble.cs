@@ -54,7 +54,7 @@ namespace MatrixLib.Test.OperationsDouble
 
             sm.MatrixOperand = c;
 
-            CollectionAssert.AreEqual(sm.MatrixOperand.Get2DArray(), c.Get2DArray());
+            Assert.AreEqual(sm.MatrixOperand, c);
 
         }
     }
