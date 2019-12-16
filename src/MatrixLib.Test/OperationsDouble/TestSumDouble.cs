@@ -10,7 +10,6 @@ namespace MatrixLib.Test.OperationsDouble
         [TestMethod]
         public void SumZerosMatrixDouble()
         {
-            var resultMatr = new double[5, 7];
             var a = Matrix<double>.CreateZeroMatrix(5, 7);
             var b = Matrix<double>.CreateZeroMatrix(5, 7);
 
@@ -18,22 +17,23 @@ namespace MatrixLib.Test.OperationsDouble
 
             var c = sum.Calculate();
 
-            CollectionAssert.AreEqual(resultMatr, c.Get2DArray());
+            Assert.AreEqual(a, c);
         }
 
         [TestMethod]
         public void SumUsersMatrixDouble()
         {
             var matrA = new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
-            var resultMatr = new double[,] { { 2, 4, 6 }, { 8, 10, 12 }, { 14, 16, 18 }, { 20, 22, 24 } };
+            var resultArr = new double[,] { { 2, 4, 6 }, { 8, 10, 12 }, { 14, 16, 18 }, { 20, 22, 24 } };
             var a = new Matrix<double>(4, 3, matrA);
             var b = new Matrix<double>(4, 3, matrA);
+            var resultMatr = new Matrix<double>(4, 3, resultArr);
 
             var sum = new Sum<double>(a, b);
 
             var c = sum.Calculate();
 
-            CollectionAssert.AreEqual(resultMatr, c.Get2DArray());
+            Assert.AreEqual(resultMatr, c);
         }
 
         [TestMethod]
@@ -60,8 +60,8 @@ namespace MatrixLib.Test.OperationsDouble
             sm.MatrixLeft = c;
             sm.MatrixRight = d;
 
-            CollectionAssert.AreEqual(sm.MatrixLeft.Get2DArray(), c.Get2DArray());
-            CollectionAssert.AreEqual(sm.MatrixRight.Get2DArray(), c.Get2DArray());
+            Assert.AreEqual(sm.MatrixLeft, c);
+            Assert.AreEqual(sm.MatrixRight, d);
 
         }
     }

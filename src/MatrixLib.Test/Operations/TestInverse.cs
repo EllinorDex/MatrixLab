@@ -15,7 +15,7 @@ namespace MatrixLib.Test.Operations
 
             var inverse = matr.Calculate();
 
-            CollectionAssert.AreEqual(a.Get2DArray(), inverse.Get2DArray());
+            Assert.AreEqual(a, inverse);
         }
 
         [TestMethod]
