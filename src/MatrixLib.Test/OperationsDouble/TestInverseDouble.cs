@@ -15,21 +15,22 @@ namespace MatrixLib.Test.OperationsDouble
 
             var inverse = matr.Calculate();
 
-            CollectionAssert.AreEqual(a.Get2DArray(), inverse.Get2DArray());
+            Assert.AreEqual(a, inverse);
         }
 
         [TestMethod]
         public void InverseUsersMatrix0Double()
         {
             var matrOfArray = new double[,] { { 2, 6, 5 }, { 5, 3, -2 }, { 7, 4, -3 } };
-            var resultMatr = new double[,] { { 1, -38, 27 }, { -1, 41, -29 }, { 1, -34, 24 } };
+            var resultArr = new double[,] { { 1, -38, 27 }, { -1, 41, -29 }, { 1, -34, 24 } };
             var a = new Matrix<double>(3, 3, matrOfArray);
+            var resultMatr = new Matrix<double>(3, 3, resultArr);
 
             var matr = new InverseMatrix<double>(a);
 
             var inverse = matr.Calculate();
 
-            CollectionAssert.AreEqual(resultMatr, inverse.Get2DArray());
+            Assert.AreEqual(resultMatr, inverse);
         }
         [TestMethod]
         public void InverseUsersMatrixNumbDouble()
@@ -66,7 +67,7 @@ namespace MatrixLib.Test.OperationsDouble
 
             sm.MatrixOperand = c;
 
-            CollectionAssert.AreEqual(sm.MatrixOperand.Get2DArray(), c.Get2DArray());
+            Assert.AreEqual(sm.MatrixOperand, c);
 
         }
 

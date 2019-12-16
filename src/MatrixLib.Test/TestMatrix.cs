@@ -61,5 +61,49 @@ namespace MatrixLib.Test
             Assert.AreEqual(matr[1, 1], a[1, 1]);
         }
 
+        [TestMethod]
+        public void OperationEqualityTrue()
+        {
+            var matr = new int[,] { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+            var a = new Matrix<int>(3, 3, matr);
+            var b = Matrix<int>.CreateOnesMatrix(3, 3);
+            Assert.IsTrue(a == b);
+        }
+
+        [TestMethod]
+        public void OperationEqualityFalse()
+        {
+            var matr = new int[,] { { 1, 1, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+            var a = new Matrix<int>(3, 3, matr);
+            var b = Matrix<int>.CreateOnesMatrix(3, 3);
+            Assert.IsFalse(a == b);
+        }
+
+        [TestMethod]
+        public void OperationInequalityTrue()
+        {
+            var matr = new int[,] { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+            var a = new Matrix<int>(3, 3, matr);
+            var b = Matrix<int>.CreateOnesMatrix(3, 3);
+            Assert.IsFalse(a != b);
+        }
+
+        [TestMethod]
+        public void OperationInequalityFalse()
+        {
+            var matr = new int[,] { { 1, 1, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+            var a = new Matrix<int>(3, 3, matr);
+            var b = Matrix<int>.CreateOnesMatrix(3, 3);
+            Assert.IsTrue(a != b);
+        }
+
+        [TestMethod]
+        public void MethodGetHashCode()
+        {
+            var matr = new int[,] { { 1, 1, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+            var a = new Matrix<int>(3, 3, matr);
+            Assert.AreEqual(13000, a.GetHashCode());
+        }
+
     }
 }
