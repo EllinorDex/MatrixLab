@@ -5,15 +5,13 @@ namespace MatrixLib.Test
     [TestClass]
     public class TestMatrix
     {
-
         [TestMethod]
-        public void ConstractOnesMatrixNorm()
-        { 
-            //Лучше сделать сравнение с двумерным массивом(1 ассерт + полная проверка)
+        public void ConstractOnesMatrixNormDouble()
+        {
             var a = Matrix<int>.CreateOnesMatrix(4, 4);
+            var matr = new int[,] { { 1, 0, 0, 0 }, { 0, 1, 0, 0 }, { 0, 0, 1, 0 }, { 0, 0, 0, 1 } };
 
-            Assert.AreEqual(1, a[2, 2]);
-            Assert.AreEqual(0, a[3, 2]);
+            CollectionAssert.AreEqual(matr, a.Get2DArray());
         }
 
         [TestMethod]
@@ -103,6 +101,14 @@ namespace MatrixLib.Test
             var matr = new int[,] { { 1, 1, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
             var a = new Matrix<int>(3, 3, matr);
             Assert.AreEqual(13000, a.GetHashCode());
+        }
+
+        [TestMethod]
+        public void MethodEquals()
+        {
+            var matr = new int[,] { { 1, 1, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+            var a = new Matrix<int>(3, 3, matr);
+            Assert.IsTrue(a.Equals(a));
         }
 
     }
