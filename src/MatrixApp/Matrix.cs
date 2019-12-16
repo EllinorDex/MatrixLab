@@ -225,6 +225,7 @@ namespace MatrixApp
 
         private T[,] MatrixWrite()
         {
+            var arrayOfDoubleValues = new double[_numberOfRows, _numberOfColumns];
             var arrayOfValues = new T[_numberOfRows, _numberOfColumns];
             for (var i = 0; i < _numberOfRows; ++i)
             {
@@ -232,7 +233,8 @@ namespace MatrixApp
                 {
                     try
                     {
-                        arrayOfValues[i, j] = (T)Convert.ChangeType(dataGridView1[j, i].Value, typeof(T));
+                        arrayOfDoubleValues[i, j] = (double)Convert.ChangeType(dataGridView1[j, i].Value, typeof(double));
+                        arrayOfValues[i, j] = (T)Convert.ChangeType(arrayOfDoubleValues[i, j], typeof(T));
                     }
                     catch (FormatException)
                     {

@@ -89,7 +89,7 @@ namespace MatrixApp
                     {
                         for (var j = 0; j < numberOfColumns; ++j)
                         {
-                            arrayOfMatrixValues[i, j] = Convert.ToInt32(matrixRow[j]);
+                            arrayOfMatrixValues[i, j] = Convert.ToDouble(matrixRow[j]);
                         }
                     }
                     else
@@ -131,7 +131,7 @@ namespace MatrixApp
                     {
                         for (var j = 0; j < numberOfColumns; ++j)
                         {
-                            arrayOfMatrixValues[i, j] = Convert.ToInt32(matrixRow[j]);
+                            arrayOfMatrixValues[i, j] = Convert.ToDouble(matrixRow[j]);
                         }
                     }
                     else
@@ -206,13 +206,13 @@ namespace MatrixApp
 
                 if (comboBox7.Text == "Integer")
                 {
-                    Matrix<int> matr1 = new Matrix<int>(numericUpDown1, numericUpDown2, comboBox1, "Left Matrix");
-                    matr1.ShowDialog();
+                    Matrix<int> form = new Matrix<int>(numericUpDown1, numericUpDown2, comboBox1, "Left Matrix");
+                    form.ShowDialog();
                 }
                 else
                 {
-                    Matrix<double> matr2 = new Matrix<double>(numericUpDown1, numericUpDown2, comboBox1, "Left Matrix");
-                    matr2.ShowDialog();
+                    Matrix<double> form = new Matrix<double>(numericUpDown1, numericUpDown2, comboBox1, "Left Matrix");
+                    form.ShowDialog();
                 }
             }
             else
@@ -234,13 +234,13 @@ namespace MatrixApp
 
                 if (comboBox8.Text == "Integer")
                 {
-                    Matrix<int> matr1 = new Matrix<int>(numericUpDown3, numericUpDown4, comboBox2, "Right Matrix");
-                    matr1.ShowDialog();
+                    Matrix<int> form = new Matrix<int>(numericUpDown3, numericUpDown4, comboBox2, "Right Matrix");
+                    form.ShowDialog();
                 }
                 else
                 {
-                    Matrix<double> matr2 = new Matrix<double>(numericUpDown3, numericUpDown4, comboBox2, "Right Matrix");
-                    matr2.ShowDialog();
+                    Matrix<double> form = new Matrix<double>(numericUpDown3, numericUpDown4, comboBox2, "Right Matrix");
+                    form.ShowDialog();
                 }
             }
             else
