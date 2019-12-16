@@ -9,11 +9,10 @@ namespace MatrixLib.Test
         [TestMethod]
         public void ConstractOnesMatrixNormDouble()
         {
-            //Лучше сделать сравнение с двумерным массивом(1 ассерт + полная проверка)
             var a = Matrix<double>.CreateOnesMatrix(4, 4);
+            var matr = new double[,] { { 1, 0, 0, 0 }, { 0, 1, 0, 0 }, { 0, 0, 1, 0 }, { 0, 0, 0, 1 } };
 
-            Assert.AreEqual(1, a[2, 2]);
-            Assert.AreEqual(0, a[3, 2]);
+            CollectionAssert.AreEqual(matr, a.Get2DArray());
         }
 
         [TestMethod]
@@ -64,44 +63,44 @@ namespace MatrixLib.Test
         [TestMethod]
         public void OperationEqualityTrue()
         {
-            var matr = new int[,] { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
-            var a = new Matrix<int>(3, 3, matr);
-            var b = Matrix<int>.CreateOnesMatrix(3, 3);
+            var matr = new double[,] { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+            var a = new Matrix<double>(3, 3, matr);
+            var b = Matrix<double>.CreateOnesMatrix(3, 3);
             Assert.IsTrue(a == b);
         }
 
         [TestMethod]
         public void OperationEqualityFalse()
         {
-            var matr = new int[,] { { 1, 1, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
-            var a = new Matrix<int>(3, 3, matr);
-            var b = Matrix<int>.CreateOnesMatrix(3, 3);
+            var matr = new double[,] { { 1, 1, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+            var a = new Matrix<double>(3, 3, matr);
+            var b = Matrix<double>.CreateOnesMatrix(3, 3);
             Assert.IsFalse(a == b);
         }
 
         [TestMethod]
         public void OperationInequalityTrue()
         {
-            var matr = new int[,] { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
-            var a = new Matrix<int>(3, 3, matr);
-            var b = Matrix<int>.CreateOnesMatrix(3, 3);
+            var matr = new double[,] { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+            var a = new Matrix<double>(3, 3, matr);
+            var b = Matrix<double>.CreateOnesMatrix(3, 3);
             Assert.IsFalse(a != b);
         }
 
         [TestMethod]
         public void OperationInequalityFalse()
         {
-            var matr = new int[,] { { 1, 1, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
-            var a = new Matrix<int>(3, 3, matr);
-            var b = Matrix<int>.CreateOnesMatrix(3, 3);
+            var matr = new double[,] { { 1, 1, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+            var a = new Matrix<double>(3, 3, matr);
+            var b = Matrix<double>.CreateOnesMatrix(3, 3);
             Assert.IsTrue(a != b);
         }
 
         [TestMethod]
         public void MethodGetHashCode()
         {
-            var matr = new int[,] { { 1, 1, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
-            var a = new Matrix<int>(3, 3, matr);
+            var matr = new double[,] { { 1, 1, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+            var a = new Matrix<double>(3, 3, matr);
             Assert.AreEqual(13000, a.GetHashCode());
         }
     }

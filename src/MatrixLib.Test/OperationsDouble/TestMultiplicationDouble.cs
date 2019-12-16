@@ -37,7 +37,6 @@ namespace MatrixLib.Test.OperationsDouble
             Assert.AreEqual(resultMatr, c);
         }
 
-        //Кирилл, в этом тесте же вроде не должно выкидываться исключение
         [TestMethod]
         public void MultMatrixExceptionDouble()
         {
