@@ -1,6 +1,6 @@
 ﻿namespace MatrixApp
 {
-    partial class Matrix
+    partial class Matrix<T>
     {
         /// <summary>
         /// Required designer variable.

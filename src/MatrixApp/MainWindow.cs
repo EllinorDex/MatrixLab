@@ -13,17 +13,30 @@ namespace MatrixApp
         {
             InitializeComponent();
             tabControl1.DrawItem += TabControl1_DrawItem;
-            SetComboBox(comboBox1);
-            SetComboBox(comboBox2);
-            SetComboBox(comboBox4);
-            SetComboBox(comboBox3);
-            SetComboBox(comboBox5);
-            SetComboBox(comboBox6);
+
+            SetMatrixTypeComboBox(comboBox1);
+            SetMatrixTypeComboBox(comboBox2);
+            SetMatrixTypeComboBox(comboBox4);
+            SetMatrixTypeComboBox(comboBox3);
+            SetMatrixTypeComboBox(comboBox5);
+            SetMatrixTypeComboBox(comboBox6);
+
+            SetValueTypeComboBox(comboBox7);
+            SetValueTypeComboBox(comboBox8);
+            SetValueTypeComboBox(comboBox9);
+            SetValueTypeComboBox(comboBox10);
+            SetValueTypeComboBox(comboBox11);
+            SetValueTypeComboBox(comboBox12);
         }
 
-        private static void SetComboBox(Control comboBox)
+        private static void SetMatrixTypeComboBox(Control comboBox)
         {
             comboBox.Text = Resources.res04;
+        }
+
+        private static void SetValueTypeComboBox(Control comboBox)
+        {
+            comboBox.Text = "Integer";
         }
 
         private void TabControl1_DrawItem(object sender, DrawItemEventArgs e)
@@ -65,7 +78,8 @@ namespace MatrixApp
             var matrix = File.ReadAllLines(openFileDialog1.FileName);
             var numberOfRows = matrix.Length;
             var numberOfColumns = matrix[0].Split(' ').Length;
-            var arrayOfMatrixValues = new int[numberOfRows, numberOfColumns];
+            var arrayOfMatrixValues = new double[numberOfRows, numberOfColumns];
+
             for (var i = 0; i < numberOfRows; ++i)
             {
                 var matrixRow = matrix[i].Split(' ');
@@ -74,7 +88,9 @@ namespace MatrixApp
                     if (matrix[i].Split(' ').Length == numberOfColumns)
                     {
                         for (var j = 0; j < numberOfColumns; ++j)
+                        {
                             arrayOfMatrixValues[i, j] = Convert.ToInt32(matrixRow[j]);
+                        }
                     }
                     else
                     {
@@ -84,11 +100,12 @@ namespace MatrixApp
                 }
                 catch
                 {
-                        MessageBox.Show(Resources.res01, Resources.res03);
+                    MessageBox.Show(Resources.res01, Resources.res03);
                     return;
                 }
             }
-            var form = new Matrix(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Left Matrix");
+
+            Matrix<double> form = new Matrix<double>(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Left Matrix");
             form.ShowDialog();
         }
 
@@ -103,7 +120,8 @@ namespace MatrixApp
             var matrix = File.ReadAllLines(openFileDialog1.FileName);
             var numberOfRows = matrix.Length;
             var numberOfColumns = matrix[0].Split(' ').Length;
-            var arrayOfMatrixValues = new int[numberOfRows, numberOfColumns];
+            var arrayOfMatrixValues = new double[numberOfRows, numberOfColumns];
+
             for (var i = 0; i < numberOfRows; ++i)
             {
                 var matrixRow = matrix[i].Split(' ');
@@ -112,7 +130,9 @@ namespace MatrixApp
                     if (matrix[i].Split(' ').Length == numberOfColumns)
                     {
                         for (var j = 0; j < numberOfColumns; ++j)
+                        {
                             arrayOfMatrixValues[i, j] = Convert.ToInt32(matrixRow[j]);
+                        }
                     }
                     else
                     {
@@ -126,7 +146,8 @@ namespace MatrixApp
                     return;
                 }
             }
-            var form = new Matrix(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Right Matrix");
+
+            Matrix<double> form = new Matrix<double>(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Right Matrix");
             form.ShowDialog();
         }
 
@@ -182,8 +203,17 @@ namespace MatrixApp
                         return;
                     }
                 }
-                var form = new Matrix(numericUpDown1, numericUpDown2, comboBox1, "Left Matrix");
-                form.ShowDialog();
+
+                if (comboBox7.Text == "Integer")
+                {
+                    Matrix<int> matr1 = new Matrix<int>(numericUpDown1, numericUpDown2, comboBox1, "Left Matrix");
+                    matr1.ShowDialog();
+                }
+                else
+                {
+                    Matrix<double> matr2 = new Matrix<double>(numericUpDown1, numericUpDown2, comboBox1, "Left Matrix");
+                    matr2.ShowDialog();
+                }
             }
             else
                 MessageBox.Show(Resources.res10, Resources.res03);
@@ -201,8 +231,17 @@ namespace MatrixApp
                         return;
                     }
                 }
-                var form = new Matrix(numericUpDown3, numericUpDown4, comboBox2, "Right Matrix");
-                form.ShowDialog();
+
+                if (comboBox8.Text == "Integer")
+                {
+                    Matrix<int> matr1 = new Matrix<int>(numericUpDown3, numericUpDown4, comboBox2, "Right Matrix");
+                    matr1.ShowDialog();
+                }
+                else
+                {
+                    Matrix<double> matr2 = new Matrix<double>(numericUpDown3, numericUpDown4, comboBox2, "Right Matrix");
+                    matr2.ShowDialog();
+                }
             }
             else
                 MessageBox.Show(Resources.res10, Resources.res03);
@@ -212,10 +251,21 @@ namespace MatrixApp
         {
             try
             {
-                var matrix = new Sum<int>(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
-                var resultMatrix = matrix.Calculate();
-                var form = new Matrix(resultMatrix.CountOfRows, resultMatrix.CountOfColumns, resultMatrix.Get2DArray());
-                form.ShowDialog();
+                if (comboBox7.Text == "Integer" && comboBox8.Text == "Integer")
+                {
+                    var matrix = new Sum<int>(Matrix<int>.GetLeftMatrix(), Matrix<int>.GetRightMatrix());
+                    var resultMatrix = matrix.Calculate();
+                    var form = new Matrix<int>(resultMatrix.CountOfRows, resultMatrix.CountOfColumns, resultMatrix.Get2DArray());
+                    form.ShowDialog();
+                }
+                else
+                {
+                    var matrix = new Sum<double>(Matrix<double>.GetLeftMatrix(), Matrix<double>.GetRightMatrix());
+                    var resultMatrix = matrix.Calculate();
+                    var form = new Matrix<double>(resultMatrix.CountOfRows, resultMatrix.CountOfColumns, resultMatrix.Get2DArray());
+                    form.ShowDialog();
+                }
+
             }
             catch (NullReferenceException)
             {
@@ -239,8 +289,18 @@ namespace MatrixApp
                         return;
                     }
                 }
-                var form = new Matrix(numericUpDown5, numericUpDown6, comboBox3, "Left Matrix");
-                form.ShowDialog();
+ 
+                if (comboBox9.Text == "Integer")
+                {
+                    var form = new Matrix<int>(numericUpDown5, numericUpDown6, comboBox3, "Left Matrix");
+                    form.ShowDialog();
+                }
+                else
+                {
+                    var form = new Matrix<double>(numericUpDown5, numericUpDown6, comboBox3, "Left Matrix");
+                    form.ShowDialog();
+                }
+
             }
             else
                 MessageBox.Show(Resources.res10, Resources.res03);
@@ -258,8 +318,18 @@ namespace MatrixApp
                         return;
                     }
                 }
-                var form = new Matrix(numericUpDown7, numericUpDown8, comboBox4, "Right Matrix");
-                form.ShowDialog();
+
+                if (comboBox10.Text == "Integer")
+                {
+                    var form = new Matrix<int>(numericUpDown7, numericUpDown8, comboBox4, "Right Matrix");
+                    form.ShowDialog();
+                }
+                else
+                {
+                    var form = new Matrix<double>(numericUpDown7, numericUpDown8, comboBox4, "Right Matrix");
+                    form.ShowDialog();
+                }
+
             }
             else
                 MessageBox.Show(Resources.res10, Resources.res03);
@@ -269,10 +339,20 @@ namespace MatrixApp
         {
             try
             {
-                var matrix = new Multiplication<int>(Matrix.GetLeftMatrix(), Matrix.GetRightMatrix());
-                var resultMatrix = matrix.Calculate();
-                var form = new Matrix(resultMatrix.CountOfRows, resultMatrix.CountOfColumns, resultMatrix.Get2DArray());
-                form.ShowDialog();
+                if (comboBox9.Text == "Integer" && comboBox10.Text == "Integer")
+                {
+                    var matrix = new Multiplication<int>(Matrix<int>.GetLeftMatrix(), Matrix<int>.GetRightMatrix());
+                    var resultMatrix = matrix.Calculate();
+                    var form = new Matrix<int>(resultMatrix.CountOfRows, resultMatrix.CountOfColumns, resultMatrix.Get2DArray());
+                    form.ShowDialog();
+                }
+                else
+                {
+                    var matrix = new Multiplication<double>(Matrix<double>.GetLeftMatrix(), Matrix<double>.GetRightMatrix());
+                    var resultMatrix = matrix.Calculate();
+                    var form = new Matrix<double>(resultMatrix.CountOfRows, resultMatrix.CountOfColumns, resultMatrix.Get2DArray());
+                    form.ShowDialog();
+                }
             }
             catch (NullReferenceException)
             {
@@ -296,8 +376,17 @@ namespace MatrixApp
                         return;
                     }
                 }
-                var form = new Matrix(numericUpDown9, numericUpDown10, comboBox5, "Left Matrix");
-                form.ShowDialog();
+
+                if (comboBox11.Text == "Integer")
+                {
+                    var form = new Matrix<int>(numericUpDown9, numericUpDown10, comboBox5, "Left Matrix");
+                    form.ShowDialog();
+                }
+                else
+                {
+                    var form = new Matrix<double>(numericUpDown9, numericUpDown10, comboBox5, "Left Matrix");
+                    form.ShowDialog();
+                }
             }
             else
                 MessageBox.Show(Resources.res10, Resources.res03);
@@ -306,11 +395,21 @@ namespace MatrixApp
         private void Button8_Click(Object sender, EventArgs e)
         {
             try
-            { 
-                var matrix = new InverseMatrix<int>(Matrix.GetLeftMatrix());
-                var resultMatrix = matrix.Calculate();
-                var form = new Matrix(resultMatrix.CountOfRows, resultMatrix.CountOfColumns, resultMatrix.Get2DArray());
-                form.ShowDialog();
+            {
+                if (comboBox11.Text == "Integer")
+                {
+                    var matrix = new InverseMatrix<int>(Matrix<int>.GetLeftMatrix());
+                    var resultMatrix = matrix.Calculate();
+                    var form = new Matrix<int>(resultMatrix.CountOfRows, resultMatrix.CountOfColumns, resultMatrix.Get2DArray());
+                    form.ShowDialog();
+                }
+                else
+                {
+                    var matrix = new InverseMatrix<double>(Matrix<double>.GetLeftMatrix());
+                    var resultMatrix = matrix.Calculate();
+                    var form = new Matrix<double>(resultMatrix.CountOfRows, resultMatrix.CountOfColumns, resultMatrix.Get2DArray());
+                    form.ShowDialog();
+                }
             }
             catch (NullReferenceException)
             {
@@ -334,8 +433,17 @@ namespace MatrixApp
                         return;
                     }
                 }
-                var form = new Matrix(numericUpDown11, numericUpDown12, comboBox6, "Left Matrix");
-                form.ShowDialog();
+
+                if (comboBox12.Text == "Integer")
+                {
+                    var form = new Matrix<int>(numericUpDown11, numericUpDown12, comboBox6, "Left Matrix");
+                    form.ShowDialog();
+                }
+                else
+                {
+                    var form = new Matrix<double>(numericUpDown11, numericUpDown12, comboBox6, "Left Matrix");
+                    form.ShowDialog();
+                }
             }
             else
                 MessageBox.Show(Resources.res10, Resources.res03);
@@ -345,9 +453,18 @@ namespace MatrixApp
         {
             try
             {
-                var matrix = new Determinant<int>(Matrix.GetLeftMatrix());
-                var determinant = matrix.Calculate();
-                MessageBox.Show(Resources.res13 + determinant.ToString() + '.', "Determinant");
+                if (comboBox12.Text == "Integer")
+                {
+                    var matrix = new Determinant<int>(Matrix<int>.GetLeftMatrix());
+                    var determinant = matrix.Calculate();
+                    MessageBox.Show(Resources.res13 + determinant.ToString() + '.', "Determinant");
+                }
+                else
+                {
+                    var matrix = new Determinant<double>(Matrix<double>.GetLeftMatrix());
+                    var determinant = matrix.Calculate();
+                    MessageBox.Show(Resources.res13 + determinant.ToString() + '.', "Determinant");
+                }
             }
             catch (NullReferenceException)
             {
@@ -357,11 +474,6 @@ namespace MatrixApp
             {
                 MessageBox.Show(exception.Message, Resources.res03);
             }
-        }
-
-        private void MainWindow_Load(Object sender, EventArgs e)
-        {
-
         }
     }
 }
