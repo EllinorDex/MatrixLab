@@ -22,9 +22,7 @@ namespace MatrixApp
             SetMatrixTypeComboBox(comboBox6);
 
             SetValueTypeComboBox(comboBox7);
-            SetValueTypeComboBox(comboBox8);
             SetValueTypeComboBox(comboBox9);
-            SetValueTypeComboBox(comboBox10);
             SetValueTypeComboBox(comboBox11);
             SetValueTypeComboBox(comboBox12);
         }
@@ -105,7 +103,7 @@ namespace MatrixApp
                 }
             }
 
-            Matrix<double> form = new Matrix<double>(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Left Matrix");
+            var form = new Matrix<double>(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Left Matrix");
             form.ShowDialog();
         }
 
@@ -147,7 +145,7 @@ namespace MatrixApp
                 }
             }
 
-            Matrix<double> form = new Matrix<double>(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Right Matrix");
+            var form = new Matrix<double>(numberOfRows, numberOfColumns, arrayOfMatrixValues, "Right Matrix");
             form.ShowDialog();
         }
 
@@ -206,12 +204,12 @@ namespace MatrixApp
 
                 if (comboBox7.Text == "Integer")
                 {
-                    Matrix<int> form = new Matrix<int>(numericUpDown1, numericUpDown2, comboBox1, "Left Matrix");
+                    var form = new Matrix<int>(numericUpDown1, numericUpDown2, comboBox1, "Left Matrix");
                     form.ShowDialog();
                 }
                 else
                 {
-                    Matrix<double> form = new Matrix<double>(numericUpDown1, numericUpDown2, comboBox1, "Left Matrix");
+                    var form = new Matrix<double>(numericUpDown1, numericUpDown2, comboBox1, "Left Matrix");
                     form.ShowDialog();
                 }
             }
@@ -232,14 +230,14 @@ namespace MatrixApp
                     }
                 }
 
-                if (comboBox8.Text == "Integer")
+                if (comboBox7.Text == "Integer")
                 {
-                    Matrix<int> form = new Matrix<int>(numericUpDown3, numericUpDown4, comboBox2, "Right Matrix");
+                    var form = new Matrix<int>(numericUpDown3, numericUpDown4, comboBox2, "Right Matrix");
                     form.ShowDialog();
                 }
                 else
                 {
-                    Matrix<double> form = new Matrix<double>(numericUpDown3, numericUpDown4, comboBox2, "Right Matrix");
+                    var form = new Matrix<double>(numericUpDown3, numericUpDown4, comboBox2, "Right Matrix");
                     form.ShowDialog();
                 }
             }
@@ -251,7 +249,7 @@ namespace MatrixApp
         {
             try
             {
-                if (comboBox7.Text == "Integer" && comboBox8.Text == "Integer")
+                if (comboBox7.Text == "Integer")
                 {
                     var matrix = new Sum<int>(Matrix<int>.GetLeftMatrix(), Matrix<int>.GetRightMatrix());
                     var resultMatrix = matrix.Calculate();
@@ -319,7 +317,7 @@ namespace MatrixApp
                     }
                 }
 
-                if (comboBox10.Text == "Integer")
+                if (comboBox9.Text == "Integer")
                 {
                     var form = new Matrix<int>(numericUpDown7, numericUpDown8, comboBox4, "Right Matrix");
                     form.ShowDialog();
@@ -339,7 +337,7 @@ namespace MatrixApp
         {
             try
             {
-                if (comboBox9.Text == "Integer" && comboBox10.Text == "Integer")
+                if (comboBox9.Text == "Integer")
                 {
                     var matrix = new Multiplication<int>(Matrix<int>.GetLeftMatrix(), Matrix<int>.GetRightMatrix());
                     var resultMatrix = matrix.Calculate();

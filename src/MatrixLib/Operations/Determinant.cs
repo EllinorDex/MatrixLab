@@ -40,6 +40,8 @@ namespace MatrixLib.Operations
         /// <param name="matrixOperand">Matrix</param>
         private static void IsCorrect(Matrix<T> matrixOperand)
         {
+            if (matrixOperand is null)
+                throw new MatrixException("The operation cannot be performed. Incorrect matrix");
             if (matrixOperand.CountOfColumns != matrixOperand.CountOfRows)
                 throw new MatrixException("The operation cannot be performed. Incorrect sizes of operand.");
         }

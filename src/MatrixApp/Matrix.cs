@@ -184,7 +184,7 @@ namespace MatrixApp
             {
                 for (var j = 0; j < _numberOfColumns; ++j)
                 {
-                    dataGridView1.Rows[i].Cells[j].Value = _resultMatrixValues[i, j];
+                    dataGridView1.Rows[i].Cells[j].Value = _resultMatrixValues[i, j].ToString();
                     dataGridView1.Rows[i].Cells[j].ReadOnly = true;
                 }
             }
@@ -225,7 +225,6 @@ namespace MatrixApp
 
         private T[,] MatrixWrite()
         {
-            var arrayOfDoubleValues = new double[_numberOfRows, _numberOfColumns];
             var arrayOfValues = new T[_numberOfRows, _numberOfColumns];
             for (var i = 0; i < _numberOfRows; ++i)
             {
@@ -233,8 +232,7 @@ namespace MatrixApp
                 {
                     try
                     {
-                        arrayOfDoubleValues[i, j] = (double)Convert.ChangeType(dataGridView1[j, i].Value, typeof(double));
-                        arrayOfValues[i, j] = (T)Convert.ChangeType(arrayOfDoubleValues[i, j], typeof(T));
+                        arrayOfValues[i, j] = (T)Convert.ChangeType(dataGridView1[j, i].Value, typeof(T));
                     }
                     catch (FormatException)
                     {

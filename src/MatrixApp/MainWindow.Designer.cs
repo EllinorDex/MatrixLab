@@ -45,13 +45,9 @@
             this.donateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label26 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
@@ -67,8 +63,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label28 = new System.Windows.Forms.Label();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -101,6 +95,8 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label30 = new System.Windows.Forms.Label();
+            this.comboBox12 = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
@@ -110,8 +106,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.label30 = new System.Windows.Forms.Label();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -142,7 +138,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1397, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1397, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -153,14 +149,14 @@
             this.openRightMatrixToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openLeftMatrixToolStripMenuItem
             // 
             this.openLeftMatrixToolStripMenuItem.Name = "openLeftMatrixToolStripMenuItem";
             this.openLeftMatrixToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.openLeftMatrixToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
+            this.openLeftMatrixToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.openLeftMatrixToolStripMenuItem.Text = "Open left matrix...";
             this.openLeftMatrixToolStripMenuItem.Click += new System.EventHandler(this.OpenLeftMatrixToolStripMenuItem_Click);
             // 
@@ -168,7 +164,7 @@
             // 
             this.openRightMatrixToolStripMenuItem.Name = "openRightMatrixToolStripMenuItem";
             this.openRightMatrixToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.openRightMatrixToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
+            this.openRightMatrixToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.openRightMatrixToolStripMenuItem.Text = "Open right matrix...";
             this.openRightMatrixToolStripMenuItem.Click += new System.EventHandler(this.OpenRightMatrixToolStripMenuItem_Click);
             // 
@@ -177,7 +173,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeyDisplayString = "";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -189,14 +185,14 @@
             this.invToolStripMenuItem,
             this.delToolStripMenuItem});
             this.operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
-            this.operationsToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
+            this.operationsToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.operationsToolStripMenuItem.Text = "Operations";
             // 
             // sumToolStripMenuItem
             // 
             this.sumToolStripMenuItem.Name = "sumToolStripMenuItem";
             this.sumToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.sumToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.sumToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.sumToolStripMenuItem.Text = "Sum";
             this.sumToolStripMenuItem.Click += new System.EventHandler(this.SumToolStripMenuItem_Click);
             // 
@@ -204,7 +200,7 @@
             // 
             this.multToolStripMenuItem.Name = "multToolStripMenuItem";
             this.multToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
-            this.multToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.multToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.multToolStripMenuItem.Text = "Mult";
             this.multToolStripMenuItem.Click += new System.EventHandler(this.MultToolStripMenuItem_Click);
             // 
@@ -212,7 +208,7 @@
             // 
             this.invToolStripMenuItem.Name = "invToolStripMenuItem";
             this.invToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.invToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.invToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.invToolStripMenuItem.Text = "Inv";
             this.invToolStripMenuItem.Click += new System.EventHandler(this.InvToolStripMenuItem_Click);
             // 
@@ -220,7 +216,7 @@
             // 
             this.delToolStripMenuItem.Name = "delToolStripMenuItem";
             this.delToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.delToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.delToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.delToolStripMenuItem.Text = "Det";
             this.delToolStripMenuItem.Click += new System.EventHandler(this.DetToolStripMenuItem_Click);
             // 
@@ -231,14 +227,14 @@
             this.aboutUsToolStripMenuItem,
             this.donateToolStripMenuItem});
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.infoToolStripMenuItem.Text = "Info";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.HelpToolStripMenuItem_Click);
             // 
@@ -246,7 +242,7 @@
             // 
             this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
             this.aboutUsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.aboutUsToolStripMenuItem.Text = "About us";
             this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.AboutUsToolStripMenuItem_Click);
             // 
@@ -254,7 +250,7 @@
             // 
             this.donateToolStripMenuItem.Name = "donateToolStripMenuItem";
             this.donateToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.donateToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.donateToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.donateToolStripMenuItem.Text = "Donate";
             this.donateToolStripMenuItem.Click += new System.EventHandler(this.DonateToolStripMenuItem_Click);
             // 
@@ -278,8 +274,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label26);
-            this.tabPage1.Controls.Add(this.comboBox8);
             this.tabPage1.Controls.Add(this.label25);
             this.tabPage1.Controls.Add(this.comboBox7);
             this.tabPage1.Controls.Add(this.label5);
@@ -308,37 +302,13 @@
             this.tabPage1.Text = "Sum";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label26.Location = new System.Drawing.Point(944, 197);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(131, 29);
-            this.label26.TabIndex = 41;
-            this.label26.Text = "Value type:";
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Items.AddRange(new object[] {
-            "Integer",
-            "Double"});
-            this.comboBox8.Location = new System.Drawing.Point(1083, 197);
-            this.comboBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(121, 28);
-            this.comboBox8.TabIndex = 40;
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label25.Location = new System.Drawing.Point(20, 196);
+            this.label25.Location = new System.Drawing.Point(484, 238);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(131, 29);
+            this.label25.Size = new System.Drawing.Size(104, 24);
             this.label25.TabIndex = 39;
             this.label25.Text = "Value type:";
             // 
@@ -350,10 +320,10 @@
             this.comboBox7.Items.AddRange(new object[] {
             "Integer",
             "Double"});
-            this.comboBox7.Location = new System.Drawing.Point(159, 197);
+            this.comboBox7.Location = new System.Drawing.Point(638, 237);
             this.comboBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(121, 28);
+            this.comboBox7.Size = new System.Drawing.Size(121, 25);
             this.comboBox7.TabIndex = 38;
             // 
             // label5
@@ -363,35 +333,9 @@
             this.label5.Location = new System.Drawing.Point(773, 22);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(291, 55);
+            this.label5.Size = new System.Drawing.Size(237, 44);
             this.label5.TabIndex = 37;
             this.label5.Text = "Right matrix";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(633, 196);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(134, 29);
-            this.label8.TabIndex = 36;
-            this.label8.Text = "Matrix type:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Custom",
-            "Diagonal",
-            "Unit",
-            "Zero"});
-            this.comboBox2.Location = new System.Drawing.Point(773, 197);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 28);
-            this.comboBox2.TabIndex = 35;
             // 
             // numericUpDown4
             // 
@@ -399,7 +343,7 @@
             this.numericUpDown4.Location = new System.Drawing.Point(1021, 149);
             this.numericUpDown4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(71, 30);
+            this.numericUpDown4.Size = new System.Drawing.Size(71, 26);
             this.numericUpDown4.TabIndex = 34;
             this.numericUpDown4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown4.Value = new decimal(new int[] {
@@ -414,7 +358,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(760, 148);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(228, 29);
+            this.label7.Size = new System.Drawing.Size(181, 24);
             this.label7.TabIndex = 33;
             this.label7.Text = "Number of columns:";
             // 
@@ -424,7 +368,7 @@
             this.numericUpDown3.Location = new System.Drawing.Point(1021, 101);
             this.numericUpDown3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(71, 30);
+            this.numericUpDown3.Size = new System.Drawing.Size(71, 26);
             this.numericUpDown3.TabIndex = 32;
             this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown3.Value = new decimal(new int[] {
@@ -439,7 +383,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(760, 100);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(190, 29);
+            this.label6.Size = new System.Drawing.Size(149, 24);
             this.label6.TabIndex = 31;
             this.label6.Text = "Number of rows:";
             // 
@@ -462,7 +406,7 @@
             this.label1.Location = new System.Drawing.Point(167, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 55);
+            this.label1.Size = new System.Drawing.Size(211, 44);
             this.label1.TabIndex = 29;
             this.label1.Text = "Left matrix";
             // 
@@ -470,9 +414,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(331, 196);
+            this.label4.Location = new System.Drawing.Point(159, 198);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 29);
+            this.label4.Size = new System.Drawing.Size(105, 24);
             this.label4.TabIndex = 26;
             this.label4.Text = "Matrix type:";
             // 
@@ -486,10 +430,10 @@
             "Diagonal",
             "Unit",
             "Zero"});
-            this.comboBox1.Location = new System.Drawing.Point(471, 197);
+            this.comboBox1.Location = new System.Drawing.Point(317, 199);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.Size = new System.Drawing.Size(121, 25);
             this.comboBox1.TabIndex = 23;
             // 
             // numericUpDown2
@@ -498,7 +442,7 @@
             this.numericUpDown2.Location = new System.Drawing.Point(397, 149);
             this.numericUpDown2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(71, 30);
+            this.numericUpDown2.Size = new System.Drawing.Size(71, 26);
             this.numericUpDown2.TabIndex = 22;
             this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown2.Value = new decimal(new int[] {
@@ -513,7 +457,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(135, 148);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(228, 29);
+            this.label3.Size = new System.Drawing.Size(181, 24);
             this.label3.TabIndex = 21;
             this.label3.Text = "Number of columns:";
             // 
@@ -523,7 +467,7 @@
             this.numericUpDown1.Location = new System.Drawing.Point(397, 101);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(71, 30);
+            this.numericUpDown1.Size = new System.Drawing.Size(71, 26);
             this.numericUpDown1.TabIndex = 20;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown1.Value = new decimal(new int[] {
@@ -538,7 +482,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(135, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 29);
+            this.label2.Size = new System.Drawing.Size(149, 24);
             this.label2.TabIndex = 19;
             this.label2.Text = "Number of rows:";
             // 
@@ -568,8 +512,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label28);
-            this.tabPage2.Controls.Add(this.comboBox10);
             this.tabPage2.Controls.Add(this.label27);
             this.tabPage2.Controls.Add(this.comboBox9);
             this.tabPage2.Controls.Add(this.label13);
@@ -598,37 +540,13 @@
             this.tabPage2.Text = "Mult";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label28.Location = new System.Drawing.Point(944, 197);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(131, 29);
-            this.label28.TabIndex = 58;
-            this.label28.Text = "Value type:";
-            // 
-            // comboBox10
-            // 
-            this.comboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Items.AddRange(new object[] {
-            "Integer",
-            "Double"});
-            this.comboBox10.Location = new System.Drawing.Point(1083, 197);
-            this.comboBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(121, 28);
-            this.comboBox10.TabIndex = 57;
-            // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label27.Location = new System.Drawing.Point(20, 196);
+            this.label27.Location = new System.Drawing.Point(494, 263);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(131, 29);
+            this.label27.Size = new System.Drawing.Size(104, 24);
             this.label27.TabIndex = 56;
             this.label27.Text = "Value type:";
             // 
@@ -640,10 +558,10 @@
             this.comboBox9.Items.AddRange(new object[] {
             "Integer",
             "Double"});
-            this.comboBox9.Location = new System.Drawing.Point(159, 197);
+            this.comboBox9.Location = new System.Drawing.Point(633, 264);
             this.comboBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(121, 28);
+            this.comboBox9.Size = new System.Drawing.Size(121, 25);
             this.comboBox9.TabIndex = 55;
             // 
             // label13
@@ -653,7 +571,7 @@
             this.label13.Location = new System.Drawing.Point(773, 22);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(291, 55);
+            this.label13.Size = new System.Drawing.Size(237, 44);
             this.label13.TabIndex = 54;
             this.label13.Text = "Right matrix";
             // 
@@ -661,9 +579,9 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(633, 196);
+            this.label16.Location = new System.Drawing.Point(804, 203);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(134, 29);
+            this.label16.Size = new System.Drawing.Size(105, 24);
             this.label16.TabIndex = 53;
             this.label16.Text = "Matrix type:";
             // 
@@ -677,10 +595,10 @@
             "Diagonal",
             "Unit",
             "Zero"});
-            this.comboBox4.Location = new System.Drawing.Point(773, 197);
+            this.comboBox4.Location = new System.Drawing.Point(959, 204);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 28);
+            this.comboBox4.Size = new System.Drawing.Size(121, 25);
             this.comboBox4.TabIndex = 52;
             // 
             // numericUpDown8
@@ -689,7 +607,7 @@
             this.numericUpDown8.Location = new System.Drawing.Point(1021, 149);
             this.numericUpDown8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(71, 30);
+            this.numericUpDown8.Size = new System.Drawing.Size(71, 26);
             this.numericUpDown8.TabIndex = 51;
             this.numericUpDown8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown8.Value = new decimal(new int[] {
@@ -704,7 +622,7 @@
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label15.Location = new System.Drawing.Point(760, 148);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(228, 29);
+            this.label15.Size = new System.Drawing.Size(181, 24);
             this.label15.TabIndex = 50;
             this.label15.Text = "Number of columns:";
             // 
@@ -714,7 +632,7 @@
             this.numericUpDown7.Location = new System.Drawing.Point(1021, 101);
             this.numericUpDown7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(71, 30);
+            this.numericUpDown7.Size = new System.Drawing.Size(71, 26);
             this.numericUpDown7.TabIndex = 49;
             this.numericUpDown7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown7.Value = new decimal(new int[] {
@@ -729,7 +647,7 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.Location = new System.Drawing.Point(760, 100);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(190, 29);
+            this.label14.Size = new System.Drawing.Size(149, 24);
             this.label14.TabIndex = 48;
             this.label14.Text = "Number of rows:";
             // 
@@ -752,7 +670,7 @@
             this.label9.Location = new System.Drawing.Point(167, 22);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(258, 55);
+            this.label9.Size = new System.Drawing.Size(211, 44);
             this.label9.TabIndex = 46;
             this.label9.Text = "Left matrix";
             // 
@@ -760,9 +678,9 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(331, 196);
+            this.label12.Location = new System.Drawing.Point(159, 205);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(134, 29);
+            this.label12.Size = new System.Drawing.Size(105, 24);
             this.label12.TabIndex = 45;
             this.label12.Text = "Matrix type:";
             // 
@@ -776,10 +694,10 @@
             "Diagonal",
             "Unit",
             "Zero"});
-            this.comboBox3.Location = new System.Drawing.Point(471, 197);
+            this.comboBox3.Location = new System.Drawing.Point(315, 204);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 28);
+            this.comboBox3.Size = new System.Drawing.Size(121, 25);
             this.comboBox3.TabIndex = 44;
             // 
             // numericUpDown6
@@ -788,7 +706,7 @@
             this.numericUpDown6.Location = new System.Drawing.Point(397, 149);
             this.numericUpDown6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(71, 30);
+            this.numericUpDown6.Size = new System.Drawing.Size(71, 26);
             this.numericUpDown6.TabIndex = 43;
             this.numericUpDown6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown6.Value = new decimal(new int[] {
@@ -803,7 +721,7 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.Location = new System.Drawing.Point(135, 148);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(228, 29);
+            this.label11.Size = new System.Drawing.Size(181, 24);
             this.label11.TabIndex = 42;
             this.label11.Text = "Number of columns:";
             // 
@@ -813,7 +731,7 @@
             this.numericUpDown5.Location = new System.Drawing.Point(397, 101);
             this.numericUpDown5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(71, 30);
+            this.numericUpDown5.Size = new System.Drawing.Size(71, 26);
             this.numericUpDown5.TabIndex = 41;
             this.numericUpDown5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown5.Value = new decimal(new int[] {
@@ -828,7 +746,7 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.Location = new System.Drawing.Point(135, 100);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(190, 29);
+            this.label10.Size = new System.Drawing.Size(149, 24);
             this.label10.TabIndex = 40;
             this.label10.Text = "Number of rows:";
             // 
@@ -884,7 +802,7 @@
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label29.Location = new System.Drawing.Point(328, 196);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(131, 29);
+            this.label29.Size = new System.Drawing.Size(104, 24);
             this.label29.TabIndex = 58;
             this.label29.Text = "Value type:";
             // 
@@ -899,7 +817,7 @@
             this.comboBox11.Location = new System.Drawing.Point(467, 197);
             this.comboBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(121, 28);
+            this.comboBox11.Size = new System.Drawing.Size(121, 25);
             this.comboBox11.TabIndex = 57;
             // 
             // label17
@@ -909,7 +827,7 @@
             this.label17.Location = new System.Drawing.Point(532, 22);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(160, 55);
+            this.label17.Size = new System.Drawing.Size(131, 44);
             this.label17.TabIndex = 55;
             this.label17.Text = "Matrix";
             // 
@@ -919,7 +837,7 @@
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label20.Location = new System.Drawing.Point(639, 196);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(134, 29);
+            this.label20.Size = new System.Drawing.Size(105, 24);
             this.label20.TabIndex = 54;
             this.label20.Text = "Matrix type:";
             // 
@@ -936,7 +854,7 @@
             this.comboBox5.Location = new System.Drawing.Point(779, 197);
             this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 28);
+            this.comboBox5.Size = new System.Drawing.Size(121, 25);
             this.comboBox5.TabIndex = 53;
             // 
             // numericUpDown10
@@ -945,7 +863,7 @@
             this.numericUpDown10.Location = new System.Drawing.Point(708, 149);
             this.numericUpDown10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown10.Name = "numericUpDown10";
-            this.numericUpDown10.Size = new System.Drawing.Size(71, 30);
+            this.numericUpDown10.Size = new System.Drawing.Size(71, 26);
             this.numericUpDown10.TabIndex = 52;
             this.numericUpDown10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown10.Value = new decimal(new int[] {
@@ -960,7 +878,7 @@
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label19.Location = new System.Drawing.Point(445, 148);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(228, 29);
+            this.label19.Size = new System.Drawing.Size(181, 24);
             this.label19.TabIndex = 51;
             this.label19.Text = "Number of columns:";
             // 
@@ -970,7 +888,7 @@
             this.numericUpDown9.Location = new System.Drawing.Point(708, 101);
             this.numericUpDown9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown9.Name = "numericUpDown9";
-            this.numericUpDown9.Size = new System.Drawing.Size(71, 30);
+            this.numericUpDown9.Size = new System.Drawing.Size(71, 26);
             this.numericUpDown9.TabIndex = 50;
             this.numericUpDown9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown9.Value = new decimal(new int[] {
@@ -985,7 +903,7 @@
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label18.Location = new System.Drawing.Point(445, 100);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(190, 29);
+            this.label18.Size = new System.Drawing.Size(149, 24);
             this.label18.TabIndex = 49;
             this.label18.Text = "Number of rows:";
             // 
@@ -1035,6 +953,30 @@
             this.tabPage4.Text = "Det";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label30.Location = new System.Drawing.Point(328, 196);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(104, 24);
+            this.label30.TabIndex = 66;
+            this.label30.Text = "Value type:";
+            // 
+            // comboBox12
+            // 
+            this.comboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox12.FormattingEnabled = true;
+            this.comboBox12.Items.AddRange(new object[] {
+            "Integer",
+            "Double"});
+            this.comboBox12.Location = new System.Drawing.Point(467, 197);
+            this.comboBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox12.Name = "comboBox12";
+            this.comboBox12.Size = new System.Drawing.Size(121, 25);
+            this.comboBox12.TabIndex = 65;
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -1042,7 +984,7 @@
             this.label21.Location = new System.Drawing.Point(532, 22);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(160, 55);
+            this.label21.Size = new System.Drawing.Size(131, 44);
             this.label21.TabIndex = 64;
             this.label21.Text = "Matrix";
             // 
@@ -1052,7 +994,7 @@
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label24.Location = new System.Drawing.Point(639, 196);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(134, 29);
+            this.label24.Size = new System.Drawing.Size(105, 24);
             this.label24.TabIndex = 63;
             this.label24.Text = "Matrix type:";
             // 
@@ -1069,7 +1011,7 @@
             this.comboBox6.Location = new System.Drawing.Point(779, 197);
             this.comboBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 28);
+            this.comboBox6.Size = new System.Drawing.Size(121, 25);
             this.comboBox6.TabIndex = 62;
             // 
             // numericUpDown12
@@ -1078,7 +1020,7 @@
             this.numericUpDown12.Location = new System.Drawing.Point(708, 149);
             this.numericUpDown12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown12.Name = "numericUpDown12";
-            this.numericUpDown12.Size = new System.Drawing.Size(71, 30);
+            this.numericUpDown12.Size = new System.Drawing.Size(71, 26);
             this.numericUpDown12.TabIndex = 61;
             this.numericUpDown12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown12.Value = new decimal(new int[] {
@@ -1093,7 +1035,7 @@
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label23.Location = new System.Drawing.Point(445, 148);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(228, 29);
+            this.label23.Size = new System.Drawing.Size(181, 24);
             this.label23.TabIndex = 60;
             this.label23.Text = "Number of columns:";
             // 
@@ -1103,7 +1045,7 @@
             this.numericUpDown11.Location = new System.Drawing.Point(708, 101);
             this.numericUpDown11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown11.Name = "numericUpDown11";
-            this.numericUpDown11.Size = new System.Drawing.Size(71, 30);
+            this.numericUpDown11.Size = new System.Drawing.Size(71, 26);
             this.numericUpDown11.TabIndex = 59;
             this.numericUpDown11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown11.Value = new decimal(new int[] {
@@ -1118,7 +1060,7 @@
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label22.Location = new System.Drawing.Point(445, 100);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(190, 29);
+            this.label22.Size = new System.Drawing.Size(149, 24);
             this.label22.TabIndex = 58;
             this.label22.Text = "Number of rows:";
             // 
@@ -1146,29 +1088,31 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
-            // label30
+            // comboBox2
             // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label30.Location = new System.Drawing.Point(328, 196);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(131, 29);
-            this.label30.TabIndex = 66;
-            this.label30.Text = "Value type:";
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Custom",
+            "Diagonal",
+            "Unit",
+            "Zero"});
+            this.comboBox2.Location = new System.Drawing.Point(941, 199);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 25);
+            this.comboBox2.TabIndex = 35;
             // 
-            // comboBox12
+            // label8
             // 
-            this.comboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Items.AddRange(new object[] {
-            "Integer",
-            "Double"});
-            this.comboBox12.Location = new System.Drawing.Point(467, 197);
-            this.comboBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(121, 28);
-            this.comboBox12.TabIndex = 65;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(792, 198);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(105, 24);
+            this.label8.TabIndex = 36;
+            this.label8.Text = "Matrix type:";
             // 
             // MainWindow
             // 
@@ -1244,8 +1188,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.NumericUpDown numericUpDown4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
@@ -1289,16 +1231,14 @@
         private System.Windows.Forms.ToolStripMenuItem openRightMatrixToolStripMenuItem;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.ComboBox comboBox10;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.ComboBox comboBox11;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 

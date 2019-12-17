@@ -44,6 +44,9 @@ namespace MatrixLib.Operations
         /// <param name="matrixRight">Right Matrix</param>
         private static void IsCorrect(Matrix<T> matrixLeft, Matrix<T> matrixRight)
         {
+            if (matrixLeft is null || matrixRight is null)
+                throw new MatrixException("The operation cannot be performed. Incorrect matrix");
+
             if (matrixLeft.CountOfColumns != matrixRight.CountOfRows)
                 throw new MatrixException("The operation cannot be performed. Incorrect sizes of operands.");
         }
