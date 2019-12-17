@@ -19,7 +19,7 @@ namespace MatrixApp.Properties {
     // с помощью такого средства, как ResGen или Visual Studio.
     // Чтобы добавить или удалить член, измените файл .ResX и снова запустите ResGen
     // с параметром /str или перестройте свой проект VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -115,9 +115,11 @@ namespace MatrixApp.Properties {
         ///
         ///3) Select one of the proposed matrix types. If your matrix is random, then select a custom matrix type;
         ///
-        ///4) In the window that appears, set the matrix elements;
+        ///4) Select the type of matrix value;
         ///
-        ///5) Click the button Calculate!.
+        ///5) In the window that appears, set the matrix elements;
+        ///
+        ///6) Click the button Calculate!.
         /// </summary>
         internal static string res06 {
             get {
@@ -186,6 +188,15 @@ namespace MatrixApp.Properties {
         internal static string res13 {
             get {
                 return ResourceManager.GetString("res13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Integer.
+        /// </summary>
+        internal static string res14 {
+            get {
+                return ResourceManager.GetString("res14", resourceCulture);
             }
         }
     }

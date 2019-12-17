@@ -117,7 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="res01" xml:space="preserve">
     <value>The matrix you tried to load from the file is not set correctly.</value>
     <comment>a</comment>
@@ -144,9 +143,11 @@ Don't do that. Please, check the elements of the matrix you set.</value>
 
 3) Select one of the proposed matrix types. If your matrix is random, then select a custom matrix type;
 
-4) In the window that appears, set the matrix elements;
+4) Select the type of matrix value;
 
-5) Click the button Calculate!</value>
+5) In the window that appears, set the matrix elements;
+
+6) Click the button Calculate!</value>
   </data>
   <data name="res07" xml:space="preserve">
     <value>Three beginning programmers from Belarus and Ukraine.</value>
@@ -169,5 +170,8 @@ Sberbank Online: +7-977-763-62-91</value>
   </data>
   <data name="res13" xml:space="preserve">
     <value>The determinant of the matrix is </value>
+  </data>
+  <data name="res14" xml:space="preserve">
+    <value>Integer</value>
   </data>
 </root>

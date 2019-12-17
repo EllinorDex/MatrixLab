@@ -61,14 +61,21 @@ namespace MatrixApp
             {
                 for (var i = 0; i < _numberOfRows; ++i)
                     for (var j = 0; j < _numberOfColumns; ++j)
-                        _userMatrixValues[i, j] = (T)Convert.ChangeType(1, typeof(T));
+                    {
+                        if (_leftMatrix != null && _operand == "Left Matrix")
+                            _userMatrixValues[i, j] = _leftMatrix[i, j];
+                        else if (_rightMatrix != null && _operand == "Right Matrix")
+                            _userMatrixValues[i, j] = _rightMatrix[i, j];
+                        else
+                            _userMatrixValues[i, j] = (T)Convert.ChangeType(1, typeof(T));
+                    }
             }
 
             else if (_resultMatrix != null && _operand == "Left Matrix")
             {
                 for (var i = 0; i < _numberOfRows; ++i)
                     for (var j = 0; j < _numberOfColumns; ++j)
-                        _userMatrixValues[i, j] = _resultMatrix.Get2DArray()[i, j];
+                        _userMatrixValues[i, j] = (T)Convert.ChangeType(_resultMatrix.Get2DArray()[i, j], typeof(T));
 
                 _leftMatrix = new MatrixLib.Matrix<T>(_numberOfRows, _numberOfColumns, _userMatrixValues);
                 _resultMatrix = new MatrixLib.Matrix<T>(_numberOfRows, _numberOfColumns, _userMatrixValues);
@@ -78,7 +85,7 @@ namespace MatrixApp
             {
                 for (var i = 0; i < _numberOfRows; ++i)
                     for (var j = 0; j < _numberOfColumns; ++j)
-                        _userMatrixValues[i, j] = _rightMatrix.Get2DArray()[i, j];
+                        _userMatrixValues[i, j] = (T)Convert.ChangeType(_rightMatrix.Get2DArray()[i, j], typeof(T));
 
                 _rightMatrix = new MatrixLib.Matrix<T>(_numberOfRows, _numberOfColumns, _userMatrixValues);
             }
@@ -113,7 +120,7 @@ namespace MatrixApp
             for (var i = 0; i < _numberOfRows; ++i)
             {
                 for (var j = 0; j < _numberOfColumns; ++j)
-                    dataGridView1.Rows[i].Cells[j].Value = _userMatrixValues[i, j];
+                    dataGridView1.Rows[i].Cells[j].Value = _userMatrixValues[i, j].ToString();
             }
         }
 
@@ -124,7 +131,7 @@ namespace MatrixApp
             for (var i = 0; i < _numberOfRows; ++i)
             {
                 for (var j = 0; j < _numberOfColumns; ++j)
-                    dataGridView1.Rows[i].Cells[j].Value = _resultMatrixValues[i, j];
+                    dataGridView1.Rows[i].Cells[j].Value = _resultMatrixValues[i, j].ToString();
             }
         }
 
